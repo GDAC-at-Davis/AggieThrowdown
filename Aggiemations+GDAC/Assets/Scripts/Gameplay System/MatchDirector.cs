@@ -13,10 +13,7 @@ public class MatchDirector : MonoBehaviour
     private FlexCameraScript flexCamera;
 
     [SerializeField]
-    private Transform spawnPoint;
-
-    [SerializeField]
-    private FighterManager fighterPrefab;
+    private List<Transform> spawnPoint;
 
     private List<PlayerInfo> playerInfos;
 
@@ -32,10 +29,35 @@ public class MatchDirector : MonoBehaviour
             var playerInfo = playerInfos[i];
             var fighterConfig = playerInfo.SelectedFighter;
 
-            var fighter = Instantiate(fighterPrefab, spawnPoint.position, Quaternion.identity);
+            var fighter = Instantiate(fighterConfig.FighterPrefab, spawnPoint[i].position, Quaternion.identity);
             fighter.Initialize(i, fighterConfig, flexCamera);
 
             fighters.Add(fighter);
+        }
+    }
+
+    private void RespawnPlayer()
+    {
+        // get respawn position furthest from all players
+        var respawnPosition = Vector3.zero;
+        var maxDistance = float.MinValue;
+        foreach (var point in spawnPoint)
+        {
+            var minDistance = float.MaxValue;
+            foreach (var fighter in fighters)
+            {
+                var distance = Vector3.Distance(point.position, fighter.GetBodyPosition());
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                }
+            }
+
+            if (minDistance > maxDistance)
+            {
+                maxDistance = minDistance;
+                respawnPosition = point.position;
+            }
         }
     }
 }

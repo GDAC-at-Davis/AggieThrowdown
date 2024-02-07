@@ -62,6 +62,78 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Basic_P1"",
+                    ""type"": ""Button"",
+                    ""id"": ""202f30c4-cbb0-4d48-b071-faac12c7f692"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Basic_P2"",
+                    ""type"": ""Button"",
+                    ""id"": ""87671381-d270-4db5-b1c4-45ca91f8745a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Heavy_P1"",
+                    ""type"": ""Button"",
+                    ""id"": ""04831cff-c1bd-4a2b-b8d5-6fca3686f62f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Heavy_P2"",
+                    ""type"": ""Button"",
+                    ""id"": ""d6142691-1f0b-4eab-aea0-c99a0a5a0fdd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Dash_P1"",
+                    ""type"": ""Button"",
+                    ""id"": ""01780217-5bf7-4357-bf1c-c8330cd9d644"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Dash_P2"",
+                    ""type"": ""Button"",
+                    ""id"": ""1e7ecb53-3e17-4cb0-bcd0-13b7e87adb84"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Taunt_P1"",
+                    ""type"": ""Button"",
+                    ""id"": ""03362fc4-9494-45ca-8e56-528f2d00658f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Taunt_P2"",
+                    ""type"": ""Button"",
+                    ""id"": ""c3560b8f-7881-4757-9069-6d0462a1944a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -196,6 +268,94 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
                     ""action"": ""Jump_P2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7be5bac1-304b-4e06-8ded-48c0a7d7c4e5"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Basic_P1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bf18a6ed-c4bf-4ab0-a2e3-bcc2e3563ef8"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Basic_P2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7331478a-d09c-487f-b12d-6c8c665cf4ea"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Heavy_P1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a988aae2-2324-4c8b-acad-7b75961bb63c"",
+                    ""path"": ""<Keyboard>/period"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Heavy_P2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5be7f844-bf8e-4c5c-8202-58656b3d8337"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash_P1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""936973a2-e898-4f81-922a-dcbcc28979e8"",
+                    ""path"": ""<Keyboard>/comma"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash_P2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f744e40f-e958-4540-a250-a9774af5fc41"",
+                    ""path"": ""<Keyboard>/v"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Taunt_P1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""12e2f44c-651a-4aa1-847f-79195cafd9f3"",
+                    ""path"": ""<Keyboard>/slash"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Taunt_P2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -208,6 +368,14 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
         m_Gameplay_Movement_P2 = m_Gameplay.FindAction("Movement_P2", throwIfNotFound: true);
         m_Gameplay_Jump_P1 = m_Gameplay.FindAction("Jump_P1", throwIfNotFound: true);
         m_Gameplay_Jump_P2 = m_Gameplay.FindAction("Jump_P2", throwIfNotFound: true);
+        m_Gameplay_Basic_P1 = m_Gameplay.FindAction("Basic_P1", throwIfNotFound: true);
+        m_Gameplay_Basic_P2 = m_Gameplay.FindAction("Basic_P2", throwIfNotFound: true);
+        m_Gameplay_Heavy_P1 = m_Gameplay.FindAction("Heavy_P1", throwIfNotFound: true);
+        m_Gameplay_Heavy_P2 = m_Gameplay.FindAction("Heavy_P2", throwIfNotFound: true);
+        m_Gameplay_Dash_P1 = m_Gameplay.FindAction("Dash_P1", throwIfNotFound: true);
+        m_Gameplay_Dash_P2 = m_Gameplay.FindAction("Dash_P2", throwIfNotFound: true);
+        m_Gameplay_Taunt_P1 = m_Gameplay.FindAction("Taunt_P1", throwIfNotFound: true);
+        m_Gameplay_Taunt_P2 = m_Gameplay.FindAction("Taunt_P2", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -273,6 +441,14 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Movement_P2;
     private readonly InputAction m_Gameplay_Jump_P1;
     private readonly InputAction m_Gameplay_Jump_P2;
+    private readonly InputAction m_Gameplay_Basic_P1;
+    private readonly InputAction m_Gameplay_Basic_P2;
+    private readonly InputAction m_Gameplay_Heavy_P1;
+    private readonly InputAction m_Gameplay_Heavy_P2;
+    private readonly InputAction m_Gameplay_Dash_P1;
+    private readonly InputAction m_Gameplay_Dash_P2;
+    private readonly InputAction m_Gameplay_Taunt_P1;
+    private readonly InputAction m_Gameplay_Taunt_P2;
     public struct GameplayActions
     {
         private @DefaultControls m_Wrapper;
@@ -281,6 +457,14 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
         public InputAction @Movement_P2 => m_Wrapper.m_Gameplay_Movement_P2;
         public InputAction @Jump_P1 => m_Wrapper.m_Gameplay_Jump_P1;
         public InputAction @Jump_P2 => m_Wrapper.m_Gameplay_Jump_P2;
+        public InputAction @Basic_P1 => m_Wrapper.m_Gameplay_Basic_P1;
+        public InputAction @Basic_P2 => m_Wrapper.m_Gameplay_Basic_P2;
+        public InputAction @Heavy_P1 => m_Wrapper.m_Gameplay_Heavy_P1;
+        public InputAction @Heavy_P2 => m_Wrapper.m_Gameplay_Heavy_P2;
+        public InputAction @Dash_P1 => m_Wrapper.m_Gameplay_Dash_P1;
+        public InputAction @Dash_P2 => m_Wrapper.m_Gameplay_Dash_P2;
+        public InputAction @Taunt_P1 => m_Wrapper.m_Gameplay_Taunt_P1;
+        public InputAction @Taunt_P2 => m_Wrapper.m_Gameplay_Taunt_P2;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -302,6 +486,30 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
             @Jump_P2.started += instance.OnJump_P2;
             @Jump_P2.performed += instance.OnJump_P2;
             @Jump_P2.canceled += instance.OnJump_P2;
+            @Basic_P1.started += instance.OnBasic_P1;
+            @Basic_P1.performed += instance.OnBasic_P1;
+            @Basic_P1.canceled += instance.OnBasic_P1;
+            @Basic_P2.started += instance.OnBasic_P2;
+            @Basic_P2.performed += instance.OnBasic_P2;
+            @Basic_P2.canceled += instance.OnBasic_P2;
+            @Heavy_P1.started += instance.OnHeavy_P1;
+            @Heavy_P1.performed += instance.OnHeavy_P1;
+            @Heavy_P1.canceled += instance.OnHeavy_P1;
+            @Heavy_P2.started += instance.OnHeavy_P2;
+            @Heavy_P2.performed += instance.OnHeavy_P2;
+            @Heavy_P2.canceled += instance.OnHeavy_P2;
+            @Dash_P1.started += instance.OnDash_P1;
+            @Dash_P1.performed += instance.OnDash_P1;
+            @Dash_P1.canceled += instance.OnDash_P1;
+            @Dash_P2.started += instance.OnDash_P2;
+            @Dash_P2.performed += instance.OnDash_P2;
+            @Dash_P2.canceled += instance.OnDash_P2;
+            @Taunt_P1.started += instance.OnTaunt_P1;
+            @Taunt_P1.performed += instance.OnTaunt_P1;
+            @Taunt_P1.canceled += instance.OnTaunt_P1;
+            @Taunt_P2.started += instance.OnTaunt_P2;
+            @Taunt_P2.performed += instance.OnTaunt_P2;
+            @Taunt_P2.canceled += instance.OnTaunt_P2;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -318,6 +526,30 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
             @Jump_P2.started -= instance.OnJump_P2;
             @Jump_P2.performed -= instance.OnJump_P2;
             @Jump_P2.canceled -= instance.OnJump_P2;
+            @Basic_P1.started -= instance.OnBasic_P1;
+            @Basic_P1.performed -= instance.OnBasic_P1;
+            @Basic_P1.canceled -= instance.OnBasic_P1;
+            @Basic_P2.started -= instance.OnBasic_P2;
+            @Basic_P2.performed -= instance.OnBasic_P2;
+            @Basic_P2.canceled -= instance.OnBasic_P2;
+            @Heavy_P1.started -= instance.OnHeavy_P1;
+            @Heavy_P1.performed -= instance.OnHeavy_P1;
+            @Heavy_P1.canceled -= instance.OnHeavy_P1;
+            @Heavy_P2.started -= instance.OnHeavy_P2;
+            @Heavy_P2.performed -= instance.OnHeavy_P2;
+            @Heavy_P2.canceled -= instance.OnHeavy_P2;
+            @Dash_P1.started -= instance.OnDash_P1;
+            @Dash_P1.performed -= instance.OnDash_P1;
+            @Dash_P1.canceled -= instance.OnDash_P1;
+            @Dash_P2.started -= instance.OnDash_P2;
+            @Dash_P2.performed -= instance.OnDash_P2;
+            @Dash_P2.canceled -= instance.OnDash_P2;
+            @Taunt_P1.started -= instance.OnTaunt_P1;
+            @Taunt_P1.performed -= instance.OnTaunt_P1;
+            @Taunt_P1.canceled -= instance.OnTaunt_P1;
+            @Taunt_P2.started -= instance.OnTaunt_P2;
+            @Taunt_P2.performed -= instance.OnTaunt_P2;
+            @Taunt_P2.canceled -= instance.OnTaunt_P2;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -341,5 +573,13 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
         void OnMovement_P2(InputAction.CallbackContext context);
         void OnJump_P1(InputAction.CallbackContext context);
         void OnJump_P2(InputAction.CallbackContext context);
+        void OnBasic_P1(InputAction.CallbackContext context);
+        void OnBasic_P2(InputAction.CallbackContext context);
+        void OnHeavy_P1(InputAction.CallbackContext context);
+        void OnHeavy_P2(InputAction.CallbackContext context);
+        void OnDash_P1(InputAction.CallbackContext context);
+        void OnDash_P2(InputAction.CallbackContext context);
+        void OnTaunt_P1(InputAction.CallbackContext context);
+        void OnTaunt_P2(InputAction.CallbackContext context);
     }
 }

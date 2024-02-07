@@ -1,23 +1,50 @@
+using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class FighterManager : MonoBehaviour
 {
-    [Header("Dependencies")]
+    [Header("Configuration")]
+    [SerializeField]
+    private FighterConfigSO config;
+
+    [Header("Dependencies (Do not modify in fighter variants)")]
     [SerializeField]
     private ServiceContainerSO serviceContainer;
 
     [SerializeField]
-    private MovementDependencies moveDependencies;
+    private MovementDependencies movementDependencies;
 
     [SerializeField]
     private FighterController controller;
 
     [SerializeField]
-    private Transform cameraTarget;
+    private FighterCombatEntity combatEntity;
+
+    [SerializeField]
+    private AnimationEventHandler animEventHandler;
+
+    [SerializeField]
+    private Transform bodyTransformPivot;
 
     private int playerIndex;
-    private FighterConfigSO config;
     private FlexCameraScript flexCamera;
+
+    [ContextMenu("Initialize In Editor")]
+    public void OnValidate()
+    {
+        if (!config)
+        {
+            return;
+        }
+
+        Configure();
+    }
+
+    private void Configure()
+    {
+        controller.Configure(config.MoveStats, movementDependencies, config, animEventHandler);
+    }
 
     public void Initialize(int playerIndex, FighterConfigSO config, FlexCameraScript flexCamera)
     {
@@ -25,9 +52,30 @@ public class FighterManager : MonoBehaviour
         this.config = config;
         this.flexCamera = flexCamera;
 
-        flexCamera.AddTarget(cameraTarget);
+        if (this.flexCamera)
+        {
+            flexCamera.AddTarget(bodyTransformPivot);
+        }
 
-        controller.Initialize(playerIndex, serviceContainer.InputManager.GetInputProvider(playerIndex),
-            config.MoveStats, moveDependencies);
+        controller.Initialize(playerIndex, serviceContainer.InputManager.GetInputProvider(playerIndex));
+
+        // Hook up events
+        animEventHandler.OnSetInvincible += combatEntity.SetInvincible;
+        animEventHandler.OnSetSuperArmor += combatEntity.SetSuperArmor;
+    }
+
+    public Vector2 GetBodyPosition()
+    {
+        return bodyTransformPivot.position;
+    }
+
+    private void OnDrawGizmos()
+    {
+        // draw hurtboxes
+        Gizmos.color = Color.green;
+        config.BasicAttack.DrawHurtboxGizmos(bodyTransformPivot.position, 1);
+
+        Gizmos.color = Color.blue;
+        config.HeavyAttack.DrawHurtboxGizmos(bodyTransformPivot.position, 1);
     }
 }

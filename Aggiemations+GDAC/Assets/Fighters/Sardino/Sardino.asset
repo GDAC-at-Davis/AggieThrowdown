@@ -16,16 +16,18 @@ MonoBehaviour:
 
 '
   <MoveStats>k__BackingField:
-    GroundMaxMovementSpeed: 5
-    MovementAcceleration: 50
-    JumpVelocity: 5
-    AirMovementAcceleration: 15
-    AirMaxMovementSpeed: 5
-    FastFallAcceleration: 5
-    MaxGroundStableAngle: 55
-    GroundCastRadius: 0.2
-    GroundCastDistance: 0.26
-    GroundCastOffset: -0.18
+    <GroundMaxMovementSpeed>k__BackingField: 5
+    <MovementAcceleration>k__BackingField: 50
+    <JumpVelocity>k__BackingField: 5
+    <AirMovementAcceleration>k__BackingField: 15
+    <AirMaxMovementSpeed>k__BackingField: 5
+    <FastFallAcceleration>k__BackingField: 5
+    <MaxGroundStableAngle>k__BackingField: 55
+    <GroundCastRadius>k__BackingField: 0.2
+    <GroundCastDistance>k__BackingField: 0.26
+    <GroundCastOffset>k__BackingField: -0.18
     groundMask:
       serializedVersion: 2
       m_Bits: 64
+  <AnimationOverrides>k__BackingField: {fileID: 0}
+  <FighterPrefab>k__BackingField: {fileID: 0}

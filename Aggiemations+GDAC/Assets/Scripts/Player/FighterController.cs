@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
-public class FighterController : MonoBehaviour
+public partial class FighterController : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField]
@@ -19,130 +19,174 @@ public class FighterController : MonoBehaviour
     [SerializeField]
     private float rotateSpeed;
 
+    [Header("Dependencies (Do not modify directly)")]
+    [SerializeField]
+    private FighterConfigSO fighterConfig;
+
+    [SerializeField]
+    private MovementDependencies moveDependencies;
+
+    [SerializeField]
+    private AnimationEventHandler animEventHandler;
+
+
     private enum State
     {
+        NoState,
         Default,
+        Dash,
         Action,
         Staggered,
         Dead
     }
 
-    private State _state;
+    private MovementStats moveStats => fighterConfig.MoveStats;
+
+    private State currentState = State.NoState;
 
     private bool jumping;
     private float xInput;
 
     private InputProvider inputProvider;
-    private MovementDependencies moveDepend;
-    private MovementStats moveStats;
+    private int playerIndex;
 
+    // Timers
+    private float dashCooldownTimer;
 
-    public void Initialize(int playerIndex, InputProvider inputProvider, MovementStats stats,
-        MovementDependencies moveDependencies)
+    public void Configure(MovementStats stats, MovementDependencies moveDependencies,
+        FighterConfigSO config, AnimationEventHandler animEventHandler)
     {
-        _state = State.Default;
-        this.inputProvider = inputProvider;
-        moveDepend = moveDependencies;
-        moveStats = stats;
+        this.moveDependencies = moveDependencies;
+        fighterConfig = config;
+        this.animEventHandler = animEventHandler;
 
-        inputProvider.OnJumpInput += HandleJumpInput;
+        anim.runtimeAnimatorController = config.AnimationOverrides;
+    }
+
+    public void Initialize(int playerIndex,
+        InputProvider inputProvider)
+    {
+        currentState = State.Default;
+        this.inputProvider = inputProvider;
+        this.playerIndex = playerIndex;
+        SwitchState(State.Default);
     }
 
     private void OnDestroy()
     {
-        inputProvider.OnJumpInput -= HandleJumpInput;
-    }
-
-    private void HandleJumpInput(InputAction.CallbackContext ctx)
-    {
-        var canJump = moveEngine.Context.AirTime < 0.1f || moveEngine.Context.IsStableOnGround;
-        if (ctx.started && canJump)
-        {
-            moveDepend.Rb.velocity = Vector2.right * moveDepend.Rb.velocity.x + Vector2.up * moveStats.JumpVelocity;
-            moveEngine.ForceUnground(0.2f);
-            jumping = true;
-        }
-
-        // Early release
-        if (ctx.canceled && jumping)
-        {
-            jumping = false;
-            var velocity = moveDepend.Rb.velocity;
-            velocity = new Vector2(velocity.x, velocity.y * 0.65f);
-            moveDepend.Rb.velocity = velocity;
-        }
+        SwitchState(State.NoState);
     }
 
     private void Update()
     {
+        // Timers
+        dashCooldownTimer -= Time.deltaTime;
+
         // Input
         xInput = inputProvider.MovementInput.x;
 
-        if (_state == State.Default)
+        switch (currentState)
         {
-            if (jumping)
-            {
-                if (moveDepend.Rb.velocity.y < 0)
-                {
-                    jumping = false;
-                }
-            }
+            case State.Default:
+                DefaultStateUpdate();
+                break;
+            case State.Dash:
+                DashStateUpdate();
+                break;
+            case State.Action:
+                ActionStateUpdate();
+                break;
+            case State.Staggered:
+                StaggeredStateUpdate();
+                break;
+            case State.Dead:
+                DeadStateUpdate();
+                break;
         }
     }
 
     private void FixedUpdate()
     {
-        if (_state == State.Default)
+        switch (currentState)
         {
-            DefaultModeFixedUpdate();
+            case State.Default:
+                DefaultStateFixedUpdate();
+                break;
+            case State.Dash:
+                DashStateFixedUpdate();
+                break;
+            case State.Action:
+                ActionStateFixedUpdate();
+                break;
+            case State.Staggered:
+                StaggeredStateFixedUpdate();
+                break;
+            case State.Dead:
+                DeadStateFixedUpdate();
+                break;
         }
     }
 
-    private void DefaultModeFixedUpdate()
+    private void SwitchState(State newState)
     {
-        moveEngine.Move(xInput, moveStats, moveDepend);
-
-        if (inputProvider.MovementInput.y < 0)
+        switch (currentState)
         {
-            moveDepend.Rb.velocity += Vector2.down * (moveStats.FastFallAcceleration * Time.deltaTime);
+            case State.Default:
+                ExitDefaultState();
+                break;
+            case State.Dash:
+                ExitDashState();
+                break;
+            case State.Action:
+                ExitActionState();
+                break;
+            case State.Staggered:
+                ExitStaggeredState();
+                break;
+            case State.Dead:
+                ExitDeadState();
+                break;
         }
 
-        // flip ren
-        if (xInput > 0)
-        {
-            ren.flipX = false;
-        }
-        else if (xInput < 0)
-        {
-            ren.flipX = true;
-        }
+        currentState = newState;
 
-        // Rotate to match normal
-        var angle = Vector2.SignedAngle(Vector2.up, moveEngine.Context.GroundNormal);
-        var newAngle =
-            Mathf.MoveTowardsAngle(ren.transform.rotation.eulerAngles.z, angle, Time.deltaTime * rotateSpeed);
-        ren.transform.rotation = Quaternion.Euler(0, 0, newAngle);
-
-        // anims
-        anim.SetFloat("Speed", Mathf.Abs(moveDepend.Rb.velocity.x));
-        anim.SetBool("IsGrounded", moveEngine.Context.IsStableOnGround);
+        switch (currentState)
+        {
+            case State.Default:
+                EnterDefaultState();
+                break;
+            case State.Dash:
+                EnterDashState();
+                break;
+            case State.Action:
+                EnterActionState();
+                break;
+            case State.Staggered:
+                EnterStaggeredState();
+                break;
+            case State.Dead:
+                EnterDeadState();
+                break;
+        }
     }
 
     private void OnGUI()
     {
+        GUILayout.BeginArea(new Rect(10 + 500 * playerIndex, 10, 300, 300));
         GUILayout.Label("IsGrounded: " + moveEngine.Context.IsGrounded);
         GUILayout.Label("IsStableOnGround: " + moveEngine.Context.IsStableOnGround);
         GUILayout.Label("GroundNormal: " + moveEngine.Context.GroundNormal);
-        GUILayout.Label("Mode: " + _state);
+        GUILayout.Label("Mode: " + currentState);
+        GUILayout.EndArea();
     }
 
     private void OnDrawGizmos()
     {
         if (!Application.isPlaying)
         {
-            moveEngine.Move(0, moveStats, moveDepend);
+            moveEngine.Move(0, moveStats, moveDependencies);
         }
 
-        moveEngine.DrawGizmos(moveStats, moveDepend);
+        moveEngine.DrawGizmos(moveStats, moveDependencies);
     }
 }

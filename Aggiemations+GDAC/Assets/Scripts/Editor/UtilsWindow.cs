@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class UtilsWindow : EditorWindow
 {
-    private string startupScenePath;
+    private UtilsPrefs prefs;
 
     [MenuItem("Window/Utils")]
     public static void ShowWindow()
@@ -17,16 +17,20 @@ public class UtilsWindow : EditorWindow
 
     private void OnBecameVisible()
     {
-        startupScenePath = EditorPrefs.GetString("StartupScenePath");
+        prefs = AssetDatabase.LoadAssetAtPath<UtilsPrefs>("Assets/Scripts/Editor/UtilsPrefs.asset");
+        if (prefs == null)
+        {
+            prefs = CreateInstance<UtilsPrefs>();
+            AssetDatabase.CreateAsset(prefs, "Assets/Scripts/Editor/UtilsPrefs.asset");
+            AssetDatabase.SaveAssets();
+        }
     }
 
     private void OnGUI()
     {
         EditorGUILayout.LabelField("Scene Utils", EditorStyles.boldLabel);
 
-        startupScenePath = EditorGUILayout.TextField("Startup Scene Path", startupScenePath);
-
-        EditorPrefs.SetString("StartupScenePath", startupScenePath);
+        var startupScenePath = prefs.StartupScenePath;
 
         if (GUILayout.Button("Play"))
         {

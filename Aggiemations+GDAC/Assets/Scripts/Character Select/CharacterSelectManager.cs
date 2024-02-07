@@ -39,6 +39,8 @@ public class CharacterSelectManager : MonoBehaviour
     {
         inputManager = serviceContainer.InputManager;
 
+        roster.OnValidate();
+
         // Initialize character entries UI
         for (var i = 0; i < roster.FighterRoster.Count; i++)
         {

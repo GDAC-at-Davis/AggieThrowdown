@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db39cca4ff6fb7f4f934e9a42f7a9322, type: 3}
+  m_Name: UtilsPrefs
+  m_EditorClassIdentifier: 
+  <StartupScenePath>k__BackingField: Assets\Scenes\BaseScene.unity
+  <FighterTemplatePrefab>k__BackingField: {fileID: 150414167833556814, guid: c38763a4c98930d40b2a53c24a5e9c90, type: 3}
+  <FighterTemplateConfig>k__BackingField: {fileID: 11400000, guid: e07c202a1948b344fa96d12e37071eb1, type: 2}

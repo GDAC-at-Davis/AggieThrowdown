@@ -10,4 +10,6 @@ public class ServiceContainerSO : ScriptableObject
     public PlayerInfoService PlayerInfoService { get; set; }
 
     public GameDirector GameDirector { get; set; }
+
+    public EventManager EventManager { get; set; }
 }

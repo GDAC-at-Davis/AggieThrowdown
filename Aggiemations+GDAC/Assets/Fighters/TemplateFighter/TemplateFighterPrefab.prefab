@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5645057798530719208
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 175932312340316045, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: moveDepend.Rb
+      value: 
+      objectReference: {fileID: 1766587050903720490}
+    - target: {fileID: 175932312340316045, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: moveDepend.physicsCollider
+      value: 
+      objectReference: {fileID: 8274742938529122718}
+    - target: {fileID: 175932312340316045, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: moveStats.groundMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 175932312340316045, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: moveStats.<JumpVelocity>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 175932312340316045, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: moveStats.<GroundCastOffset>k__BackingField
+      value: -0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 175932312340316045, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: moveStats.<GroundCastRadius>k__BackingField
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 175932312340316045, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: moveStats.<GroundCastDistance>k__BackingField
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 175932312340316045, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: moveStats.<AirMaxMovementSpeed>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 175932312340316045, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: moveStats.<FastFallAcceleration>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 175932312340316045, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: moveStats.<MaxGroundStableAngle>k__BackingField
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 175932312340316045, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: moveStats.<MovementAcceleration>k__BackingField
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 175932312340316045, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: moveStats.<GroundMaxMovementSpeed>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 175932312340316045, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: moveStats.<AirMovementAcceleration>k__BackingField
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494715674546629286, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: config
+      value: 
+      objectReference: {fileID: 11400000, guid: e07c202a1948b344fa96d12e37071eb1, type: 2}
+    - target: {fileID: 5677483950961008529, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: m_Name
+      value: JoeSmasher
+      objectReference: {fileID: 0}
+    - target: {fileID: 5713289586870270658, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5713289586870270658, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5713289586870270658, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5713289586870270658, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5713289586870270658, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5713289586870270658, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5713289586870270658, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5713289586870270658, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5713289586870270658, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5713289586870270658, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010901635881700504, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: m_Size.y
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010901635881700504, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539735758522596736, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: d1e0c734231b67147b79adda57477c93, type: 2}
+    - target: {fileID: 8839168525864382548, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: Context.AirTime
+      value: 227.5918
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 2236540137424623116, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+--- !u!50 &1766587050903720490 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 6256462747783073730, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+  m_PrefabInstance: {fileID: 5645057798530719208}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &8274742938529122718 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 4360202372124480630, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+  m_PrefabInstance: {fileID: 5645057798530719208}
+  m_PrefabAsset: {fileID: 0}

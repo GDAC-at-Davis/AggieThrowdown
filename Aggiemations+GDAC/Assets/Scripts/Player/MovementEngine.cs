@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 
 [Serializable]
-public struct MovementDependencies
+public class MovementDependencies
 {
     public Rigidbody2D Rb;
     public Collider2D physicsCollider;
