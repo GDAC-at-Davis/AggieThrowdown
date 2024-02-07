@@ -105,6 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6278519153062732723}
   - component: {fileID: 6010901635881700504}
+  - component: {fileID: 7954030348390361399}
   m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
@@ -162,6 +163,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.26}
   m_Size: {x: 0.5, y: 0.5}
   m_Direction: 0
+--- !u!114 &7954030348390361399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5603659902097892350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25161f34e891d274fb6e3948bbb708db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5677483950961008529
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +227,8 @@ MonoBehaviour:
     Rb: {fileID: 6256462747783073730}
     physicsCollider: {fileID: 6010901635881700504}
   controller: {fileID: 175932312340316045}
-  combatEntity: {fileID: 8389328487878787864}
+  combatController: {fileID: 8389328487878787864}
+  hitbox: {fileID: 7954030348390361399}
   animEventHandler: {fileID: 4432238660062824301}
   bodyTransformPivot: {fileID: 3328034145452758297}
 --- !u!1 &6305083139535379853
@@ -489,6 +503,7 @@ MonoBehaviour:
     Rb: {fileID: 0}
     physicsCollider: {fileID: 0}
   animEventHandler: {fileID: 0}
+  combatController: {fileID: 0}
 --- !u!114 &8839168525864382548
 MonoBehaviour:
   m_ObjectHideFlags: 0

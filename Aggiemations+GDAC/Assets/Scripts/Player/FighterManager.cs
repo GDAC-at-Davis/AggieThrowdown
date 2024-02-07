@@ -19,7 +19,10 @@ public class FighterManager : MonoBehaviour
     private FighterController controller;
 
     [SerializeField]
-    private FighterCombatEntity combatEntity;
+    private FighterCombatController combatController;
+
+    [SerializeField]
+    private FighterHitbox hitbox;
 
     [SerializeField]
     private AnimationEventHandler animEventHandler;
@@ -43,7 +46,8 @@ public class FighterManager : MonoBehaviour
 
     private void Configure()
     {
-        controller.Configure(config.MoveStats, movementDependencies, config, animEventHandler);
+        controller.Configure(config.MoveStats, movementDependencies, config, animEventHandler, combatController,
+            bodyTransformPivot);
     }
 
     public void Initialize(int playerIndex, FighterConfigSO config, FlexCameraScript flexCamera)
@@ -58,10 +62,11 @@ public class FighterManager : MonoBehaviour
         }
 
         controller.Initialize(playerIndex, serviceContainer.InputManager.GetInputProvider(playerIndex));
+        combatController.Initialize(config, playerIndex, hitbox);
 
         // Hook up events
-        animEventHandler.OnSetInvincible += combatEntity.SetInvincible;
-        animEventHandler.OnSetSuperArmor += combatEntity.SetSuperArmor;
+        animEventHandler.OnSetInvincible += combatController.SetInvincible;
+        animEventHandler.OnSetSuperArmor += combatController.SetSuperArmor;
     }
 
     public Vector2 GetBodyPosition()
@@ -71,11 +76,14 @@ public class FighterManager : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        // draw hurtboxes
-        Gizmos.color = Color.green;
-        config.BasicAttack.DrawHurtboxGizmos(bodyTransformPivot.position, 1);
+        // draw hurtboxes in editor mode
+        if (!Application.isPlaying)
+        {
+            Gizmos.color = Color.green;
+            config.BasicAttack.DrawHurtboxGizmos(bodyTransformPivot.position, 1);
 
-        Gizmos.color = Color.blue;
-        config.HeavyAttack.DrawHurtboxGizmos(bodyTransformPivot.position, 1);
+            Gizmos.color = Color.blue;
+            config.HeavyAttack.DrawHurtboxGizmos(bodyTransformPivot.position, 1);
+        }
     }
 }

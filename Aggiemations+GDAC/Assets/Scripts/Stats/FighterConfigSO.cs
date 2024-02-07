@@ -20,13 +20,10 @@ public class FighterConfigSO : ScriptableObject
     [field: SerializeField]
     public MovementStats MoveStats { get; private set; }
 
+    [field: SerializeField]
+    public int MaxHealth { get; private set; }
+
     [field: Header("Dashing")]
-    [field: SerializeField]
-    public float DashVelocity { get; private set; }
-
-    [field: SerializeField]
-    public float DashAccelerationOverTime { get; private set; }
-
     [field: SerializeField]
     public float DashCooldown { get; private set; }
 
@@ -53,16 +50,24 @@ public class AttackConfig
     public List<Hurtbox> Hurtboxes { get; private set; }
 
     [field: SerializeField]
-    public float Damage { get; private set; }
+    public int Damage { get; private set; }
 
     [field: SerializeField]
-    public float KnockbackVelocity { get; private set; }
+    public Vector2 KnockbackVelocity { get; private set; }
 
     public void DrawHurtboxGizmos(Vector2 position, int xDir)
     {
         foreach (var hurtbox in Hurtboxes)
         {
             hurtbox.DrawHurtboxGizmo(position, xDir);
+        }
+    }
+
+    public void DrawHurtboxDebug(Vector2 position, int xDir, float duration)
+    {
+        foreach (var hurtbox in Hurtboxes)
+        {
+            hurtbox.DrawHurtboxDebug(position, xDir, duration);
         }
     }
 }
@@ -81,6 +86,25 @@ public class Hurtbox
 
     public void DrawHurtboxGizmo(Vector2 position, int xDir)
     {
+        CalculateCorners(position, xDir, out var topLeft, out var topRight, out var bottomLeft, out var bottomRight);
+        Gizmos.DrawLine(topLeft, topRight);
+        Gizmos.DrawLine(topRight, bottomRight);
+        Gizmos.DrawLine(bottomRight, bottomLeft);
+        Gizmos.DrawLine(bottomLeft, topLeft);
+    }
+
+    public void DrawHurtboxDebug(Vector2 position, int xDir, float duration)
+    {
+        CalculateCorners(position, xDir, out var topLeft, out var topRight, out var bottomLeft, out var bottomRight);
+        Debug.DrawLine(topLeft, topRight, Color.red, duration);
+        Debug.DrawLine(topRight, bottomRight, Color.red, duration);
+        Debug.DrawLine(bottomRight, bottomLeft, Color.red, duration);
+        Debug.DrawLine(bottomLeft, topLeft, Color.red, duration);
+    }
+
+    private void CalculateCorners(Vector2 position, int xDir, out Vector2 topLeft, out Vector2 topRight,
+        out Vector2 bottomLeft, out Vector2 bottomRight)
+    {
         var offset = new Vector2(Offset.x * xDir, Offset.y);
         var pos = position + offset;
 
@@ -89,22 +113,17 @@ public class Hurtbox
 
         var halfSize = size / 2;
 
-        var topLeft = pos + new Vector2(-halfSize.x, halfSize.y);
-        var topRight = pos + new Vector2(halfSize.x, halfSize.y);
-        var bottomLeft = pos + new Vector2(-halfSize.x, -halfSize.y);
-        var bottomRight = pos + new Vector2(halfSize.x, -halfSize.y);
+        topLeft = pos + new Vector2(-halfSize.x, halfSize.y);
+        topRight = pos + new Vector2(halfSize.x, halfSize.y);
+        bottomLeft = pos + new Vector2(-halfSize.x, -halfSize.y);
+        bottomRight = pos + new Vector2(halfSize.x, -halfSize.y);
 
-        var rot = Quaternion.Euler(0, 0, angle);
+        var rot = Quaternion.Euler(0, 0, xDir * angle);
 
         topLeft = pos + (Vector2)(rot * (topLeft - pos));
         topRight = pos + (Vector2)(rot * (topRight - pos));
         bottomLeft = pos + (Vector2)(rot * (bottomLeft - pos));
         bottomRight = pos + (Vector2)(rot * (bottomRight - pos));
-
-        Gizmos.DrawLine(topLeft, topRight);
-        Gizmos.DrawLine(topRight, bottomRight);
-        Gizmos.DrawLine(bottomRight, bottomLeft);
-        Gizmos.DrawLine(bottomLeft, topLeft);
     }
 }
 

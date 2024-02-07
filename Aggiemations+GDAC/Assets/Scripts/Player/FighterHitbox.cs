@@ -1,13 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FighterHitbox : MonoBehaviour
 {
-    private int playerIndex;
+    public event Func<FighterCombatController.AttackInstance, bool> OnHitByAttack;
 
-    public void Initialize(int playerIndex)
+    public bool ReceiveAttack(FighterCombatController.AttackInstance attackInstance)
     {
-        this.playerIndex = playerIndex;
+        if (OnHitByAttack == null)
+        {
+            return false;
+        }
+
+        return OnHitByAttack.Invoke(attackInstance);
     }
 }

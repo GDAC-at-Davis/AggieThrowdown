@@ -25,14 +25,23 @@ public partial class FighterController : MonoBehaviour
         inputProvider.OnBasicAttackInput += HandleBasicAttackInput;
         inputProvider.OnHeavyAttackInput += HandleHeavyAttackInput;
         inputProvider.OnDashInput += HandleDashInput;
+
+        combatController.OnHitByAttack += HandleOnHitByAttack;
+
+        SubscribeToActionEvents();
     }
 
     private void ExitDefaultState()
     {
         inputProvider.OnJumpInput -= HandleJumpInput;
+        inputProvider.OnTauntInput -= HandleTauntInput;
         inputProvider.OnBasicAttackInput -= HandleBasicAttackInput;
         inputProvider.OnHeavyAttackInput -= HandleHeavyAttackInput;
         inputProvider.OnDashInput -= HandleDashInput;
+
+        combatController.OnHitByAttack -= HandleOnHitByAttack;
+
+        UnsubscribeFromActionEvents();
     }
 
     private void HandleDashInput(InputAction.CallbackContext obj)
@@ -47,12 +56,22 @@ public partial class FighterController : MonoBehaviour
 
     private void HandleHeavyAttackInput(InputAction.CallbackContext obj)
     {
+        if (!obj.performed)
+        {
+            return;
+        }
+
         attackToPerform = AttackType.Heavy;
         SwitchState(State.Action);
     }
 
     private void HandleBasicAttackInput(InputAction.CallbackContext obj)
     {
+        if (!obj.performed)
+        {
+            return;
+        }
+
         attackToPerform = AttackType.Basic;
         SwitchState(State.Action);
     }
@@ -79,6 +98,8 @@ public partial class FighterController : MonoBehaviour
         {
             ren.flipX = true;
         }
+
+        currentActionDirection = ren.flipX ? -1 : 1;
 
         // Rotate to match normal
         var angle = Vector2.SignedAngle(Vector2.up, moveEngine.Context.GroundNormal);
@@ -109,6 +130,8 @@ public partial class FighterController : MonoBehaviour
                 anim.Play("Jump");
             }
         }
+
+        ApplyActionAcceleration();
     }
 
 
@@ -147,30 +170,28 @@ public partial class FighterController : MonoBehaviour
 
     #region Dash State
 
-    private int dashDirection;
-
     private void DashStateUpdate()
     {
     }
 
     private void EnterDashState()
     {
-        dashDirection = ren.flipX ? -1 : 1;
+        currentActionDirection = ren.flipX ? -1 : 1;
         anim.Play("Dash");
         dashCooldownTimer = fighterConfig.DashCooldown;
-        animEventHandler.OnBeginDash += HandleBeginDash;
         animEventHandler.OnFinishAction += HandleEndDash;
+        combatController.OnHitByAttack += HandleOnHitByAttack;
+
+
+        SubscribeToActionEvents();
     }
 
     private void ExitDashState()
     {
-        animEventHandler.OnBeginDash -= HandleBeginDash;
         animEventHandler.OnFinishAction -= HandleEndDash;
-    }
+        combatController.OnHitByAttack -= HandleOnHitByAttack;
 
-    private void HandleBeginDash()
-    {
-        moveDependencies.Rb.velocity = new Vector2(dashDirection * fighterConfig.DashVelocity, 0);
+        UnsubscribeFromActionEvents();
     }
 
     private void HandleEndDash()
@@ -180,19 +201,7 @@ public partial class FighterController : MonoBehaviour
 
     private void DashStateFixedUpdate()
     {
-        var vel = moveDependencies.Rb.velocity;
-        var accel = fighterConfig.DashAccelerationOverTime;
-
-        if (accel < 0)
-        {
-            vel.x = Mathf.MoveTowards(vel.x, 0, -accel * Time.fixedDeltaTime);
-        }
-        else
-        {
-            vel.x += dashDirection * fighterConfig.DashAccelerationOverTime * Time.fixedDeltaTime;
-        }
-
-        moveDependencies.Rb.velocity = vel;
+        ApplyActionAcceleration();
     }
 
     #endregion
@@ -213,14 +222,55 @@ public partial class FighterController : MonoBehaviour
 
     private void EnterActionState()
     {
+        currentActionDirection = ren.flipX ? -1 : 1;
+        ren.sortingOrder += 1;
+
+        switch (attackToPerform)
+        {
+            case AttackType.Basic:
+                anim.Play("BasicAttack");
+                break;
+            case AttackType.Heavy:
+                anim.Play("HeavyAttack");
+                break;
+            default:
+                break;
+        }
+
+        animEventHandler.OnFinishAction += HandleFinishAttack;
+        animEventHandler.OnAttackActionImpact += HandleAttackImpact;
+        combatController.OnHitByAttack += HandleOnHitByAttack;
+
+
+        SubscribeToActionEvents();
+    }
+
+    private void HandleAttackImpact()
+    {
+        var hurtbox =
+            attackToPerform == AttackType.Basic ? fighterConfig.BasicAttack : fighterConfig.HeavyAttack;
+
+        combatController.PerformAttack(hurtbox, bodyTransformPivot.position, currentActionDirection);
+    }
+
+    private void HandleFinishAttack()
+    {
+        SwitchState(State.Default);
     }
 
     private void ExitActionState()
     {
+        ren.sortingOrder -= 0;
+        animEventHandler.OnFinishAction -= HandleFinishAttack;
+        animEventHandler.OnAttackActionImpact -= HandleAttackImpact;
+        combatController.OnHitByAttack -= HandleOnHitByAttack;
+
+        UnsubscribeFromActionEvents();
     }
 
     private void ActionStateFixedUpdate()
     {
+        ApplyActionAcceleration();
     }
 
     #endregion
@@ -233,14 +283,26 @@ public partial class FighterController : MonoBehaviour
 
     private void EnterStaggeredState()
     {
+        anim.Play("Staggered");
+        moveEngine.ForceUnground(0.1f);
+        animEventHandler.OnFinishAction += HandleEndStaggered;
+        combatController.OnHitByAttack += HandleOnHitByAttack;
+    }
+
+    private void HandleEndStaggered()
+    {
+        SwitchState(State.Default);
     }
 
     private void ExitStaggeredState()
     {
+        animEventHandler.OnFinishAction -= HandleEndStaggered;
+        combatController.OnHitByAttack -= HandleOnHitByAttack;
     }
 
     private void StaggeredStateFixedUpdate()
     {
+        moveEngine.Move(0, moveStats, moveDependencies);
     }
 
     #endregion
@@ -253,6 +315,7 @@ public partial class FighterController : MonoBehaviour
 
     private void EnterDeadState()
     {
+        anim.Play("Dead");
     }
 
     private void ExitDeadState()

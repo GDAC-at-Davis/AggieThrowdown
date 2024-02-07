@@ -6,17 +6,18 @@ using UnityEngine;
 public class AnimationEventHandler : MonoBehaviour
 {
     // Events
-    public event Action OnBeginDash;
     public event Action<bool> OnSetInvincible;
     public event Action<bool> OnSetSuperArmor;
-    public event Action OnHeavyAttackImpact;
-    public event Action OnLightAttackImpact;
+    public event Action OnAttackActionImpact;
     public event Action OnFinishAction;
 
-    public void BeginDash()
-    {
-        OnBeginDash?.Invoke();
-    }
+    public event Action<float> OnSetActionVelocityX;
+    public event Action<float> OnSetActionVelocityY;
+
+    public event Action<float> OnSetActionAccelerationX;
+    public event Action<float> OnSetActionAccelerationY;
+    public event Action<float> OnMultiplyCurrentVelocityX;
+    public event Action<float> OnMultiplyCurrentVelocityY;
 
     public void StartInvincibleFrames()
     {
@@ -38,14 +39,9 @@ public class AnimationEventHandler : MonoBehaviour
         OnSetSuperArmor?.Invoke(false);
     }
 
-    public void HeavyAttackImpact()
+    public void TriggerAttackImpactHurtboxes()
     {
-        OnHeavyAttackImpact?.Invoke();
-    }
-
-    public void LightAttackImpact()
-    {
-        OnLightAttackImpact?.Invoke();
+        OnAttackActionImpact?.Invoke();
     }
 
     public void FinishAction()
@@ -53,7 +49,33 @@ public class AnimationEventHandler : MonoBehaviour
         OnFinishAction?.Invoke();
     }
 
-    public void Test(float val)
+    public void SetActionVelocityX(float xVelocity)
     {
+        OnSetActionVelocityX?.Invoke(xVelocity);
+    }
+
+    public void SetActionVelocityY(float yVelocity)
+    {
+        OnSetActionVelocityY?.Invoke(yVelocity);
+    }
+
+    public void SetActionAccelerationX(float xAcceleration)
+    {
+        OnSetActionAccelerationX?.Invoke(xAcceleration);
+    }
+
+    public void SetActionAccelerationY(float yAcceleration)
+    {
+        OnSetActionAccelerationY?.Invoke(yAcceleration);
+    }
+
+    public void MultiplyCurrentVelocityX(float xMultiplier)
+    {
+        OnMultiplyCurrentVelocityX?.Invoke(xMultiplier);
+    }
+
+    public void MultiplyCurrentVelocityY(float yMultiplier)
+    {
+        OnMultiplyCurrentVelocityY?.Invoke(yMultiplier);
     }
 }

@@ -99,7 +99,7 @@ public class MovementEngine : MonoBehaviour
 
         var accel = newContext.IsStableOnGround ? stats.MovementAcceleration : stats.AirMovementAcceleration;
 
-        // Over max speed, so maintain it
+        // When over max speed, maintain it if input is in the same direction
         if (Vector2.Dot(Vector2.right * horizontalInput, currentVel) > 0
             && currentVel.magnitude > targetVelocity.magnitude)
         {
@@ -118,7 +118,7 @@ public class MovementEngine : MonoBehaviour
     private void CalculateGrounded(MovementStats stats, MovementDependencies dependencies,
         ref MovementContext context)
     {
-        // circle cast down
+        // circle cast down for grounded check
         var startPos = dependencies.Rb.position + Vector2.up * stats.GroundCastOffset;
         var hit = Physics2D.CircleCast(
             startPos,
@@ -132,8 +132,6 @@ public class MovementEngine : MonoBehaviour
             context.IsGrounded = true;
             context.GroundNormalSmoothed = hit.normal;
             context.GroundNormal = CalculateRawGroundNormal(stats, hit);
-
-            // Check if stable
             context.IsStableOnGround = Vector2.Angle(Vector2.up, hit.normal) < stats.MaxGroundStableAngle;
         }
         else
@@ -144,12 +142,12 @@ public class MovementEngine : MonoBehaviour
             context.GroundNormal = Vector2.up;
         }
 
-        Debug.DrawLine(startPos, startPos + context.GroundNormalSmoothed, Color.magenta, 1f);
+        // Debug.DrawLine(startPos, startPos + context.GroundNormalSmoothed, Color.magenta, 1f);
     }
 
     private Vector2 CalculateRawGroundNormal(MovementStats stats, RaycastHit2D hit)
     {
-        // raycast
+        // raycast down to the hit point to get the raw ground normal
         var start = hit.centroid + Vector2.up * 0.05f;
         var dir = hit.point + Vector2.up * 0.05f - start;
         var rayHit = Physics2D.Raycast(
@@ -158,8 +156,8 @@ public class MovementEngine : MonoBehaviour
             10f,
             stats.groundMask);
 
-        Debug.DrawLine(start, start + dir, Color.green, 1f);
-        Debug.DrawLine(rayHit.point, rayHit.point + rayHit.normal, Color.blue, 1f);
+        // Debug.DrawLine(start, start + dir, Color.green, 1f);
+        // Debug.DrawLine(rayHit.point, rayHit.point + rayHit.normal, Color.blue, 1f);
 
         return rayHit.normal;
     }

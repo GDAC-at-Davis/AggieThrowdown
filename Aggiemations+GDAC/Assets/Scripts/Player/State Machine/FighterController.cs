@@ -29,6 +29,12 @@ public partial class FighterController : MonoBehaviour
     [SerializeField]
     private AnimationEventHandler animEventHandler;
 
+    [SerializeField]
+    private FighterCombatController combatController;
+
+    [SerializeField]
+    private Transform bodyTransformPivot;
+
 
     private enum State
     {
@@ -50,15 +56,25 @@ public partial class FighterController : MonoBehaviour
     private InputProvider inputProvider;
     private int playerIndex;
 
+    // Action state
+    private Vector2 currentActionAcceleration;
+    private int currentActionDirection;
+
     // Timers
     private float dashCooldownTimer;
 
-    public void Configure(MovementStats stats, MovementDependencies moveDependencies,
-        FighterConfigSO config, AnimationEventHandler animEventHandler)
+    public void Configure(MovementStats stats,
+        MovementDependencies moveDependencies,
+        FighterConfigSO config,
+        AnimationEventHandler animEventHandler,
+        FighterCombatController combatController,
+        Transform bodyTransformPivot)
     {
         this.moveDependencies = moveDependencies;
         fighterConfig = config;
         this.animEventHandler = animEventHandler;
+        this.combatController = combatController;
+        this.bodyTransformPivot = bodyTransformPivot;
 
         anim.runtimeAnimatorController = config.AnimationOverrides;
     }
@@ -129,6 +145,9 @@ public partial class FighterController : MonoBehaviour
 
     private void SwitchState(State newState)
     {
+        // Reset action state
+        currentActionAcceleration = Vector2.zero;
+
         switch (currentState)
         {
             case State.Default:
@@ -184,9 +203,9 @@ public partial class FighterController : MonoBehaviour
     {
         if (!Application.isPlaying)
         {
-            moveEngine.Move(0, moveStats, moveDependencies);
+            // moveEngine.Move(0, moveStats, moveDependencies);
         }
 
-        moveEngine.DrawGizmos(moveStats, moveDependencies);
+        // moveEngine.DrawGizmos(moveStats, moveDependencies);
     }
 }

@@ -30,25 +30,24 @@ MonoBehaviour:
     groundMask:
       serializedVersion: 2
       m_Bits: 64
-  <DashVelocity>k__BackingField: 25
-  <DashAccelerationOverTime>k__BackingField: -75
+  <MaxHealth>k__BackingField: 0
   <DashCooldown>k__BackingField: 1.25
   <BasicAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
-    - <Offset>k__BackingField: {x: 0.32, y: 0.12}
+    - <Offset>k__BackingField: {x: 0.32, y: -0.06}
       <Size>k__BackingField: {x: 1, y: 0.31}
-      <Angle>k__BackingField: 0
+      <Angle>k__BackingField: -8.99
     - <Offset>k__BackingField: {x: -0.01, y: -0.02}
       <Size>k__BackingField: {x: 0.5, y: 0.5}
       <Angle>k__BackingField: 0
-    <Damage>k__BackingField: 0
-    <KnockbackVelocity>k__BackingField: 0
+    <Damage>k__BackingField: 5
+    <KnockbackVelocity>k__BackingField: {x: 10, y: 0}
   <HeavyAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
     - <Offset>k__BackingField: {x: 0, y: 0.07}
       <Size>k__BackingField: {x: 1.5, y: 1.5}
       <Angle>k__BackingField: 0
-    <Damage>k__BackingField: 0
-    <KnockbackVelocity>k__BackingField: 0
+    <Damage>k__BackingField: 5
+    <KnockbackVelocity>k__BackingField: {x: 0, y: 15}
   <AnimationOverrides>k__BackingField: {fileID: 22100000, guid: d1e0c734231b67147b79adda57477c93, type: 2}
   <FighterPrefab>k__BackingField: {fileID: 150414167833556814, guid: c38763a4c98930d40b2a53c24a5e9c90, type: 3}
