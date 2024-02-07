@@ -6,7 +6,6 @@ using UnityEngine;
 public class AnimationEventHandler : MonoBehaviour
 {
     // Events
-    public event Action<bool> OnSetInvincible;
     public event Action<bool> OnSetSuperArmor;
     public event Action OnAttackActionImpact;
     public event Action OnFinishAction;
@@ -18,16 +17,6 @@ public class AnimationEventHandler : MonoBehaviour
     public event Action<float> OnSetActionAccelerationY;
     public event Action<float> OnMultiplyCurrentVelocityX;
     public event Action<float> OnMultiplyCurrentVelocityY;
-
-    public void StartInvincibleFrames()
-    {
-        OnSetInvincible?.Invoke(true);
-    }
-
-    public void EndInvincibleFrames()
-    {
-        OnSetInvincible?.Invoke(false);
-    }
 
     public void StartSuperArmor()
     {

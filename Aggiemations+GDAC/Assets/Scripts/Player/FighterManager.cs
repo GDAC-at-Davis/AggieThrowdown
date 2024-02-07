@@ -65,7 +65,6 @@ public class FighterManager : MonoBehaviour
         combatController.Initialize(config, playerIndex, hitbox);
 
         // Hook up events
-        animEventHandler.OnSetInvincible += combatController.SetInvincible;
         animEventHandler.OnSetSuperArmor += combatController.SetSuperArmor;
     }
 

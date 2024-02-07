@@ -19,9 +19,10 @@ MonoBehaviour:
   <MoveStats>k__BackingField:
     <GroundMaxMovementSpeed>k__BackingField: 5
     <MovementAcceleration>k__BackingField: 50
-    <JumpVelocity>k__BackingField: 5
+    <JumpVelocity>k__BackingField: 6
     <AirMovementAcceleration>k__BackingField: 15
     <AirMaxMovementSpeed>k__BackingField: 5
+    <Gravity>k__BackingField: 13
     <FastFallVelocity>k__BackingField: 5
     <MaxGroundStableAngle>k__BackingField: 55
     <GroundCastRadius>k__BackingField: 0.2
@@ -31,22 +32,22 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 64
   <MaxHealth>k__BackingField: 0
-  <DashCooldown>k__BackingField: 1.25
+  <DashCooldown>k__BackingField: 0.5
   <BasicAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
-    - <Offset>k__BackingField: {x: 0.32, y: -0.06}
-      <Size>k__BackingField: {x: 1, y: 0.31}
-      <Angle>k__BackingField: -8.99
+    - <Offset>k__BackingField: {x: 0.5, y: -0.06}
+      <Size>k__BackingField: {x: 1, y: 0.75}
+      <Angle>k__BackingField: 0
     - <Offset>k__BackingField: {x: -0.01, y: -0.02}
       <Size>k__BackingField: {x: 0.5, y: 0.5}
       <Angle>k__BackingField: 0
     <Damage>k__BackingField: 5
-    <KnockbackVelocity>k__BackingField: {x: 10, y: 0}
+    <KnockbackVelocity>k__BackingField: {x: 15, y: 0}
   <HeavyAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
     - <Offset>k__BackingField: {x: 0, y: 0.07}
-      <Size>k__BackingField: {x: 1.5, y: 1.5}
-      <Angle>k__BackingField: 0
+      <Size>k__BackingField: {x: 2, y: 2}
+      <Angle>k__BackingField: 45
     <Damage>k__BackingField: 5
     <KnockbackVelocity>k__BackingField: {x: 0, y: 15}
   <AnimationOverrides>k__BackingField: {fileID: 22100000, guid: d1e0c734231b67147b79adda57477c93, type: 2}

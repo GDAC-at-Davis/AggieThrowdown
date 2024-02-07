@@ -62,6 +62,7 @@ public partial class FighterController : MonoBehaviour
 
     // Timers
     private float dashCooldownTimer;
+    private float actionStaticTimer;
 
     public void Configure(MovementStats stats,
         MovementDependencies moveDependencies,
@@ -97,6 +98,7 @@ public partial class FighterController : MonoBehaviour
     {
         // Timers
         dashCooldownTimer -= Time.deltaTime;
+        actionStaticTimer -= Time.deltaTime;
 
         // Input
         xInput = inputProvider.MovementInput.x;
@@ -196,6 +198,7 @@ public partial class FighterController : MonoBehaviour
         GUILayout.Label("IsStableOnGround: " + moveEngine.Context.IsStableOnGround);
         GUILayout.Label("GroundNormal: " + moveEngine.Context.GroundNormal);
         GUILayout.Label("Mode: " + currentState);
+        GUILayout.Label("Invincible: " + combatController.IsInvincible);
         GUILayout.EndArea();
     }
 

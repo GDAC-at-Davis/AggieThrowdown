@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 
 [Serializable]
-public class MovementDependencies
+public struct MovementDependencies
 {
     public Rigidbody2D Rb;
     public Collider2D physicsCollider;
@@ -46,7 +46,7 @@ public class MovementEngine : MonoBehaviour
         // Gravity
         if (!newContext.IsStableOnGround)
         {
-            dependencies.Rb.velocity += Physics2D.gravity * Time.fixedDeltaTime;
+            dependencies.Rb.velocity += Vector2.down * (stats.Gravity * Time.fixedDeltaTime);
             newContext.AirTime += Time.fixedDeltaTime;
         }
         else

@@ -15,13 +15,15 @@ MonoBehaviour:
   <FighterName>k__BackingField: 'Sardino
 
 '
+  <FighterDescription>k__BackingField: 
+  <IncludeInRoster>k__BackingField: 0
   <MoveStats>k__BackingField:
     <GroundMaxMovementSpeed>k__BackingField: 5
     <MovementAcceleration>k__BackingField: 50
     <JumpVelocity>k__BackingField: 5
     <AirMovementAcceleration>k__BackingField: 15
     <AirMaxMovementSpeed>k__BackingField: 5
-    <FastFallAcceleration>k__BackingField: 5
+    <FastFallVelocity>k__BackingField: 0
     <MaxGroundStableAngle>k__BackingField: 55
     <GroundCastRadius>k__BackingField: 0.2
     <GroundCastDistance>k__BackingField: 0.26
@@ -29,5 +31,15 @@ MonoBehaviour:
     groundMask:
       serializedVersion: 2
       m_Bits: 64
+  <MaxHealth>k__BackingField: 0
+  <DashCooldown>k__BackingField: 0
+  <BasicAttack>k__BackingField:
+    <Hurtboxes>k__BackingField: []
+    <Damage>k__BackingField: 0
+    <KnockbackVelocity>k__BackingField: {x: 0, y: 0}
+  <HeavyAttack>k__BackingField:
+    <Hurtboxes>k__BackingField: []
+    <Damage>k__BackingField: 0
+    <KnockbackVelocity>k__BackingField: {x: 0, y: 0}
   <AnimationOverrides>k__BackingField: {fileID: 0}
   <FighterPrefab>k__BackingField: {fileID: 0}

@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public partial class FighterController : MonoBehaviour
 {
+    private const float ActionStaticTimer = 0.02f;
+
     #region Default State
 
     private void DefaultStateUpdate()
@@ -56,7 +58,7 @@ public partial class FighterController : MonoBehaviour
 
     private void HandleHeavyAttackInput(InputAction.CallbackContext obj)
     {
-        if (!obj.performed)
+        if (!obj.performed || actionStaticTimer > 0)
         {
             return;
         }
@@ -67,7 +69,7 @@ public partial class FighterController : MonoBehaviour
 
     private void HandleBasicAttackInput(InputAction.CallbackContext obj)
     {
-        if (!obj.performed)
+        if (!obj.performed || actionStaticTimer > 0)
         {
             return;
         }
@@ -89,6 +91,15 @@ public partial class FighterController : MonoBehaviour
             moveDependencies.Rb.velocity = vel;
         }
 
+        var maxFallSpeed = 15f;
+        // Limit fall speed
+        if (moveDependencies.Rb.velocity.y < -maxFallSpeed)
+        {
+            var vel = moveDependencies.Rb.velocity;
+            vel.y = -maxFallSpeed;
+            moveDependencies.Rb.velocity = vel;
+        }
+
         // flip ren
         if (xInput > 0)
         {
@@ -102,7 +113,7 @@ public partial class FighterController : MonoBehaviour
         currentActionDirection = ren.flipX ? -1 : 1;
 
         // Rotate to match normal
-        var angle = Vector2.SignedAngle(Vector2.up, moveEngine.Context.GroundNormal);
+        var angle = Vector2.SignedAngle(Vector2.up, moveEngine.Context.GroundNormal) / 2f;
         var newAngle =
             Mathf.MoveTowardsAngle(ren.transform.rotation.eulerAngles.z, angle, Time.deltaTime * rotateSpeed);
         ren.transform.rotation = Quaternion.Euler(0, 0, newAngle);
@@ -182,6 +193,7 @@ public partial class FighterController : MonoBehaviour
         animEventHandler.OnFinishAction += HandleEndDash;
         combatController.OnHitByAttack += HandleOnHitByAttack;
 
+        combatController.SetInvincible(true);
 
         SubscribeToActionEvents();
     }
@@ -190,6 +202,10 @@ public partial class FighterController : MonoBehaviour
     {
         animEventHandler.OnFinishAction -= HandleEndDash;
         combatController.OnHitByAttack -= HandleOnHitByAttack;
+
+        actionStaticTimer = ActionStaticTimer;
+
+        combatController.SetInvincible(false);
 
         UnsubscribeFromActionEvents();
     }
@@ -264,6 +280,8 @@ public partial class FighterController : MonoBehaviour
         animEventHandler.OnFinishAction -= HandleFinishAttack;
         animEventHandler.OnAttackActionImpact -= HandleAttackImpact;
         combatController.OnHitByAttack -= HandleOnHitByAttack;
+
+        actionStaticTimer = ActionStaticTimer;
 
         UnsubscribeFromActionEvents();
     }

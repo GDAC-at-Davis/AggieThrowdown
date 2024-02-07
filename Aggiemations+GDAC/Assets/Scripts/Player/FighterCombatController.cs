@@ -11,8 +11,8 @@ public class FighterCombatController : MonoBehaviour
     public event Action<AttackInstance, bool> OnHitByAttack;
     public event Action<AttackInstance> OnKilledAttack;
 
-    private int IsInvincible = 0;
-    private int IsSuperArmor = 0;
+    public int IsInvincible { get; private set; }
+    public bool IsSuperArmor { get; private set; }
 
     private int playerIndex;
     private FighterHitbox hitbox;
@@ -50,7 +50,7 @@ public class FighterCombatController : MonoBehaviour
 
     public void SetSuperArmor(bool value)
     {
-        IsSuperArmor += value ? 1 : -1;
+        IsSuperArmor = value;
         ;
     }
 
@@ -107,7 +107,7 @@ public class FighterCombatController : MonoBehaviour
             return false;
         }
 
-        OnHitByAttack?.Invoke(instance, IsSuperArmor > 0);
+        OnHitByAttack?.Invoke(instance, IsSuperArmor);
 
         CurrentHealth -= instance.attackConfig.Damage;
 

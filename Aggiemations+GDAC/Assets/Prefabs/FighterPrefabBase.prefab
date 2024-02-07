@@ -375,7 +375,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 67bbc216291b4d94aac6fef7859ae750, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -504,6 +504,7 @@ MonoBehaviour:
     physicsCollider: {fileID: 0}
   animEventHandler: {fileID: 0}
   combatController: {fileID: 0}
+  bodyTransformPivot: {fileID: 0}
 --- !u!114 &8839168525864382548
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -22,13 +22,13 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -6994824071544803430, guid: 72eb4a71dec61ed47bb10dcc4a348dcc, type: 3}
-    - time: 0.06666667
+    - time: 0.026666667
       value: {fileID: -4723396261734719308, guid: 72eb4a71dec61ed47bb10dcc4a348dcc, type: 3}
-    - time: 0.13333334
+    - time: 0.053333335
       value: {fileID: -6904164767297344267, guid: 72eb4a71dec61ed47bb10dcc4a348dcc, type: 3}
-    - time: 0.2
+    - time: 0.086666666
       value: {fileID: -7887312808182486043, guid: 72eb4a71dec61ed47bb10dcc4a348dcc, type: 3}
-    - time: 0.26666668
+    - time: 0.12
       value: {fileID: -7887312808182486043, guid: 72eb4a71dec61ed47bb10dcc4a348dcc, type: 3}
     attribute: m_Sprite
     path: 
@@ -62,7 +62,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.27333334
+    m_StopTime: 0.12666667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -86,14 +86,14 @@ AnimationClip:
     functionName: SetActionVelocityX
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 25
+    floatParameter: 17
     intParameter: 0
     messageOptions: 0
   - time: 0.006666667
     functionName: SetActionAccelerationX
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: -75
+    floatParameter: -150
     intParameter: 0
     messageOptions: 0
   - time: 0.013333334
@@ -103,28 +103,14 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.04
-    functionName: StartInvincibleFrames
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.23333333
-    functionName: EndInvincibleFrames
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.25333333
+  - time: 0.11333334
     functionName: SetActionVelocityY
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.26666668
+  - time: 0.12
     functionName: FinishAction
     data: 
     objectReferenceParameter: {fileID: 0}

@@ -148,6 +148,9 @@ public class MovementStats
     public float AirMaxMovementSpeed { get; private set; }
 
     [field: SerializeField]
+    public float Gravity { get; private set; }
+
+    [field: SerializeField]
     public float FastFallVelocity { get; private set; }
 
     [field: Header("Grounding")]
