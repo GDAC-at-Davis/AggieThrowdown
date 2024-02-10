@@ -88,7 +88,7 @@ public class MatchDirector : MonoBehaviour
 
             fighter.SetControl(false);
 
-            yield return new WaitForSecondsRealtime(2.5f * delayMult);
+            yield return new WaitForSecondsRealtime(1.7f * delayMult);
 
             fighters.Add(fighter);
             spawnPoints[i].SetCameraActive(false);
