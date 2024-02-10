@@ -44,6 +44,9 @@ public class FighterConfigSO : ScriptableObject
     [field: SerializeField]
 
     public FighterManager FighterPrefab { get; set; }
+
+    [field: SerializeField]
+    public AudioConfig AudioConfig { get; private set; }
 }
 
 [Serializable]
@@ -170,4 +173,29 @@ public class MovementStats
     public float GroundCastOffset { get; private set; }
 
     public LayerMask groundMask;
+}
+
+[Serializable]
+public class AudioConfig
+{
+    [field: SerializeField]
+    public AudioClip JumpClip { get; private set; }
+
+    [field: SerializeField]
+    public AudioClip DashClip { get; private set; }
+
+    [field: SerializeField]
+    public AudioClip BasicAttackClip { get; private set; }
+
+    [field: SerializeField]
+    public AudioClip BasicAttackImpactClip { get; private set; }
+
+    [field: SerializeField]
+    public AudioClip HeavyAttackClip { get; private set; }
+
+    [field: SerializeField]
+    public AudioClip HeavyAttackImpactClip { get; private set; }
+
+    [field: SerializeField]
+    public AudioClip TauntClip { get; private set; }
 }

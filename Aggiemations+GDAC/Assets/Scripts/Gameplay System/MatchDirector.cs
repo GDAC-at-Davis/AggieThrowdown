@@ -141,10 +141,12 @@ public class MatchDirector : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.2f);
 
         Time.timeScale = 0.25f;
+        Time.fixedDeltaTime *= 0.25f;
 
-        yield return new WaitForSecondsRealtime(1.5f);
+        yield return new WaitForSecondsRealtime(2f);
 
         Time.timeScale = 1f;
+        Time.fixedDeltaTime = 0.02f;
 
         yield return new WaitForSecondsRealtime(0.5f);
 

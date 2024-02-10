@@ -49,3 +49,11 @@ MonoBehaviour:
     <KnockbackVelocity>k__BackingField: {x: 5, y: 10}
   <AnimationOverrides>k__BackingField: {fileID: 22100000, guid: 919c8e2341055c449ad678fe290a0a3d, type: 2}
   <FighterPrefab>k__BackingField: {fileID: 150414167833556814, guid: daaa3f16f4cb12743a727fd862f48098, type: 3}
+  <AudioConfig>k__BackingField:
+    <JumpClip>k__BackingField: {fileID: 8300000, guid: 6d1f004a849db5749b59f6daba3683da, type: 3}
+    <DashClip>k__BackingField: {fileID: 8300000, guid: 8a37af193e72519448a65809fa03bdff, type: 3}
+    <BasicAttackClip>k__BackingField: {fileID: 8300000, guid: 52d68e65268fa8b46baf87ad8f93e0bb, type: 3}
+    <BasicAttackImpactClip>k__BackingField: {fileID: 8300000, guid: d01bc918c3f1e604c805548bc5573ee0, type: 3}
+    <HeavyAttackClip>k__BackingField: {fileID: 8300000, guid: 85f32687633bb424c9ee9197fce055b9, type: 3}
+    <HeavyAttackImpactClip>k__BackingField: {fileID: 8300000, guid: 6df927fb3cb89bb4aa226d81280cdaa5, type: 3}
+    <TauntClip>k__BackingField: {fileID: 8300000, guid: 44d7a2a5c77d66e49a9de9ad43c19aa3, type: 3}

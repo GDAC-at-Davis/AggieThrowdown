@@ -152,6 +152,7 @@ public partial class FighterController : MonoBehaviour
         if (obj.started && Mathf.Abs(moveDependencies.Rb.velocity.x) < 1f)
         {
             anim.Play("Taunt");
+            SFXOneshotPlayer.Instance.PlaySFXOneshot(bodyTransformPivot.position, fighterConfig.AudioConfig.TauntClip);
         }
     }
 
@@ -165,6 +166,7 @@ public partial class FighterController : MonoBehaviour
             moveDependencies.Rb.velocity =
                 Vector2.right * moveDependencies.Rb.velocity.x + Vector2.up * moveStats.JumpVelocity;
             moveEngine.ForceUnground(0.2f);
+            SFXOneshotPlayer.Instance.PlaySFXOneshot(bodyTransformPivot.position, fighterConfig.AudioConfig.JumpClip);
             jumping = true;
         }
 
@@ -195,6 +197,7 @@ public partial class FighterController : MonoBehaviour
         combatController.OnHitByAttack += HandleOnHitByAttack;
 
         combatController.SetInvincible(true);
+        SFXOneshotPlayer.Instance.PlaySFXOneshot(bodyTransformPivot.position, fighterConfig.AudioConfig.DashClip);
 
         SubscribeToActionEvents();
     }
@@ -267,7 +270,22 @@ public partial class FighterController : MonoBehaviour
         var hurtbox =
             attackToPerform == AttackType.Basic ? fighterConfig.BasicAttack : fighterConfig.HeavyAttack;
 
-        combatController.PerformAttack(hurtbox, bodyTransformPivot.position, currentActionDirection);
+        var result = combatController.PerformAttack(hurtbox, bodyTransformPivot.position, currentActionDirection);
+
+        if (result)
+        {
+            SFXOneshotPlayer.Instance.PlaySFXOneshot(bodyTransformPivot.position,
+                attackToPerform == AttackType.Basic
+                    ? fighterConfig.AudioConfig.BasicAttackImpactClip
+                    : fighterConfig.AudioConfig.HeavyAttackImpactClip);
+        }
+        else
+        {
+            SFXOneshotPlayer.Instance.PlaySFXOneshot(bodyTransformPivot.position,
+                attackToPerform == AttackType.Basic
+                    ? fighterConfig.AudioConfig.BasicAttackClip
+                    : fighterConfig.AudioConfig.HeavyAttackClip);
+        }
     }
 
     private void HandleFinishAttack()

@@ -49,7 +49,7 @@ public class FighterCombatController : MonoBehaviour
         IsSuperArmor = value;
     }
 
-    public void PerformAttack(AttackConfig attackConfig, Vector2 position, int dir)
+    public bool PerformAttack(AttackConfig attackConfig, Vector2 position, int dir)
     {
         attackConfig.DrawHurtboxDebug(position, dir, 0.5f);
 
@@ -84,10 +84,12 @@ public class FighterCombatController : MonoBehaviour
                 var didHit = hitFighter.ReceiveAttack(attackInstance);
                 if (didHit)
                 {
-                    break;
+                    return true;
                 }
             }
         }
+
+        return false;
     }
 
     public bool ReceiveAttack(AttackInstance instance)
