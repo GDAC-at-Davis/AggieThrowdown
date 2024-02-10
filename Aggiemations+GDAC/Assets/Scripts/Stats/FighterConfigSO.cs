@@ -21,10 +21,10 @@ public class FighterConfigSO : ScriptableObject
     public bool IncludeInRoster { get; set; }
 
     [field: SerializeField]
-    public MovementStats MoveStats { get; private set; }
+    public bool FastLoadForTest { get; set; }
 
     [field: SerializeField]
-    public int MaxHealth { get; private set; }
+    public MovementStats MoveStats { get; private set; }
 
     [field: Header("Dashing")]
     [field: SerializeField]
@@ -53,7 +53,7 @@ public class AttackConfig
     public List<Hurtbox> Hurtboxes { get; private set; }
 
     [field: SerializeField]
-    public int Damage { get; private set; }
+    public int PointsAwarded { get; private set; }
 
     [field: SerializeField]
     public Vector2 KnockbackVelocity { get; private set; }

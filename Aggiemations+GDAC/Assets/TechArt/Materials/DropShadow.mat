@@ -66,11 +66,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.6
+    - _Alpha: 0.25
     - _EnableExternalAlpha: 0
+    - _QueueControl: 1
+    - _QueueOffset: 0
     m_Colors:
     - _Color: {r: 0.07019105, g: 0.09875309, b: 0.13207549, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _Offset: {r: 0.2, g: -0.1, b: 0, a: 0}
+    - _Offset: {r: 0.1, g: -0.1, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

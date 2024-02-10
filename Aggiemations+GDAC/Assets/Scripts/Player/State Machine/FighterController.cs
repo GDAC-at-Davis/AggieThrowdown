@@ -38,17 +38,16 @@ public partial class FighterController : MonoBehaviour
 
     private enum State
     {
-        NoState,
+        Stasis,
         Default,
         Dash,
         Action,
-        Staggered,
-        Dead
+        Staggered
     }
 
     private MovementStats moveStats => fighterConfig.MoveStats;
 
-    private State currentState = State.NoState;
+    private State currentState = State.Stasis;
 
     private bool jumping;
     private float xInput;
@@ -86,12 +85,12 @@ public partial class FighterController : MonoBehaviour
         currentState = State.Default;
         this.inputProvider = inputProvider;
         this.playerIndex = playerIndex;
-        SwitchState(State.Default);
+        anim.Play("EntryFlex");
     }
 
     private void OnDestroy()
     {
-        SwitchState(State.NoState);
+        SwitchState(State.Stasis);
     }
 
     private void Update()
@@ -117,9 +116,6 @@ public partial class FighterController : MonoBehaviour
             case State.Staggered:
                 StaggeredStateUpdate();
                 break;
-            case State.Dead:
-                DeadStateUpdate();
-                break;
         }
     }
 
@@ -127,6 +123,9 @@ public partial class FighterController : MonoBehaviour
     {
         switch (currentState)
         {
+            case State.Stasis:
+                moveEngine.Move(0, moveStats, moveDependencies);
+                break;
             case State.Default:
                 DefaultStateFixedUpdate();
                 break;
@@ -139,9 +138,6 @@ public partial class FighterController : MonoBehaviour
             case State.Staggered:
                 StaggeredStateFixedUpdate();
                 break;
-            case State.Dead:
-                DeadStateFixedUpdate();
-                break;
         }
     }
 
@@ -149,6 +145,16 @@ public partial class FighterController : MonoBehaviour
     {
         // Reset action state
         currentActionAcceleration = Vector2.zero;
+
+        // flip ren
+        if (xInput > 0)
+        {
+            ren.flipX = false;
+        }
+        else if (xInput < 0)
+        {
+            ren.flipX = true;
+        }
 
         switch (currentState)
         {
@@ -163,9 +169,6 @@ public partial class FighterController : MonoBehaviour
                 break;
             case State.Staggered:
                 ExitStaggeredState();
-                break;
-            case State.Dead:
-                ExitDeadState();
                 break;
         }
 
@@ -184,9 +187,6 @@ public partial class FighterController : MonoBehaviour
                 break;
             case State.Staggered:
                 EnterStaggeredState();
-                break;
-            case State.Dead:
-                EnterDeadState();
                 break;
         }
     }
@@ -209,6 +209,23 @@ public partial class FighterController : MonoBehaviour
             // moveEngine.Move(0, moveStats, moveDependencies);
         }
 
-        // moveEngine.DrawGizmos(moveStats, moveDependencies);
+        moveEngine.DrawGizmos(moveStats, moveDependencies);
+    }
+
+    public void FlipSprite(bool value)
+    {
+        ren.flipX = value;
+    }
+
+    public void EnableControl(bool val)
+    {
+        if (val)
+        {
+            SwitchState(State.Default);
+        }
+        else
+        {
+            SwitchState(State.Stasis);
+        }
     }
 }

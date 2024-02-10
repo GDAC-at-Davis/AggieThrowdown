@@ -18,6 +18,43 @@ public partial class FighterController : MonoBehaviour
                 jumping = false;
             }
         }
+
+
+        // anims
+        if (moveEngine.Context.IsStableOnGround)
+        {
+            if (Mathf.Abs(moveDependencies.Rb.velocity.x) > 1f)
+            {
+                anim.Play("Run");
+            }
+            else if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Taunt"))
+            {
+                anim.Play("Idle");
+            }
+        }
+        else
+        {
+            if (moveDependencies.Rb.velocity.y < 0)
+            {
+                anim.Play("Fall");
+            }
+            else if (moveDependencies.Rb.velocity.y > 0)
+            {
+                anim.Play("Jump");
+            }
+        }
+
+        // flip ren
+        if (xInput > 0)
+        {
+            ren.flipX = false;
+        }
+        else if (xInput < 0)
+        {
+            ren.flipX = true;
+        }
+
+        currentActionDirection = ren.flipX ? -1 : 1;
     }
 
     private void EnterDefaultState()
@@ -56,9 +93,9 @@ public partial class FighterController : MonoBehaviour
         SwitchState(State.Dash);
     }
 
-    private void HandleHeavyAttackInput(InputAction.CallbackContext obj)
+    private void HandleHeavyAttackInput(InputAction.CallbackContext context)
     {
-        if (!obj.performed || actionStaticTimer > 0)
+        if (!context.started || actionStaticTimer > 0)
         {
             return;
         }
@@ -67,9 +104,9 @@ public partial class FighterController : MonoBehaviour
         SwitchState(State.Action);
     }
 
-    private void HandleBasicAttackInput(InputAction.CallbackContext obj)
+    private void HandleBasicAttackInput(InputAction.CallbackContext context)
     {
-        if (!obj.performed || actionStaticTimer > 0)
+        if (!context.started || actionStaticTimer > 0)
         {
             return;
         }
@@ -100,47 +137,11 @@ public partial class FighterController : MonoBehaviour
             moveDependencies.Rb.velocity = vel;
         }
 
-        // flip ren
-        if (xInput > 0)
-        {
-            ren.flipX = false;
-        }
-        else if (xInput < 0)
-        {
-            ren.flipX = true;
-        }
-
-        currentActionDirection = ren.flipX ? -1 : 1;
-
         // Rotate to match normal
         var angle = Vector2.SignedAngle(Vector2.up, moveEngine.Context.GroundNormal) / 2f;
         var newAngle =
             Mathf.MoveTowardsAngle(ren.transform.rotation.eulerAngles.z, angle, Time.deltaTime * rotateSpeed);
         ren.transform.rotation = Quaternion.Euler(0, 0, newAngle);
-
-        // anims
-        if (moveEngine.Context.IsStableOnGround)
-        {
-            if (moveDependencies.Rb.velocity.x != 0)
-            {
-                anim.Play("Run");
-            }
-            else if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Taunt"))
-            {
-                anim.Play("Idle");
-            }
-        }
-        else
-        {
-            if (moveDependencies.Rb.velocity.y < 0)
-            {
-                anim.Play("Falling");
-            }
-            else if (moveDependencies.Rb.velocity.y > 0)
-            {
-                anim.Play("Jump");
-            }
-        }
 
         ApplyActionAcceleration();
     }
@@ -148,7 +149,7 @@ public partial class FighterController : MonoBehaviour
 
     private void HandleTauntInput(InputAction.CallbackContext obj)
     {
-        if (obj.started && inputProvider.MovementInput.x == 0)
+        if (obj.started && Mathf.Abs(moveDependencies.Rb.velocity.x) < 1f)
         {
             anim.Play("Taunt");
         }
@@ -302,6 +303,7 @@ public partial class FighterController : MonoBehaviour
     private void EnterStaggeredState()
     {
         anim.Play("Staggered");
+        anim.Update(0.1f);
         moveEngine.ForceUnground(0.1f);
         animEventHandler.OnFinishAction += HandleEndStaggered;
         combatController.OnHitByAttack += HandleOnHitByAttack;
@@ -321,27 +323,6 @@ public partial class FighterController : MonoBehaviour
     private void StaggeredStateFixedUpdate()
     {
         moveEngine.Move(0, moveStats, moveDependencies);
-    }
-
-    #endregion
-
-    #region Dead State
-
-    private void DeadStateUpdate()
-    {
-    }
-
-    private void EnterDeadState()
-    {
-        anim.Play("Dead");
-    }
-
-    private void ExitDeadState()
-    {
-    }
-
-    private void DeadStateFixedUpdate()
-    {
     }
 
     #endregion

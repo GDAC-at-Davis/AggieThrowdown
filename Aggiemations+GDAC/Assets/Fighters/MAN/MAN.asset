@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d2d4dc77e48e364aa469586c6652a40, type: 3}
+  m_Name: MAN
+  m_EditorClassIdentifier: 
+  <FighterName>k__BackingField: MAN
+  <FighterPortrait>k__BackingField: {fileID: 21300000, guid: d493068d9125bee4ab95bd0683ca227f, type: 3}
+  <FighterDescription>k__BackingField: MAN has appeared! Time to create a legendary
+    fighter! (Replace this with your fighter's description)
+  <IncludeInRoster>k__BackingField: 1
+  <FastLoadForTest>k__BackingField: 1
+  <MoveStats>k__BackingField:
+    <GroundMaxMovementSpeed>k__BackingField: 5
+    <MovementAcceleration>k__BackingField: 50
+    <JumpVelocity>k__BackingField: 6
+    <AirMovementAcceleration>k__BackingField: 15
+    <AirMaxMovementSpeed>k__BackingField: 5
+    <Gravity>k__BackingField: 13
+    <FastFallVelocity>k__BackingField: 5
+    <MaxGroundStableAngle>k__BackingField: 55
+    <GroundCastRadius>k__BackingField: 0.2
+    <GroundCastDistance>k__BackingField: 0.26
+    <GroundCastOffset>k__BackingField: 0.32
+    groundMask:
+      serializedVersion: 2
+      m_Bits: 64
+  <DashCooldown>k__BackingField: 0.5
+  <BasicAttack>k__BackingField:
+    <Hurtboxes>k__BackingField:
+    - <Offset>k__BackingField: {x: 0.55, y: 0.44}
+      <Size>k__BackingField: {x: 1.36, y: 1.06}
+      <Angle>k__BackingField: 0
+    <PointsAwarded>k__BackingField: 0
+    <KnockbackVelocity>k__BackingField: {x: 15, y: 0}
+  <HeavyAttack>k__BackingField:
+    <Hurtboxes>k__BackingField:
+    - <Offset>k__BackingField: {x: 1, y: 0.47}
+      <Size>k__BackingField: {x: 2, y: 1.15}
+      <Angle>k__BackingField: 0
+    <PointsAwarded>k__BackingField: 0
+    <KnockbackVelocity>k__BackingField: {x: 15, y: 3}
+  <AnimationOverrides>k__BackingField: {fileID: 22100000, guid: d54e49e898f1fd04491b0970567ae96b, type: 2}
+  <FighterPrefab>k__BackingField: {fileID: 150414167833556814, guid: 45dd1c2b2d9b6ae439697e84e535ff09, type: 3}

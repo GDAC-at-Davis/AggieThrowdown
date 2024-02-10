@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class FighterCombatController : MonoBehaviour
 {
+    public const float FreezeFrameDuration = 0.12f;
+
     private static Coroutine FreezeFrameCorout;
     public event Action<AttackInstance, bool> OnHitByAttack;
     public event Action<AttackInstance> OnKilledAttack;
@@ -33,14 +35,8 @@ public class FighterCombatController : MonoBehaviour
         this.playerIndex = playerIndex;
         this.hitbox = hitbox;
         this.config = config;
-        Respawn();
 
         hitbox.OnHitByAttack += ReceiveAttack;
-    }
-
-    public void Respawn()
-    {
-        CurrentHealth = config.MaxHealth;
     }
 
     public void SetInvincible(bool value)
@@ -51,7 +47,6 @@ public class FighterCombatController : MonoBehaviour
     public void SetSuperArmor(bool value)
     {
         IsSuperArmor = value;
-        ;
     }
 
     public void PerformAttack(AttackConfig attackConfig, Vector2 position, int dir)
@@ -109,7 +104,7 @@ public class FighterCombatController : MonoBehaviour
 
         OnHitByAttack?.Invoke(instance, IsSuperArmor);
 
-        CurrentHealth -= instance.attackConfig.Damage;
+        CurrentHealth -= instance.attackConfig.PointsAwarded;
 
         if (CurrentHealth <= 0)
         {
@@ -122,7 +117,10 @@ public class FighterCombatController : MonoBehaviour
             StopCoroutine(FreezeFrameCorout);
         }
 
-        FreezeFrameCorout = StartCoroutine(FreezeTime(0.15f));
+        MainCameraController.Instance.SendImpulse(Vector2.down);
+
+        FreezeFrameCorout = StartCoroutine(FreezeTime(FreezeFrameDuration));
+
 
         return true;
     }

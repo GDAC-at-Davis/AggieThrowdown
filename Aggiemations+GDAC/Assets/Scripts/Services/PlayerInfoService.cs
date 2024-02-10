@@ -4,7 +4,7 @@ using UnityEngine;
 
 public struct PlayerInfo
 {
-    public FighterConfigSO SelectedFighter;
+    public FighterConfigSO SelectedFighterConfig;
 }
 
 public class PlayerInfoService : MonoBehaviour
@@ -21,12 +21,12 @@ public class PlayerInfoService : MonoBehaviour
 
     public void AssignFighterToPlayer(int playerIndex, FighterConfigSO character)
     {
-        PlayerInfos[playerIndex].SelectedFighter = character;
+        PlayerInfos[playerIndex].SelectedFighterConfig = character;
     }
 
     public FighterConfigSO GetFighterForPlayer(int playerIndex)
     {
-        return PlayerInfos[playerIndex].SelectedFighter;
+        return PlayerInfos[playerIndex].SelectedFighterConfig;
     }
 
     public List<PlayerInfo> GetPlayerInfos()
@@ -34,7 +34,7 @@ public class PlayerInfoService : MonoBehaviour
         var playerInfos = new List<PlayerInfo>();
         for (var i = 0; i < PlayerInfos.Length; i++)
         {
-            if (PlayerInfos[i].SelectedFighter != null)
+            if (PlayerInfos[i].SelectedFighterConfig != null)
             {
                 playerInfos.Add(PlayerInfos[i]);
             }

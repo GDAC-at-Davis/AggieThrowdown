@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class MatchDirector : MonoBehaviour
 {
@@ -9,11 +10,12 @@ public class MatchDirector : MonoBehaviour
     [SerializeField]
     private ServiceContainerSO serviceContainer;
 
+    [FormerlySerializedAs("flexCamera")]
     [SerializeField]
-    private FlexCameraScript flexCamera;
+    private MainCameraController mainCamera;
 
     [SerializeField]
-    private List<Transform> spawnPoint;
+    private ArenaMap map;
 
     private List<PlayerInfo> playerInfos;
 
@@ -21,43 +23,61 @@ public class MatchDirector : MonoBehaviour
 
     private void Start()
     {
-        playerInfos = serviceContainer.PlayerInfoService.GetPlayerInfos();
-
-        // Spawn players
-        for (var i = 0; i < playerInfos.Count; i++)
-        {
-            var playerInfo = playerInfos[i];
-            var fighterConfig = playerInfo.SelectedFighter;
-
-            var fighter = Instantiate(fighterConfig.FighterPrefab, spawnPoint[i].position, Quaternion.identity);
-            fighter.Initialize(i, fighterConfig, flexCamera);
-
-            fighters.Add(fighter);
-        }
+        map.SetArenaCameraActive(true);
+        StartCoroutine(StartMatchCoroutine());
     }
 
-    private void RespawnPlayer()
+    private IEnumerator StartMatchCoroutine()
     {
-        // get respawn position furthest from all players
-        var respawnPosition = Vector3.zero;
-        var maxDistance = float.MinValue;
-        foreach (var point in spawnPoint)
-        {
-            var minDistance = float.MaxValue;
-            foreach (var fighter in fighters)
-            {
-                var distance = Vector3.Distance(point.position, fighter.GetBodyPosition());
-                if (distance < minDistance)
-                {
-                    minDistance = distance;
-                }
-            }
+        playerInfos = serviceContainer.PlayerInfoService.GetPlayerInfos();
 
-            if (minDistance > maxDistance)
+        // Fast spawning for testing
+        float delayMult = 1;
+        foreach (var playerInfo in playerInfos)
+        {
+            if (playerInfo.SelectedFighterConfig.FastLoadForTest)
             {
-                maxDistance = minDistance;
-                respawnPosition = point.position;
+                delayMult = 0;
             }
+        }
+
+        var spawnPoints = map.SpawnPoints;
+
+        map.SetArenaCameraActive(true);
+
+        yield return new WaitForSecondsRealtime(1.5f * delayMult);
+
+        map.SetArenaCameraActive(false);
+
+        for (var i = 0; i < playerInfos.Count; i++)
+        {
+            // Zoom in on spawn point
+            spawnPoints[i].SetCameraActive(true);
+            yield return new WaitForSecondsRealtime(1.25f * delayMult);
+
+            // Spawn player
+            var playerInfo = playerInfos[i];
+            var fighterConfig = playerInfo.SelectedFighterConfig;
+
+            var fighter = Instantiate(fighterConfig.FighterPrefab, Vector3.zero, Quaternion.identity);
+            fighter.Initialize(i, fighterConfig, spawnPoints[i].GetPosition(), mainCamera);
+
+            fighter.FlipSprite(spawnPoints[i].FlipSprite);
+
+            fighter.SetControl(false);
+
+            yield return new WaitForSecondsRealtime(2.5f * delayMult);
+
+            fighters.Add(fighter);
+            spawnPoints[i].SetCameraActive(false);
+        }
+
+        yield return new WaitForSeconds(1.5f * delayMult);
+
+        // Begin match
+        foreach (var fighter in fighters)
+        {
+            fighter.SetControl(true);
         }
     }
 }

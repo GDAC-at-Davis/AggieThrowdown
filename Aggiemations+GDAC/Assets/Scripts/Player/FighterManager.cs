@@ -31,7 +31,7 @@ public class FighterManager : MonoBehaviour
     private Transform bodyTransformPivot;
 
     private int playerIndex;
-    private FlexCameraScript flexCamera;
+    private MainCameraController mainCamera;
 
     [ContextMenu("Initialize In Editor")]
     public void OnValidate()
@@ -57,22 +57,36 @@ public class FighterManager : MonoBehaviour
             bodyTransformPivot);
     }
 
-    public void Initialize(int playerIndex, FighterConfigSO config, FlexCameraScript flexCamera)
+    public void Initialize(int playerIndex, FighterConfigSO config, Vector3 spawnPosition,
+        MainCameraController mainCamera)
     {
         this.playerIndex = playerIndex;
         this.config = config;
-        this.flexCamera = flexCamera;
+        this.mainCamera = mainCamera;
 
-        if (this.flexCamera)
+        if (this.mainCamera)
         {
-            flexCamera.AddTarget(bodyTransformPivot);
+            mainCamera.AddTarget(bodyTransformPivot);
         }
+
+        movementDependencies.Rb.transform.position = spawnPosition;
 
         controller.Initialize(playerIndex, serviceContainer.InputManager.GetInputProvider(playerIndex));
         combatController.Initialize(config, playerIndex, hitbox);
 
         // Hook up events
         animEventHandler.OnSetSuperArmor += combatController.SetSuperArmor;
+        combatController.OnHitByAttack += OnHitByAttack;
+    }
+
+    public void SetControl(bool val)
+    {
+        controller.EnableControl(val);
+    }
+
+    private void OnHitByAttack(FighterCombatController.AttackInstance attackInstance, bool superArmor)
+    {
+        serviceContainer.EventManager.OnPlayerHitByAttack?.Invoke(playerIndex, attackInstance);
     }
 
     public Vector2 GetBodyPosition()
@@ -88,8 +102,13 @@ public class FighterManager : MonoBehaviour
             Gizmos.color = Color.green;
             config.BasicAttack.DrawHurtboxGizmos(bodyTransformPivot.position, 1);
 
-            Gizmos.color = Color.blue;
+            Gizmos.color = Color.magenta;
             config.HeavyAttack.DrawHurtboxGizmos(bodyTransformPivot.position, 1);
         }
+    }
+
+    public void FlipSprite(bool value)
+    {
+        controller.FlipSprite(value);
     }
 }

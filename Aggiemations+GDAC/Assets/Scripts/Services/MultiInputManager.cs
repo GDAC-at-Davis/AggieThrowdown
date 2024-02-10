@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,6 +7,9 @@ public class MultiInputManager : MonoBehaviour, DefaultControls.IGameplayActions
 {
     [SerializeField]
     private ServiceContainerSO container;
+
+    [SerializeField]
+    private float inputBufferDuration;
 
     private readonly List<InputProvider> inputProviders = new();
     private DefaultControls input;
@@ -20,11 +24,24 @@ public class MultiInputManager : MonoBehaviour, DefaultControls.IGameplayActions
 
         inputProviders.Add(new InputProvider());
         inputProviders.Add(new InputProvider());
+
+        foreach (var inputProvider in inputProviders)
+        {
+            inputProvider.Initialize(inputBufferDuration);
+        }
     }
 
     private void OnDestroy()
     {
         input.Disable();
+    }
+
+    private void Update()
+    {
+        foreach (var inputProvider in inputProviders)
+        {
+            inputProvider.Update();
+        }
     }
 
     public void OnMovement_P1(InputAction.CallbackContext context)

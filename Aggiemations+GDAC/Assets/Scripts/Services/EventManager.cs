@@ -13,8 +13,7 @@ public class EventManager : MonoBehaviour
         serviceContainer.EventManager = this;
     }
 
-    public delegate void PlayerEventVoid(int playerIndex);
 
     // Player propogating events
-    public PlayerEventVoid OnPlayerDeath;
+    public Action<int, FighterCombatController.AttackInstance> OnPlayerHitByAttack;
 }

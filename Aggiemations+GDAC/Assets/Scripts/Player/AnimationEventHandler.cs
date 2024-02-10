@@ -18,6 +18,7 @@ public class AnimationEventHandler : MonoBehaviour
     public event Action<float> OnMultiplyCurrentVelocityX;
     public event Action<float> OnMultiplyCurrentVelocityY;
 
+    /*
     public void StartSuperArmor()
     {
         OnSetSuperArmor?.Invoke(true);
@@ -27,6 +28,7 @@ public class AnimationEventHandler : MonoBehaviour
     {
         OnSetSuperArmor?.Invoke(false);
     }
+    */
 
     public void TriggerAttackImpactHurtboxes()
     {

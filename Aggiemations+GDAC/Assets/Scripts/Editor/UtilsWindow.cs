@@ -61,6 +61,7 @@ public class UtilsWindow : EditorWindow
             {
                 AssetDatabase.CreateFolder(prefs.FighterPath, newFighterName);
                 AssetDatabase.CreateFolder(newFighterFolderPath, "Animations");
+                AssetDatabase.CreateFolder(newFighterFolderPath, "Sprites");
             }
             else
             {
@@ -69,7 +70,7 @@ public class UtilsWindow : EditorWindow
             }
 
             // Copy fighter prefab
-            var newFighterPrefabPath = $"{newFighterFolderPath}/{newFighterName}.prefab";
+            var newFighterPrefabPath = $"{newFighterFolderPath}/{newFighterName}Prefab.prefab";
             var didCopy = AssetDatabase.CopyAsset(AssetDatabase.GetAssetPath(prefs.FighterTemplatePrefab),
                 newFighterPrefabPath);
             var newFighterPrefab =
@@ -80,10 +81,10 @@ public class UtilsWindow : EditorWindow
             newAnimationOverrides.runtimeAnimatorController =
                 prefs.FighterTemplateConfig.AnimationOverrides.runtimeAnimatorController;
             AssetDatabase.CreateAsset(newAnimationOverrides,
-                $"{newFighterFolderPath}/{newFighterName}AnimationOverrides.overrideController");
+                $"{newFighterFolderPath}/Animations/AnimationOverrides.overrideController");
 
             // Copy portrait texture
-            var newPortraitPath = $"{newFighterFolderPath}/{newFighterName}Portrait.png";
+            var newPortraitPath = $"{newFighterFolderPath}/Sprites/{newFighterName}_Portrait.png";
             var didCopyPortrait = AssetDatabase.CopyAsset(AssetDatabase.GetAssetPath(prefs.FighterPortrait),
                 newPortraitPath);
             var newPortrait = AssetDatabase.LoadAssetAtPath<Sprite>(newPortraitPath);
@@ -96,6 +97,7 @@ public class UtilsWindow : EditorWindow
             newFighterConfig.IncludeInRoster = true;
             newFighterConfig.FighterPortrait = newPortrait;
             newFighterConfig.AnimationOverrides = newAnimationOverrides;
+            newFighterConfig.FighterPrefab = newFighterPrefab;
             AssetDatabase.CreateAsset(newFighterConfig, $"{newFighterFolderPath}/{newFighterName}.asset");
 
             // Initialize the prefab with new config

@@ -65,7 +65,7 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Basic_P1"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""202f30c4-cbb0-4d48-b071-faac12c7f692"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -74,7 +74,7 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Basic_P2"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""87671381-d270-4db5-b1c4-45ca91f8745a"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -83,7 +83,7 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Heavy_P1"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""04831cff-c1bd-4a2b-b8d5-6fca3686f62f"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -92,7 +92,7 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Heavy_P2"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""d6142691-1f0b-4eab-aea0-c99a0a5a0fdd"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -101,7 +101,7 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Dash_P1"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""01780217-5bf7-4357-bf1c-c8330cd9d644"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -110,7 +110,7 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Dash_P2"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""1e7ecb53-3e17-4cb0-bcd0-13b7e87adb84"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -119,7 +119,7 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Taunt_P1"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""03362fc4-9494-45ca-8e56-528f2d00658f"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -128,7 +128,7 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Taunt_P2"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""c3560b8f-7881-4757-9069-6d0462a1944a"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",

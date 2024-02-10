@@ -17,6 +17,7 @@ MonoBehaviour:
   <FighterDescription>k__BackingField: Used as a template for creating new fighters.
     Do not include in roster.
   <IncludeInRoster>k__BackingField: 0
+  <FastLoadForTest>k__BackingField: 0
   <MoveStats>k__BackingField:
     <GroundMaxMovementSpeed>k__BackingField: 5
     <MovementAcceleration>k__BackingField: 50
@@ -28,28 +29,24 @@ MonoBehaviour:
     <MaxGroundStableAngle>k__BackingField: 55
     <GroundCastRadius>k__BackingField: 0.2
     <GroundCastDistance>k__BackingField: 0.26
-    <GroundCastOffset>k__BackingField: -0.18
+    <GroundCastOffset>k__BackingField: 0.32
     groundMask:
       serializedVersion: 2
       m_Bits: 64
-  <MaxHealth>k__BackingField: 0
   <DashCooldown>k__BackingField: 0.5
   <BasicAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
-    - <Offset>k__BackingField: {x: 0.5, y: -0.06}
+    - <Offset>k__BackingField: {x: 0.5, y: 0.32}
       <Size>k__BackingField: {x: 1, y: 0.75}
       <Angle>k__BackingField: 0
-    - <Offset>k__BackingField: {x: -0.01, y: -0.02}
-      <Size>k__BackingField: {x: 0.5, y: 0.5}
-      <Angle>k__BackingField: 0
-    <Damage>k__BackingField: 5
+    <PointsAwarded>k__BackingField: 0
     <KnockbackVelocity>k__BackingField: {x: 15, y: 0}
   <HeavyAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
-    - <Offset>k__BackingField: {x: 0, y: 0.07}
+    - <Offset>k__BackingField: {x: 0, y: 0.38}
       <Size>k__BackingField: {x: 2, y: 2}
       <Angle>k__BackingField: 45
-    <Damage>k__BackingField: 5
-    <KnockbackVelocity>k__BackingField: {x: 0, y: 15}
+    <PointsAwarded>k__BackingField: 0
+    <KnockbackVelocity>k__BackingField: {x: 8, y: 8}
   <AnimationOverrides>k__BackingField: {fileID: 22100000, guid: d1e0c734231b67147b79adda57477c93, type: 2}
   <FighterPrefab>k__BackingField: {fileID: 150414167833556814, guid: c38763a4c98930d40b2a53c24a5e9c90, type: 3}
