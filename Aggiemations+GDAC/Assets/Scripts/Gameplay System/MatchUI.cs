@@ -29,6 +29,8 @@ public class MatchUI : MonoBehaviour
     [SerializeField]
     private HorizontalLayoutGroup playerScoreLayout;
 
+    private List<PlayerScoreUI> playerScoreUIs = new();
+
     private void Start()
     {
         matchStartScreen.alpha = 0;
@@ -44,5 +46,21 @@ public class MatchUI : MonoBehaviour
     {
         matchEndText.text = $"Player {winningPlayerIndex + 1} wins!";
         matchEndAnimator.Play();
+    }
+
+    public void InitializeScoreUI(int count)
+    {
+        for (var i = 0; i < count; i++)
+        {
+            var scoreUI = Instantiate(playerScorePrefab, playerScoreLayout.transform);
+            scoreUI.Initialize(i);
+            scoreUI.UpdateSlider(0);
+            playerScoreUIs.Add(scoreUI);
+        }
+    }
+
+    public void UpdateScoreUI(int playerIndex, float score)
+    {
+        playerScoreUIs[playerIndex].UpdateSlider(score);
     }
 }

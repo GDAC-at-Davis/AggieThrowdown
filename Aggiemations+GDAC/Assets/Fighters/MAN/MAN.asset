@@ -16,7 +16,7 @@ MonoBehaviour:
   <FighterPortrait>k__BackingField: {fileID: 21300000, guid: d493068d9125bee4ab95bd0683ca227f, type: 3}
   <FighterDescription>k__BackingField: MAN. THE SMALL MAN.
   <IncludeInRoster>k__BackingField: 1
-  <FastLoadForTest>k__BackingField: 0
+  <FastLoadForTest>k__BackingField: 1
   <MoveStats>k__BackingField:
     <GroundMaxMovementSpeed>k__BackingField: 5
     <MovementAcceleration>k__BackingField: 50

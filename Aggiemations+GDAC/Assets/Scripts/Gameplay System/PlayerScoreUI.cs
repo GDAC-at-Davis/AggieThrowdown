@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerScoreUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private Slider slider;
+
+    [SerializeField]
+    private TMP_Text nameText;
+
+    public void Initialize(int playerIndex)
     {
-        
+        nameText.text = $"Player {playerIndex + 1}";
+        nameText.color = ServiceContainerSO.PlayerColors[playerIndex];
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateSlider(float value)
     {
-        
+        slider.value = value;
     }
 }

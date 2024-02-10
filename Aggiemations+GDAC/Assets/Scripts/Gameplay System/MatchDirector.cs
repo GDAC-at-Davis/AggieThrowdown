@@ -33,7 +33,6 @@ public class MatchDirector : MonoBehaviour
     {
         map.SetArenaCameraActive(true);
         StartCoroutine(StartMatchCoroutine());
-
         serviceContainer.EventManager.OnPlayerHitByAttack += OnPlayerHitByAttack;
     }
 
@@ -45,7 +44,10 @@ public class MatchDirector : MonoBehaviour
         }
 
         playerScores[attackInstance.sourcePlayerIndex] += attackInstance.attackConfig.PointsAwarded;
-        Debug.Log(playerScores[playerIndex]);
+        matchUI.UpdateScoreUI(attackInstance.sourcePlayerIndex,
+            playerScores[attackInstance.sourcePlayerIndex] / winningScore);
+
+        Debug.Log(playerScores[attackInstance.sourcePlayerIndex]);
         CheckForGameEnd();
     }
 
@@ -99,6 +101,8 @@ public class MatchDirector : MonoBehaviour
         yield return new WaitForSeconds(1.5f * delayMult);
 
         matchUI.ShowMatchStartScreen();
+
+        matchUI.InitializeScoreUI(serviceContainer.PlayerInfoService.GetPlayerInfos().Count);
 
         // Begin match
         foreach (var fighter in fighters)
