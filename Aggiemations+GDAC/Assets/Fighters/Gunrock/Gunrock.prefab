@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 175932312340316045, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
       propertyPath: fighterConfig
       value: 
-      objectReference: {fileID: 11400000, guid: e07c202a1948b344fa96d12e37071eb1, type: 2}
+      objectReference: {fileID: 11400000, guid: 447a282785d46214fb5d09ac2d80ffd9, type: 2}
     - target: {fileID: 175932312340316045, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
       propertyPath: moveDepend.Rb
       value: 
@@ -87,10 +87,10 @@ PrefabInstance:
     - target: {fileID: 5494715674546629286, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
       propertyPath: config
       value: 
-      objectReference: {fileID: 11400000, guid: e07c202a1948b344fa96d12e37071eb1, type: 2}
+      objectReference: {fileID: 11400000, guid: 447a282785d46214fb5d09ac2d80ffd9, type: 2}
     - target: {fileID: 5677483950961008529, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
       propertyPath: m_Name
-      value: TemplateFighterPrefab
+      value: Gunrock
       objectReference: {fileID: 0}
     - target: {fileID: 5713289586870270658, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -143,7 +143,7 @@ PrefabInstance:
     - target: {fileID: 7539735758522596736, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: d1e0c734231b67147b79adda57477c93, type: 2}
+      objectReference: {fileID: 22100000, guid: f57822cdc900d454d9ede5b4fb71d8fe, type: 2}
     - target: {fileID: 8839168525864382548, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
       propertyPath: Context.AirTime
       value: 227.5918

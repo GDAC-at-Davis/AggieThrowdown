@@ -6,6 +6,6 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Jason the Makima SimpAnimationOverrides
+  m_Name: GunrockAnimationOverrides
   m_Controller: {fileID: 9100000, guid: 67bbc216291b4d94aac6fef7859ae750, type: 2}
   m_Clips: []

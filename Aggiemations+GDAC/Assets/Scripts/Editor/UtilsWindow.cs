@@ -31,11 +31,11 @@ public class UtilsWindow : EditorWindow
 
     private void OnGUI()
     {
-        EditorGUILayout.LabelField("Scene Utils", EditorStyles.boldLabel);
+        EditorGUILayout.LabelField("Project CowPow Utils", EditorStyles.boldLabel);
 
         var startupScenePath = prefs.StartupScenePath;
 
-        if (GUILayout.Button("Play"))
+        if (GUILayout.Button("Play Game"))
         {
             // Close open editor scenes
             EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
@@ -69,17 +69,11 @@ public class UtilsWindow : EditorWindow
             }
 
             // Copy fighter prefab
+            var newFighterPrefabPath = $"{newFighterFolderPath}/{newFighterName}.prefab";
             var didCopy = AssetDatabase.CopyAsset(AssetDatabase.GetAssetPath(prefs.FighterTemplatePrefab),
-                $"{newFighterFolderPath}/{newFighterName}.prefab");
-
-            if (!didCopy)
-            {
-                Debug.LogError("Failed to create a copy of the fighter template prefab");
-                return;
-            }
-
+                newFighterPrefabPath);
             var newFighterPrefab =
-                AssetDatabase.LoadAssetAtPath<FighterManager>(newFighterFolderPath + newFighterName + ".prefab");
+                AssetDatabase.LoadAssetAtPath<FighterManager>(newFighterPrefabPath);
 
             // Create new animation override asset
             var newAnimationOverrides = new AnimatorOverrideController();
