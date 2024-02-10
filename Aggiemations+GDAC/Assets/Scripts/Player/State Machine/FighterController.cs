@@ -193,6 +193,8 @@ public partial class FighterController : MonoBehaviour
 
     private void OnGUI()
     {
+        return;
+
         GUILayout.BeginArea(new Rect(10 + 500 * playerIndex, 10, 300, 300));
         GUILayout.Label("IsGrounded: " + moveEngine.Context.IsGrounded);
         GUILayout.Label("IsStableOnGround: " + moveEngine.Context.IsStableOnGround);
