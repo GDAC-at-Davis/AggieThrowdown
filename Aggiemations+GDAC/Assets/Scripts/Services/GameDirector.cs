@@ -7,6 +7,9 @@ public class GameDirector : MonoBehaviour
     [SerializeField]
     private ServiceContainerSO serviceContainer;
 
+    [SerializeField]
+    private SceneController sceneController;
+
     private enum GameState
     {
         CharacterSelect,
@@ -22,7 +25,7 @@ public class GameDirector : MonoBehaviour
 
     private void Start()
     {
-        serviceContainer.SceneController.SwitchScenes(SceneController.Scenes.CharacterSelect);
+        sceneController.SwitchScenes(SceneController.Scenes.CharacterSelect);
         gameState = GameState.CharacterSelect;
     }
 
@@ -30,8 +33,17 @@ public class GameDirector : MonoBehaviour
     {
         if (gameState == GameState.CharacterSelect)
         {
-            serviceContainer.SceneController.SwitchScenes(SceneController.Scenes.Fighting);
+            sceneController.SwitchScenes(SceneController.Scenes.Fighting);
             gameState = GameState.Fighting;
+        }
+    }
+
+    public void FinishGame()
+    {
+        if (gameState == GameState.Fighting)
+        {
+            sceneController.SwitchScenes(SceneController.Scenes.CharacterSelect);
+            gameState = GameState.CharacterSelect;
         }
     }
 }

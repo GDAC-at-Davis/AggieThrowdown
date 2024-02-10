@@ -81,7 +81,7 @@ public class UtilsWindow : EditorWindow
             newAnimationOverrides.runtimeAnimatorController =
                 prefs.FighterTemplateConfig.AnimationOverrides.runtimeAnimatorController;
             AssetDatabase.CreateAsset(newAnimationOverrides,
-                $"{newFighterFolderPath}/Animations/AnimationOverrides.overrideController");
+                $"{newFighterFolderPath}/Animations/{newFighterName}AnimationOverrides.overrideController");
 
             // Copy portrait texture
             var newPortraitPath = $"{newFighterFolderPath}/Sprites/{newFighterName}_Portrait.png";

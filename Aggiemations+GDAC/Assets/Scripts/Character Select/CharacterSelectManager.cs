@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -63,6 +64,8 @@ public class CharacterSelectManager : MonoBehaviour
             playerSelections.Add(selector);
 
             characterEntriesUI[0].SelectedBy(i);
+
+            HandleChangeCharacter(i, 0);
 
             // Events for selection actions
             selector.ChangeCharacter += HandleChangeCharacter;
@@ -129,6 +132,7 @@ public class CharacterSelectManager : MonoBehaviour
         nextSelection.SelectedBy(playerIndex);
 
         playerSelections[playerIndex].selectedEntry = nextIndex;
+        playerSelections[playerIndex].SelectStatusUI.SetCharacter(roster.FighterRoster[nextIndex]);
     }
 
     private void OnDestroy()
@@ -146,7 +150,7 @@ public class CharacterSelectManager : MonoBehaviour
 
         private InputProvider inputProvider;
         private int playerIndex;
-        private PlayerSelectStatusUI _selectStatusUI;
+        public PlayerSelectStatusUI SelectStatusUI { get; private set; }
 
         public event Action<int> ReadyUp;
         public event Action<int, int> ChangeCharacter;
@@ -156,7 +160,7 @@ public class CharacterSelectManager : MonoBehaviour
         {
             this.inputProvider = inputProvider;
             this.playerIndex = playerIndex;
-            _selectStatusUI = selectStatusUI;
+            SelectStatusUI = selectStatusUI;
 
             selectStatusUI.SetReadyStatus(false);
             inputProvider.OnJumpInput += HandleJumpInput;
@@ -174,10 +178,14 @@ public class CharacterSelectManager : MonoBehaviour
             if (value > 0.5f)
             {
                 ChangeCharacter?.Invoke(playerIndex, 1);
+                isReady = false;
+                UpdateIsReadyStatus();
             }
             else if (value < -0.5f)
             {
                 ChangeCharacter?.Invoke(playerIndex, -1);
+                isReady = false;
+                UpdateIsReadyStatus();
             }
         }
 
@@ -189,7 +197,12 @@ public class CharacterSelectManager : MonoBehaviour
             }
 
             isReady = !isReady;
-            _selectStatusUI.SetReadyStatus(isReady);
+            UpdateIsReadyStatus();
+        }
+
+        private void UpdateIsReadyStatus()
+        {
+            SelectStatusUI.SetReadyStatus(isReady);
             ReadyUp?.Invoke(playerIndex);
         }
 

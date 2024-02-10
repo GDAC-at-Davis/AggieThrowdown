@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -30,6 +31,9 @@ public class FighterManager : MonoBehaviour
     [SerializeField]
     private Transform bodyTransformPivot;
 
+    [SerializeField]
+    private TMP_Text nameText;
+
     private int playerIndex;
     private MainCameraController mainCamera;
 
@@ -60,6 +64,8 @@ public class FighterManager : MonoBehaviour
     public void Initialize(int playerIndex, FighterConfigSO config, Vector3 spawnPosition,
         MainCameraController mainCamera)
     {
+        Configure(this.config);
+
         this.playerIndex = playerIndex;
         this.config = config;
         this.mainCamera = mainCamera;
@@ -73,6 +79,9 @@ public class FighterManager : MonoBehaviour
 
         controller.Initialize(playerIndex, serviceContainer.InputManager.GetInputProvider(playerIndex));
         combatController.Initialize(config, playerIndex, hitbox);
+
+        nameText.text = $"P{playerIndex + 1}";
+        nameText.color = ServiceContainerSO.PlayerColors[playerIndex];
 
         // Hook up events
         animEventHandler.OnSetSuperArmor += combatController.SetSuperArmor;

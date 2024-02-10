@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serviceContainer: {fileID: 11400000, guid: 3fc2650fb7b155344982f95f802766cc, type: 2}
+  sceneController: {fileID: 1675373971}
 --- !u!4 &6413556
 Transform:
   m_ObjectHideFlags: 0
@@ -333,7 +334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb5c49e8cb77b554893d1648702348ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  container: {fileID: 11400000, guid: 3fc2650fb7b155344982f95f802766cc, type: 2}
   SceneNames:
   - CharacterSelect
   - FightScene

@@ -7,9 +7,6 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     [SerializeField]
-    private ServiceContainerSO container;
-
-    [SerializeField]
     private List<string> SceneNames;
 
     public enum Scenes
@@ -22,7 +19,6 @@ public class SceneController : MonoBehaviour
 
     private void Awake()
     {
-        container.SceneController = this;
         currentScene = string.Empty;
     }
 

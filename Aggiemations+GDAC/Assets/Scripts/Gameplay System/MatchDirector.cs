@@ -10,21 +10,43 @@ public class MatchDirector : MonoBehaviour
     [SerializeField]
     private ServiceContainerSO serviceContainer;
 
-    [FormerlySerializedAs("flexCamera")]
     [SerializeField]
     private MainCameraController mainCamera;
 
     [SerializeField]
+    private MatchUI matchUI;
+
+    [SerializeField]
     private ArenaMap map;
 
-    private List<PlayerInfo> playerInfos;
+    [SerializeField]
+    private int winningScore = 50;
+
+    private List<PlayerInfo> playerInfos = new();
+    private List<float> playerScores = new();
 
     private List<FighterManager> fighters = new();
+
+    private bool gameEnded = false;
 
     private void Start()
     {
         map.SetArenaCameraActive(true);
         StartCoroutine(StartMatchCoroutine());
+
+        serviceContainer.EventManager.OnPlayerHitByAttack += OnPlayerHitByAttack;
+    }
+
+    private void OnPlayerHitByAttack(int playerIndex, FighterCombatController.AttackInstance attackInstance)
+    {
+        if (gameEnded)
+        {
+            return;
+        }
+
+        playerScores[attackInstance.sourcePlayerIndex] += attackInstance.attackConfig.PointsAwarded;
+        Debug.Log(playerScores[playerIndex]);
+        CheckForGameEnd();
     }
 
     private IEnumerator StartMatchCoroutine()
@@ -45,7 +67,7 @@ public class MatchDirector : MonoBehaviour
 
         map.SetArenaCameraActive(true);
 
-        yield return new WaitForSecondsRealtime(1.5f * delayMult);
+        yield return new WaitForSecondsRealtime(0.5f * delayMult);
 
         map.SetArenaCameraActive(false);
 
@@ -70,14 +92,61 @@ public class MatchDirector : MonoBehaviour
 
             fighters.Add(fighter);
             spawnPoints[i].SetCameraActive(false);
+
+            playerScores.Add(0);
         }
 
         yield return new WaitForSeconds(1.5f * delayMult);
+
+        matchUI.ShowMatchStartScreen();
 
         // Begin match
         foreach (var fighter in fighters)
         {
             fighter.SetControl(true);
         }
+    }
+
+
+    private void CheckForGameEnd()
+    {
+        var winningPlayerIndex = -1;
+        for (var i = 0; i < playerScores.Count; i++)
+        {
+            if (playerScores[i] >= winningScore)
+            {
+                winningPlayerIndex = i;
+                gameEnded = true;
+                break;
+            }
+        }
+
+        if (winningPlayerIndex != -1)
+        {
+            StartCoroutine(EndMatchCoroutine(winningPlayerIndex));
+        }
+    }
+
+    private IEnumerator EndMatchCoroutine(int winningPlayerIndex)
+    {
+        foreach (var fighter in fighters)
+        {
+            fighter.SetControl(false);
+        }
+
+        yield return new WaitForSecondsRealtime(0.2f);
+
+        Time.timeScale = 0.25f;
+
+        yield return new WaitForSecondsRealtime(1.5f);
+
+        Time.timeScale = 1f;
+
+        yield return new WaitForSecondsRealtime(0.5f);
+
+        matchUI.ShowMatchEndScreen(winningPlayerIndex);
+
+        yield return new WaitForSecondsRealtime(4);
+        serviceContainer.GameDirector.FinishGame();
     }
 }
