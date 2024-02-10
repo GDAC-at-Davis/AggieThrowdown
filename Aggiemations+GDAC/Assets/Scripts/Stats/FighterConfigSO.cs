@@ -8,14 +8,17 @@ public class FighterConfigSO : ScriptableObject
 {
     [field: SerializeField]
     [field: TextArea]
-    public string FighterName { get; private set; }
+    public string FighterName { get; set; }
+
+    [field: SerializeField]
+    public Sprite FighterPortrait { get; set; }
 
     [field: SerializeField]
     [field: TextArea]
-    public string FighterDescription { get; private set; }
+    public string FighterDescription { get; set; }
 
     [field: SerializeField]
-    public bool IncludeInRoster { get; private set; } = true;
+    public bool IncludeInRoster { get; set; }
 
     [field: SerializeField]
     public MovementStats MoveStats { get; private set; }
@@ -35,12 +38,12 @@ public class FighterConfigSO : ScriptableObject
     public AttackConfig HeavyAttack { get; private set; }
 
     [field: SerializeField]
-    [field: Header("Visuals")]
-    public AnimatorOverrideController AnimationOverrides { get; private set; }
+    [field: Header("Dependencies (Do not modify directly)")]
+    public AnimatorOverrideController AnimationOverrides { get; set; }
 
     [field: SerializeField]
 
-    public FighterManager FighterPrefab { get; private set; }
+    public FighterManager FighterPrefab { get; set; }
 }
 
 [Serializable]

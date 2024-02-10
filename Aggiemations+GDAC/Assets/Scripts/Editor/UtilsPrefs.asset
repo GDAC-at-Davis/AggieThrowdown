@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: UtilsPrefs
   m_EditorClassIdentifier: 
   <StartupScenePath>k__BackingField: Assets\Scenes\BaseScene.unity
+  <FighterPath>k__BackingField: Assets/Fighters
   <FighterTemplatePrefab>k__BackingField: {fileID: 150414167833556814, guid: c38763a4c98930d40b2a53c24a5e9c90, type: 3}
   <FighterTemplateConfig>k__BackingField: {fileID: 11400000, guid: e07c202a1948b344fa96d12e37071eb1, type: 2}
+  <FighterBaseAnimator>k__BackingField: {fileID: 9100000, guid: 67bbc216291b4d94aac6fef7859ae750, type: 2}
+  <FighterPortrait>k__BackingField: {fileID: 21300000, guid: 77bc37374ebad764caec778158d14d4b, type: 3}

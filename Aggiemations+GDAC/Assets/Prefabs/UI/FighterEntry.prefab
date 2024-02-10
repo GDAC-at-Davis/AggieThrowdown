@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 3174301341748913798}
   - component: {fileID: 2958573577672330787}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Portrait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -472,3 +472,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 4215177696689947775}
   selectedText: {fileID: 8861868523233145063}
+  fighterPortraitImage: {fileID: 2958573577672330787}

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d2d4dc77e48e364aa469586c6652a40, type: 3}
-  m_Name: TemplateFighter
+  m_Name: Jason the Makima Simp
   m_EditorClassIdentifier: 
-  <FighterName>k__BackingField: The Template Man
-  <FighterPortrait>k__BackingField: {fileID: 21300000, guid: 77bc37374ebad764caec778158d14d4b, type: 3}
-  <FighterDescription>k__BackingField: Used as a template for creating new fighters.
-    Do not include in roster.
-  <IncludeInRoster>k__BackingField: 0
+  <FighterName>k__BackingField: Jason the Makima Simp
+  <FighterPortrait>k__BackingField: {fileID: 21300000, guid: e7df6d3a67e59694db88ae90638ab823, type: 3}
+  <FighterDescription>k__BackingField: Jason the Makima Simp has appeared! Time to
+    create a legendary fighter! (Replace this with your fighter's description)
+  <IncludeInRoster>k__BackingField: 1
   <MoveStats>k__BackingField:
     <GroundMaxMovementSpeed>k__BackingField: 5
     <MovementAcceleration>k__BackingField: 50
@@ -51,5 +51,5 @@ MonoBehaviour:
       <Angle>k__BackingField: 45
     <Damage>k__BackingField: 5
     <KnockbackVelocity>k__BackingField: {x: 0, y: 15}
-  <AnimationOverrides>k__BackingField: {fileID: 22100000, guid: d1e0c734231b67147b79adda57477c93, type: 2}
+  <AnimationOverrides>k__BackingField: {fileID: 22100000, guid: a2c9067d764ebfe43aa0fd654bebfb0b, type: 2}
   <FighterPrefab>k__BackingField: {fileID: 150414167833556814, guid: c38763a4c98930d40b2a53c24a5e9c90, type: 3}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class CharacterEntryUI : MonoBehaviour
 {
@@ -13,11 +13,15 @@ public class CharacterEntryUI : MonoBehaviour
     [SerializeField]
     private TMP_Text selectedText;
 
+    [SerializeField]
+    private Image fighterPortraitImage;
+
     private List<int> selectedBy = new();
 
     public void Initialize(FighterConfigSO fighterConfig)
     {
         nameText.text = fighterConfig.FighterName;
+        fighterPortraitImage.sprite = fighterConfig.FighterPortrait;
         UpdateSelectedByText();
     }
 

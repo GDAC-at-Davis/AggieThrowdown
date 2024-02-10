@@ -44,6 +44,13 @@ public class FighterManager : MonoBehaviour
         Configure();
     }
 
+    public void Configure(FighterConfigSO newConfig)
+    {
+        config = newConfig;
+        controller.Configure(config.MoveStats, movementDependencies, config, animEventHandler, combatController,
+            bodyTransformPivot);
+    }
+
     private void Configure()
     {
         controller.Configure(config.MoveStats, movementDependencies, config, animEventHandler, combatController,
