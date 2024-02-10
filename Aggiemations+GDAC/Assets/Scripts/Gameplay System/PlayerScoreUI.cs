@@ -12,6 +12,9 @@ public class PlayerScoreUI : MonoBehaviour
     [SerializeField]
     private TMP_Text nameText;
 
+    [SerializeField]
+    private SimpleAnimator simpleAnimator;
+
     public void Initialize(int playerIndex)
     {
         nameText.text = $"Player {playerIndex + 1}";
@@ -20,6 +23,11 @@ public class PlayerScoreUI : MonoBehaviour
 
     public void UpdateSlider(float value)
     {
+        if (slider.value < value)
+        {
+            simpleAnimator.Play(true);
+        }
+
         slider.value = value;
     }
 }

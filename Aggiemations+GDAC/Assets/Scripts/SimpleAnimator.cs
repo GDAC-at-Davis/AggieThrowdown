@@ -36,7 +36,7 @@ public class SimpleAnimator : MonoBehaviour, IAnimationClipSource
         }
     }
 
-    public void Play()
+    public void Play(bool restart = false)
     {
         // Lazy instatiation
         if (!graphCreated)
@@ -47,6 +47,11 @@ public class SimpleAnimator : MonoBehaviour, IAnimationClipSource
 
         if (playableGraph.IsValid())
         {
+            if (restart)
+            {
+                playableGraph.GetRootPlayable(0).SetTime(0);
+            }
+
             playableGraph.Play();
         }
     }
