@@ -1,0 +1,435 @@
+fileFormatVersion: 2
+guid: 461b4842d7b2e4c31810c03af540eff1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 625
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: strong-attack-sheet-packed_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3192
+        width: 1920
+        height: 1064
+      alignment: 9
+      pivot: {x: 0.41558507, y: 0.16487913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c49560a642cc3404e926e34086e0db7f
+      internalID: 1232354086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strong-attack-sheet-packed_1
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 3192
+        width: 1920
+        height: 1064
+      alignment: 9
+      pivot: {x: 0.4198058, y: 0.16487913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 445125f5565f84da98906d9962410497
+      internalID: -251750174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strong-attack-sheet-packed_2
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 3192
+        width: 1920
+        height: 1064
+      alignment: 9
+      pivot: {x: 0.40292257, y: 0.18011199}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af2f27d91a3f24ee4bae4490e98548d6
+      internalID: 1298078713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strong-attack-sheet-packed_3
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 3192
+        width: 1920
+        height: 1064
+      alignment: 9
+      pivot: {x: 0.39870173, y: 0.17249545}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2316a2baa309c427e9909480517513ea
+      internalID: -254902653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strong-attack-sheet-packed_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2128
+        width: 1920
+        height: 1064
+      alignment: 9
+      pivot: {x: 0.4071436, y: 0.19534485}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6f6ad178d0fb40ecaa424ceaedbce9e
+      internalID: -1701111944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strong-attack-sheet-packed_5
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 2128
+        width: 1920
+        height: 1064
+      alignment: 9
+      pivot: {x: 0.39448127, y: 0.22581035}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f35c9a41676b04cd79aeae0b78781a51
+      internalID: 1171534489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strong-attack-sheet-packed_6
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 2120
+        width: 1920
+        height: 1064
+      alignment: 9
+      pivot: {x: 0.398702, y: 0.24865952}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3187b5c97a74741cbbf251102d6706cf
+      internalID: 337641341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strong-attack-sheet-packed_7
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 2128
+        width: 1920
+        height: 1064
+      alignment: 9
+      pivot: {x: 0.31428605, y: 0.23342666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf3ac2f837ce4bff9488ac0bfa7f4a9
+      internalID: 2127598833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strong-attack-sheet-packed_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1064
+        width: 1920
+        height: 1064
+      alignment: 9
+      pivot: {x: 0.39870209, y: 0.27912512}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f0b44fb21f9d4f33b9d2d6b5c62fbbc
+      internalID: 1133272149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strong-attack-sheet-packed_9
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1064
+        width: 1920
+        height: 1064
+      alignment: 9
+      pivot: {x: 0.4788958, y: 0.21057817}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90a841a680dd44307ba4ac760093872d
+      internalID: 258912278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strong-attack-sheet-packed_10
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 1064
+        width: 1920
+        height: 1064
+      alignment: 9
+      pivot: {x: 0.44513017, y: 0.30197477}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db4cbda4245154cd0aeb6d1a20eb8b0f
+      internalID: -1869746895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strong-attack-sheet-packed_11
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 1064
+        width: 1920
+        height: 1064
+      alignment: 9
+      pivot: {x: 0.46201298, y: 0.20296128}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f49c5ec20bfc04e17b5face52c55aac4
+      internalID: -138092574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strong-attack-sheet-packed_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1920
+        height: 1064
+      alignment: 9
+      pivot: {x: 0.3607154, y: 0.20296115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a365093762d447c918ced44e768208
+      internalID: -585683488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: strong-attack-sheet-packed_13
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 1920
+        height: 1064
+      alignment: 9
+      pivot: {x: 0.46623394, y: 0.21057752}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5633fc0693674dc483c3f999c0bb15c
+      internalID: 1644474120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      strong-attack-sheet-packed_0: 1232354086
+      strong-attack-sheet-packed_1: -251750174
+      strong-attack-sheet-packed_10: -1869746895
+      strong-attack-sheet-packed_11: -138092574
+      strong-attack-sheet-packed_12: -585683488
+      strong-attack-sheet-packed_13: 1644474120
+      strong-attack-sheet-packed_2: 1298078713
+      strong-attack-sheet-packed_3: -254902653
+      strong-attack-sheet-packed_4: -1701111944
+      strong-attack-sheet-packed_5: 1171534489
+      strong-attack-sheet-packed_6: 337641341
+      strong-attack-sheet-packed_7: 2127598833
+      strong-attack-sheet-packed_8: 1133272149
+      strong-attack-sheet-packed_9: 258912278
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
