@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d2d4dc77e48e364aa469586c6652a40, type: 3}
+  m_Name: Purtle
+  m_EditorClassIdentifier: 
+  <FighterName>k__BackingField: Purtle
+  <FighterPortrait>k__BackingField: {fileID: 21300000, guid: 0842dd131bb169e43af9a35fe2111bed, type: 3}
+  <FighterDescription>k__BackingField: Purtle has appeared! Time to create a legendary
+    fighter! (Replace this with your fighter's description)
+  <IncludeInRoster>k__BackingField: 1
+  <FastLoadForTest>k__BackingField: 1
+  <MoveStats>k__BackingField:
+    <GroundMaxMovementSpeed>k__BackingField: 5
+    <MovementAcceleration>k__BackingField: 50
+    <JumpVelocity>k__BackingField: 6
+    <AirMovementAcceleration>k__BackingField: 15
+    <AirMaxMovementSpeed>k__BackingField: 5
+    <Gravity>k__BackingField: 13
+    <FastFallVelocity>k__BackingField: 6
+    <MaxGroundStableAngle>k__BackingField: 55
+    <GroundCastRadius>k__BackingField: 0.2
+    <GroundCastDistance>k__BackingField: 0.26
+    <GroundCastOffset>k__BackingField: 0.32
+    groundMask:
+      serializedVersion: 2
+      m_Bits: 64
+  <DashCooldown>k__BackingField: 0.5
+  <BasicAttack>k__BackingField:
+    <Hurtboxes>k__BackingField:
+    - <Offset>k__BackingField: {x: 0.5, y: 0.32}
+      <Size>k__BackingField: {x: 1, y: 0.75}
+      <Angle>k__BackingField: 0
+    <PointsAwarded>k__BackingField: 3
+    <KnockbackVelocity>k__BackingField: {x: -15, y: 0}
+  <HeavyAttack>k__BackingField:
+    <Hurtboxes>k__BackingField:
+    - <Offset>k__BackingField: {x: 0, y: 0.38}
+      <Size>k__BackingField: {x: 2, y: 2}
+      <Angle>k__BackingField: 5
+    <PointsAwarded>k__BackingField: 6
+    <KnockbackVelocity>k__BackingField: {x: 8, y: 8}
+  <AnimationOverrides>k__BackingField: {fileID: 22100000, guid: eec64d039aa857b91b7b11711c881153, type: 2}
+  <FighterPrefab>k__BackingField: {fileID: 150414167833556814, guid: d430d01ace407c0bb9911ac5dafb5737, type: 3}
+  <AudioConfig>k__BackingField:
+    <JumpClip>k__BackingField: {fileID: 8300000, guid: 6d1f004a849db5749b59f6daba3683da, type: 3}
+    <DashClip>k__BackingField: {fileID: 8300000, guid: 8a37af193e72519448a65809fa03bdff, type: 3}
+    <BasicAttackClip>k__BackingField: {fileID: 8300000, guid: 52d68e65268fa8b46baf87ad8f93e0bb, type: 3}
+    <BasicAttackImpactClip>k__BackingField: {fileID: 8300000, guid: d01bc918c3f1e604c805548bc5573ee0, type: 3}
+    <HeavyAttackClip>k__BackingField: {fileID: 8300000, guid: 85f32687633bb424c9ee9197fce055b9, type: 3}
+    <HeavyAttackImpactClip>k__BackingField: {fileID: 8300000, guid: 6df927fb3cb89bb4aa226d81280cdaa5, type: 3}
+    <TauntClip>k__BackingField: {fileID: 8300000, guid: 44d7a2a5c77d66e49a9de9ad43c19aa3, type: 3}

@@ -1,0 +1,369 @@
+fileFormatVersion: 2
+guid: e05a41455be9806f8a79b3c9b307832b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 600
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Turtle-Heavy-Attack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2144
+        width: 1903
+        height: 1072
+      alignment: 9
+      pivot: {x: 0.4883287, y: 0.23894307}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d261f0a8e5d297213b4bf1abf018a7ad
+      internalID: -565203273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turtle-Heavy-Attack_1
+      rect:
+        serializedVersion: 2
+        x: 1903
+        y: 2144
+        width: 1903
+        height: 1072
+      alignment: 9
+      pivot: {x: 0.49299714, y: 0.32596213}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a563826919ef3f6bb1104b0468d7ab
+      internalID: -1345629089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turtle-Heavy-Attack_2
+      rect:
+        serializedVersion: 2
+        x: 3802
+        y: 2144
+        width: 1903
+        height: 1072
+      alignment: 9
+      pivot: {x: 0.49766585, y: 0.27623692}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed5b1002962e4772a95901b9ebf490dc
+      internalID: 851786267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turtle-Heavy-Attack_3
+      rect:
+        serializedVersion: 2
+        x: 5700
+        y: 2144
+        width: 1903
+        height: 1072
+      alignment: 9
+      pivot: {x: 0.49299702, y: 0.31767455}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48cbb80e65d6c60648c9bcf7cf85838f
+      internalID: 1083201562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turtle-Heavy-Attack_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1072
+        width: 1903
+        height: 1072
+      alignment: 9
+      pivot: {x: 0.4953315, y: 0.30109963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e4bae545d76fe640b8f7e56843b22f5
+      internalID: 1351286554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turtle-Heavy-Attack_5
+      rect:
+        serializedVersion: 2
+        x: 1903
+        y: 1072
+        width: 1903
+        height: 1072
+      alignment: 9
+      pivot: {x: 0.49299714, y: 0.23894319}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e95f7f461e43927c8a1be82a2459126
+      internalID: 99692343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turtle-Heavy-Attack_6
+      rect:
+        serializedVersion: 2
+        x: 3806
+        y: 1072
+        width: 1903
+        height: 1072
+      alignment: 9
+      pivot: {x: 0.49299702, y: 0.24308698}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc9ac17d0cea71f349ce85f41195847e
+      internalID: -927576966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turtle-Heavy-Attack_7
+      rect:
+        serializedVersion: 2
+        x: 5705
+        y: 1072
+        width: 1903
+        height: 1072
+      alignment: 9
+      pivot: {x: 0.5023342, y: 0.21408069}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c6e825d9033bc758ab4d7fd741085a7
+      internalID: 561471700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turtle-Heavy-Attack_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1903
+        height: 1072
+      alignment: 9
+      pivot: {x: 0.49766576, y: 0.31353092}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 836e4d8e053d986e2a2ea93dfe392796
+      internalID: -657664467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turtle-Heavy-Attack_9
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 0
+        width: 1903
+        height: 1072
+      alignment: 9
+      pivot: {x: 0.48832873, y: 0.25966203}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd58d62709136e8b977aea82806af77
+      internalID: 317903825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turtle-Heavy-Attack_10
+      rect:
+        serializedVersion: 2
+        x: 3806
+        y: 0
+        width: 1903
+        height: 1072
+      alignment: 9
+      pivot: {x: 0.5023342, y: 0.2555183}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70df82394456515029e989cd3fb02c87
+      internalID: -716498818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Turtle-Heavy-Attack_0: -565203273
+      Turtle-Heavy-Attack_1: -1345629089
+      Turtle-Heavy-Attack_10: -716498818
+      Turtle-Heavy-Attack_2: 851786267
+      Turtle-Heavy-Attack_3: 1083201562
+      Turtle-Heavy-Attack_4: 1351286554
+      Turtle-Heavy-Attack_5: 99692343
+      Turtle-Heavy-Attack_6: -927576966
+      Turtle-Heavy-Attack_7: 561471700
+      Turtle-Heavy-Attack_8: -657664467
+      Turtle-Heavy-Attack_9: 317903825
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
