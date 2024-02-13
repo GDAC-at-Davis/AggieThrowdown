@@ -1,0 +1,404 @@
+fileFormatVersion: 2
+guid: 1c7aa5ffc8cb4a14c927cffbea2a1140
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 650
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Carrot_Basic_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2160
+        width: 947
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.3135735, y: 0.020255987}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e40377f6e4b40a24a81cfdacb94fc377
+      internalID: 2022396465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_Basic_1
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 2160
+        width: 947
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.3135735, y: 0.034470394}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8faaa3406ebd45448982d0c7dcb82bde
+      internalID: 1396818475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_Basic_2
+      rect:
+        serializedVersion: 2
+        x: 1894
+        y: 2160
+        width: 947
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.3095208, y: 0.023809588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ffa102a300e7f40972d8ad32e9fcb8
+      internalID: -206084706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_Basic_3
+      rect:
+        serializedVersion: 2
+        x: 2841
+        y: 2160
+        width: 947
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.32167912, y: 0.013148555}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ecfd9e49b4691e4ab9dfe813e9418ed
+      internalID: -918296998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_Basic_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 947
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.3135735, y: 0.020255873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f536794da7f7942aad6409c713b954
+      internalID: -1716235205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_Basic_5
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 1080
+        width: 947
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.321679, y: 0.013148555}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b0b74af0e698a8419409e6730c31e7f
+      internalID: 499679947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_Basic_6
+      rect:
+        serializedVersion: 2
+        x: 1894
+        y: 1080
+        width: 947
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.3095208, y: 0.013148555}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a75f9999a7441f45af979361b34405d
+      internalID: 988105068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_Basic_7
+      rect:
+        serializedVersion: 2
+        x: 2841
+        y: 1080
+        width: 947
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.31762645, y: 0.016702158}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6838b973a821fc34299a8fde8b7f3adf
+      internalID: -770285802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_Basic_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 947
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.31762624, y: 0.016702168}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24527b14616ca444ab400445d4c90e87
+      internalID: 1451323491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_Basic_9
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 0
+        width: 947
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.3257318, y: 0.016702168}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92ec67ec8f12aa84295ac1d2a829552c
+      internalID: 2057915093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_Basic_10
+      rect:
+        serializedVersion: 2
+        x: 1894
+        y: 0
+        width: 947
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.3135735, y: 0.006041187}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4974fecdbcc29546b7689bb8edb0bb9
+      internalID: 1128879140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_Basic_11
+      rect:
+        serializedVersion: 2
+        x: 2841
+        y: 0
+        width: 947
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.31762645, y: 0.009594847}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eccf1fabfc3cb643b68b6835944ac1d
+      internalID: -1663990732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Carrot_Basic_0: 2022396465
+      Carrot_Basic_1: 1396818475
+      Carrot_Basic_10: 1128879140
+      Carrot_Basic_11: -1663990732
+      Carrot_Basic_2: -206084706
+      Carrot_Basic_3: -918296998
+      Carrot_Basic_4: -1716235205
+      Carrot_Basic_5: 499679947
+      Carrot_Basic_6: 988105068
+      Carrot_Basic_7: -770285802
+      Carrot_Basic_8: 1451323491
+      Carrot_Basic_9: 2057915093
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

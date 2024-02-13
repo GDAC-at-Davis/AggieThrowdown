@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CarotAnimationOverrides
+  m_Controller: {fileID: 9100000, guid: 67bbc216291b4d94aac6fef7859ae750, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 40888b8530e99fc459712aabdc410eb6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 94571acb36ca2cf41b95a6c24e48492c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d731e0e6a065f7145a6494aa05aa9a8c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f7ea37f2d50a7404b82eae7a967a3b31, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 67dc99ea50e05e844a8e1ca27b3161d3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5d28a5c8316aead4e9bc388a6144629f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e5bdcc200ed63834aa15c12ee3f55e6a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f82e2a8b75212424ea2d2ed403f082f8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1f19caab0c741fe4c8770ce811803a0b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1fc1b5b259119034c80f6991ea0f7a23, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fa640c9a4d59f6c468fffe3ad69c1abc, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 770baa8bb16f9164389aa2b554a49fa3, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f3fd26a39100c0545aec1c94f014e948, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4728fe4db3b0c7546bb3b4647c54cbad, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 073a31fa4412e9f4b994aad0a3f58d87, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2cf9bd74e5444c844bc66d4ad30c7eea, type: 2}

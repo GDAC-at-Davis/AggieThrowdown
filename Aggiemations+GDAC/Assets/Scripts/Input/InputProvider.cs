@@ -7,12 +7,12 @@ public class InputProvider
 {
     public Vector2 MovementInput { get; set; }
 
-    public event Action<InputAction.CallbackContext> OnJumpInput;
-    public event Action<InputAction.CallbackContext> OnMovementInput;
-    public event Action<InputAction.CallbackContext> OnBasicAttackInput;
-    public event Action<InputAction.CallbackContext> OnHeavyAttackInput;
-    public event Action<InputAction.CallbackContext> OnDashInput;
-    public event Action<InputAction.CallbackContext> OnTauntInput;
+    public event Action<InputContext> OnJumpInput;
+    public event Action<InputContext> OnMovementInput;
+    public event Action<InputContext> OnBasicAttackInput;
+    public event Action<InputContext> OnHeavyAttackInput;
+    public event Action<InputContext> OnDashInput;
+    public event Action<InputContext> OnTauntInput;
 
     private float bufferDuration;
 
@@ -28,7 +28,14 @@ public class InputProvider
     {
         public InputType inputType;
         public float time;
-        public InputAction.CallbackContext context;
+        public InputContext context;
+    }
+
+    public struct InputContext
+    {
+        public bool buffered;
+        public InputActionPhase phase;
+        public InputAction.CallbackContext callbackContext;
     }
 
     private List<BufferEntry> inputBuffer = new();
@@ -44,8 +51,18 @@ public class InputProvider
         {
             inputType = type,
             time = Time.time,
-            context = context
+            context = ContextFromCallback(context, true)
         });
+    }
+
+    private InputContext ContextFromCallback(InputAction.CallbackContext context, bool buffered = false)
+    {
+        return new InputContext
+        {
+            phase = context.phase,
+            callbackContext = context,
+            buffered = buffered
+        };
     }
 
     public void Update()
@@ -81,35 +98,35 @@ public class InputProvider
 
     public void TriggerOnJumpInput(InputAction.CallbackContext context)
     {
-        OnJumpInput?.Invoke(context);
+        OnJumpInput?.Invoke(ContextFromCallback(context));
         QueueInputToBuffer(InputType.Jump, context);
     }
 
     public void TriggerOnMovementInput(InputAction.CallbackContext context)
     {
-        OnMovementInput?.Invoke(context);
+        OnMovementInput?.Invoke(ContextFromCallback(context));
     }
 
     public void TriggerOnBasicAttackInput(InputAction.CallbackContext context)
     {
-        OnBasicAttackInput?.Invoke(context);
+        OnBasicAttackInput?.Invoke(ContextFromCallback(context));
         QueueInputToBuffer(InputType.BasicAttack, context);
     }
 
     public void TriggerOnHeavyAttackInput(InputAction.CallbackContext context)
     {
-        OnHeavyAttackInput?.Invoke(context);
+        OnHeavyAttackInput?.Invoke(ContextFromCallback(context));
         QueueInputToBuffer(InputType.HeavyAttack, context);
     }
 
     public void TriggerOnDashInput(InputAction.CallbackContext context)
     {
-        OnDashInput?.Invoke(context);
+        OnDashInput?.Invoke(ContextFromCallback(context));
         QueueInputToBuffer(InputType.Dash, context);
     }
 
     public void TriggerOnTauntInput(InputAction.CallbackContext context)
     {
-        OnTauntInput?.Invoke(context);
+        OnTauntInput?.Invoke(ContextFromCallback(context));
     }
 }

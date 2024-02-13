@@ -1469,9 +1469,9 @@ MonoBehaviour:
   confiner: {fileID: 1341361406}
   confinerUpdateInterval: 1
   postOffset: {x: 0, y: 0.1}
-  widthMargin: 2.5
-  heightMargin: 2.5
-  minOrthoWidth: 4
+  widthMargin: 2
+  heightMargin: 2
+  minOrthoWidth: 3
   minOrthoHeight: 0
   unitLerpFactor: 0.99
   globalImpulseSource: {fileID: 137015404}
@@ -3576,7 +3576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ApplyAfter: 2
   m_ChannelMask: 1
-  m_Gain: 1
+  m_Gain: 2
   m_Use2DDistance: 0
   m_UseCameraSpace: 1
   m_ReactionSettings:

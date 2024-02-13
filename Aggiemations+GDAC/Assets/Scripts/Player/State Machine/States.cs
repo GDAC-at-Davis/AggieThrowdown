@@ -83,7 +83,7 @@ public partial class FighterController : MonoBehaviour
         UnsubscribeFromActionEvents();
     }
 
-    private void HandleDashInput(InputAction.CallbackContext obj)
+    private void HandleDashInput(InputProvider.InputContext ctx)
     {
         if (dashCooldownTimer > 0)
         {
@@ -93,9 +93,9 @@ public partial class FighterController : MonoBehaviour
         SwitchState(State.Dash);
     }
 
-    private void HandleHeavyAttackInput(InputAction.CallbackContext context)
+    private void HandleHeavyAttackInput(InputProvider.InputContext ctx)
     {
-        if (!context.started || actionStaticTimer > 0)
+        if (ctx.phase != InputActionPhase.Started || actionStaticTimer > 0)
         {
             return;
         }
@@ -104,9 +104,9 @@ public partial class FighterController : MonoBehaviour
         SwitchState(State.Action);
     }
 
-    private void HandleBasicAttackInput(InputAction.CallbackContext context)
+    private void HandleBasicAttackInput(InputProvider.InputContext ctx)
     {
-        if (!context.started || actionStaticTimer > 0)
+        if (ctx.phase != InputActionPhase.Started || actionStaticTimer > 0)
         {
             return;
         }
@@ -147,9 +147,9 @@ public partial class FighterController : MonoBehaviour
     }
 
 
-    private void HandleTauntInput(InputAction.CallbackContext obj)
+    private void HandleTauntInput(InputProvider.InputContext ctx)
     {
-        if (obj.started && Mathf.Abs(moveDependencies.Rb.velocity.x) < 1f)
+        if (ctx.phase == InputActionPhase.Started && Mathf.Abs(moveDependencies.Rb.velocity.x) < 1f)
         {
             anim.Play("Taunt");
             SFXOneshotPlayer.Instance.PlaySFXOneshot(bodyTransformPivot.position, fighterConfig.AudioConfig.TauntClip);
@@ -157,21 +157,23 @@ public partial class FighterController : MonoBehaviour
     }
 
 
-    private void HandleJumpInput(InputAction.CallbackContext ctx)
+    private void HandleJumpInput(InputProvider.InputContext ctx)
     {
-        var canJump = moveEngine.Context.AirTime < 0.1f || moveEngine.Context.IsStableOnGround;
+        var canJump = !jumping && jumpStaticTimer < 0f &&
+                      (moveEngine.Context.AirTime < 0.1f || moveEngine.Context.IsStableOnGround);
 
-        if (ctx.started && canJump)
+        if (ctx.phase == InputActionPhase.Started && canJump)
         {
             moveDependencies.Rb.velocity =
                 Vector2.right * moveDependencies.Rb.velocity.x + Vector2.up * moveStats.JumpVelocity;
             moveEngine.ForceUnground(0.2f);
             SFXOneshotPlayer.Instance.PlaySFXOneshot(bodyTransformPivot.position, fighterConfig.AudioConfig.JumpClip);
             jumping = true;
+            jumpStaticTimer = 0.2f;
         }
 
         // Early release
-        if (ctx.canceled && jumping)
+        if (ctx.phase == InputActionPhase.Canceled && jumping)
         {
             jumping = false;
             var velocity = moveDependencies.Rb.velocity;
@@ -191,7 +193,7 @@ public partial class FighterController : MonoBehaviour
     private void EnterDashState()
     {
         currentActionDirection = ren.flipX ? -1 : 1;
-        anim.Play("Dash");
+        anim.Play("Dash", -1, 0);
         dashCooldownTimer = fighterConfig.DashCooldown;
         animEventHandler.OnFinishAction += HandleEndDash;
         combatController.OnHitByAttack += HandleOnHitByAttack;
@@ -248,10 +250,10 @@ public partial class FighterController : MonoBehaviour
         switch (attackToPerform)
         {
             case AttackType.Basic:
-                anim.Play("BasicAttack");
+                anim.Play("BasicAttack", -1, 0);
                 break;
             case AttackType.Heavy:
-                anim.Play("HeavyAttack");
+                anim.Play("HeavyAttack", -1, 0);
                 break;
             default:
                 break;
@@ -320,7 +322,7 @@ public partial class FighterController : MonoBehaviour
 
     private void EnterStaggeredState()
     {
-        anim.Play("Staggered");
+        anim.Play("Staggered", -1, 0);
         anim.Update(0.1f);
         moveEngine.ForceUnground(0.1f);
         animEventHandler.OnFinishAction += HandleEndStaggered;

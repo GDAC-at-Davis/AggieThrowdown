@@ -167,14 +167,14 @@ public class CharacterSelectManager : MonoBehaviour
             inputProvider.OnMovementInput += HandleMovementInput;
         }
 
-        private void HandleMovementInput(InputAction.CallbackContext obj)
+        private void HandleMovementInput(InputProvider.InputContext obj)
         {
-            if (!obj.started)
+            if (obj.phase != InputActionPhase.Started || obj.buffered)
             {
                 return;
             }
 
-            var value = obj.ReadValue<Vector2>().x;
+            var value = obj.callbackContext.ReadValue<Vector2>().x;
             if (value > 0.5f)
             {
                 ChangeCharacter?.Invoke(playerIndex, 1);
@@ -189,9 +189,9 @@ public class CharacterSelectManager : MonoBehaviour
             }
         }
 
-        private void HandleJumpInput(InputAction.CallbackContext obj)
+        private void HandleJumpInput(InputProvider.InputContext obj)
         {
-            if (!obj.started)
+            if (obj.phase != InputActionPhase.Started || obj.buffered)
             {
                 return;
             }

@@ -62,6 +62,7 @@ public partial class FighterController : MonoBehaviour
     // Timers
     private float dashCooldownTimer;
     private float actionStaticTimer;
+    private float jumpStaticTimer;
 
     public void Configure(MovementStats stats,
         MovementDependencies moveDependencies,
@@ -98,6 +99,7 @@ public partial class FighterController : MonoBehaviour
         // Timers
         dashCooldownTimer -= Time.deltaTime;
         actionStaticTimer -= Time.deltaTime;
+        jumpStaticTimer -= Time.deltaTime;
 
         // Input
         xInput = inputProvider.MovementInput.x;

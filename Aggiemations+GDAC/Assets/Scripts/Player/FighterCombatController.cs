@@ -129,7 +129,7 @@ public class FighterCombatController : MonoBehaviour
 
     private IEnumerator FreezeTime(float duration)
     {
-        Time.timeScale = 0.01f;
+        Time.timeScale = 0.05f;
         yield return new WaitForSecondsRealtime(duration);
         Time.timeScale = 1;
         FreezeFrameCorout = null;

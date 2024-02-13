@@ -17,7 +17,7 @@ MonoBehaviour:
   <FighterDescription>k__BackingField: Pipeman has appeared! Armed with a paper fasterner,
     he's come to exact revenge on his creator!!!?!???
   <IncludeInRoster>k__BackingField: 1
-  <FastLoadForTest>k__BackingField: 1
+  <FastLoadForTest>k__BackingField: 0
   <MoveStats>k__BackingField:
     <GroundMaxMovementSpeed>k__BackingField: 5
     <MovementAcceleration>k__BackingField: 50
@@ -25,7 +25,7 @@ MonoBehaviour:
     <AirMovementAcceleration>k__BackingField: 15
     <AirMaxMovementSpeed>k__BackingField: 5
     <Gravity>k__BackingField: 13
-    <FastFallVelocity>k__BackingField: 5
+    <FastFallVelocity>k__BackingField: 6
     <MaxGroundStableAngle>k__BackingField: 55
     <GroundCastRadius>k__BackingField: 0.2
     <GroundCastDistance>k__BackingField: 0.26
@@ -36,11 +36,11 @@ MonoBehaviour:
   <DashCooldown>k__BackingField: 0.5
   <BasicAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
-    - <Offset>k__BackingField: {x: 0.5, y: 0.32}
-      <Size>k__BackingField: {x: 1, y: 0.75}
+    - <Offset>k__BackingField: {x: 0.4, y: 0.32}
+      <Size>k__BackingField: {x: 1.2, y: 0.75}
       <Angle>k__BackingField: 0
     <PointsAwarded>k__BackingField: 3
-    <KnockbackVelocity>k__BackingField: {x: 4, y: 3}
+    <KnockbackVelocity>k__BackingField: {x: 5, y: 3}
   <HeavyAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
     - <Offset>k__BackingField: {x: 0.51, y: 0.59}
