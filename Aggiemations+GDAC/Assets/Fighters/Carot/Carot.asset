@@ -21,7 +21,7 @@ MonoBehaviour:
 
 '
   <IncludeInRoster>k__BackingField: 1
-  <FastLoadForTest>k__BackingField: 1
+  <FastLoadForTest>k__BackingField: 0
   <MoveStats>k__BackingField:
     <GroundMaxMovementSpeed>k__BackingField: 5
     <MovementAcceleration>k__BackingField: 50

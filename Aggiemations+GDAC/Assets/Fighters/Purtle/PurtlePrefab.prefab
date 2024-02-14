@@ -94,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 60fa7f7331ae4903d8439c100f2735d8, type: 2}
     - target: {fileID: 5677483950961008529, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
       propertyPath: m_Name
-      value: TurtyPrefab
+      value: PurtlePrefab
       objectReference: {fileID: 0}
     - target: {fileID: 5713289586870270658, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -135,6 +135,18 @@ PrefabInstance:
     - target: {fileID: 5713289586870270658, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010901635881700504, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010901635881700504, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: m_Size.y
+      value: 1.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010901635881700504, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: 7539735758522596736, guid: 3b4dd57534cdcda4abbb6abb9b73109d, type: 3}
       propertyPath: m_Controller

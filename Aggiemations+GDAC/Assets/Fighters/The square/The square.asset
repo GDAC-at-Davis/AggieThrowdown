@@ -35,8 +35,8 @@ MonoBehaviour:
   <DashCooldown>k__BackingField: 0.5
   <BasicAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
-    - <Offset>k__BackingField: {x: 0.5, y: 0.32}
-      <Size>k__BackingField: {x: 0.76, y: 0.75}
+    - <Offset>k__BackingField: {x: 0.36, y: 0.5}
+      <Size>k__BackingField: {x: 1, y: 0.75}
       <Angle>k__BackingField: 0
     <PointsAwarded>k__BackingField: 3
     <KnockbackVelocity>k__BackingField: {x: 15, y: 0}

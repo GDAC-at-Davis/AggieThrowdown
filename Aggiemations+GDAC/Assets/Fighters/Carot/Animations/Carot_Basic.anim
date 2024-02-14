@@ -22,34 +22,34 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 2022396465, guid: 1c7aa5ffc8cb4a14c927cffbea2a1140, type: 3}
-    - time: 0.0625
+    - time: 0.05882353
       value: {fileID: 1396818475, guid: 1c7aa5ffc8cb4a14c927cffbea2a1140, type: 3}
-    - time: 0.125
+    - time: 0.11764706
       value: {fileID: -206084706, guid: 1c7aa5ffc8cb4a14c927cffbea2a1140, type: 3}
-    - time: 0.1875
+    - time: 0.1764706
       value: {fileID: -918296998, guid: 1c7aa5ffc8cb4a14c927cffbea2a1140, type: 3}
-    - time: 0.25
+    - time: 0.23529412
       value: {fileID: -1716235205, guid: 1c7aa5ffc8cb4a14c927cffbea2a1140, type: 3}
-    - time: 0.3125
+    - time: 0.29411766
       value: {fileID: 499679947, guid: 1c7aa5ffc8cb4a14c927cffbea2a1140, type: 3}
-    - time: 0.375
+    - time: 0.3529412
       value: {fileID: 988105068, guid: 1c7aa5ffc8cb4a14c927cffbea2a1140, type: 3}
-    - time: 0.4375
+    - time: 0.4117647
       value: {fileID: -770285802, guid: 1c7aa5ffc8cb4a14c927cffbea2a1140, type: 3}
-    - time: 0.5
+    - time: 0.47058824
       value: {fileID: 1451323491, guid: 1c7aa5ffc8cb4a14c927cffbea2a1140, type: 3}
-    - time: 0.5625
+    - time: 0.5294118
       value: {fileID: 2057915093, guid: 1c7aa5ffc8cb4a14c927cffbea2a1140, type: 3}
-    - time: 0.625
+    - time: 0.5882353
       value: {fileID: 1128879140, guid: 1c7aa5ffc8cb4a14c927cffbea2a1140, type: 3}
-    - time: 0.6875
+    - time: 0.64705884
       value: {fileID: -1663990732, guid: 1c7aa5ffc8cb4a14c927cffbea2a1140, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 16
+  m_SampleRate: 17
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -83,7 +83,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.75
+    m_StopTime: 0.7058824
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -110,14 +110,35 @@ AnimationClip:
     floatParameter: -10
     intParameter: 0
     messageOptions: 0
-  - time: 0.25
+  - time: 0.05882353
+    functionName: SetActionVelocityX
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 4
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.11764706
+    functionName: SetActionAccelerationY
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: -15
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.23529412
     functionName: TriggerAttackImpactHurtboxes
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.75
+  - time: 0.4117647
+    functionName: TriggerAttackImpactHurtboxes
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.7058824
     functionName: FinishAction
     data: 
     objectReferenceParameter: {fileID: 0}

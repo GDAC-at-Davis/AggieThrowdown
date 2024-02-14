@@ -22,24 +22,24 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 381188940, guid: 0449f709e28dc564b8261000ad8ec299, type: 3}
-    - time: 0.041666668
+    - time: 0.05
       value: {fileID: 569235059, guid: 0449f709e28dc564b8261000ad8ec299, type: 3}
-    - time: 0.083333336
+    - time: 0.1
       value: {fileID: -485549298, guid: 0449f709e28dc564b8261000ad8ec299, type: 3}
-    - time: 0.125
+    - time: 0.15
       value: {fileID: -1307978596, guid: 0449f709e28dc564b8261000ad8ec299, type: 3}
-    - time: 0.16666667
+    - time: 0.2
       value: {fileID: -1123358583, guid: 0449f709e28dc564b8261000ad8ec299, type: 3}
-    - time: 0.20833333
+    - time: 0.25
       value: {fileID: 1976017587, guid: 0449f709e28dc564b8261000ad8ec299, type: 3}
-    - time: 0.29166666
+    - time: 0.35
       value: {fileID: -259623731, guid: 0449f709e28dc564b8261000ad8ec299, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 24
+  m_SampleRate: 20
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -68,7 +68,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.375
+    m_StopTime: 0.45
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -109,28 +109,28 @@ AnimationClip:
     floatParameter: 0.4
     intParameter: 0
     messageOptions: 0
-  - time: 0.041666668
+  - time: 0.05
     functionName: SetActionAccelerationX
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: -100
     intParameter: 0
     messageOptions: 0
-  - time: 0.16666667
+  - time: 0.2
     functionName: SetActionVelocityX
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 12
     intParameter: 0
     messageOptions: 0
-  - time: 0.20833333
+  - time: 0.25
     functionName: TriggerAttackImpactHurtboxes
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.375
+  - time: 0.45
     functionName: FinishAction
     data: 
     objectReferenceParameter: {fileID: 0}

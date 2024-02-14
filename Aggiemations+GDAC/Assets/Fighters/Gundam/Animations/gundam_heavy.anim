@@ -114,6 +114,13 @@ AnimationClip:
     floatParameter: -8
     intParameter: 0
     messageOptions: 0
+  - time: 0.35714287
+    functionName: TriggerAttackImpactHurtboxes
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.5
     functionName: TriggerAttackImpactHurtboxes
     data: 
@@ -121,7 +128,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.78571427
+  - time: 0.85714287
     functionName: FinishAction
     data: 
     objectReferenceParameter: {fileID: 0}

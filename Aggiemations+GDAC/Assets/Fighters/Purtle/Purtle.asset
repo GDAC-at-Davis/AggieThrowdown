@@ -36,18 +36,18 @@ MonoBehaviour:
   <DashCooldown>k__BackingField: 0.5
   <BasicAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
-    - <Offset>k__BackingField: {x: 0.5, y: 0.32}
-      <Size>k__BackingField: {x: 1, y: 0.75}
+    - <Offset>k__BackingField: {x: 1.11, y: 0.57}
+      <Size>k__BackingField: {x: 1.87, y: 1.4}
       <Angle>k__BackingField: 0
     <PointsAwarded>k__BackingField: 3
-    <KnockbackVelocity>k__BackingField: {x: -15, y: 0}
+    <KnockbackVelocity>k__BackingField: {x: 5, y: -30}
   <HeavyAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
-    - <Offset>k__BackingField: {x: 0, y: 0.38}
-      <Size>k__BackingField: {x: 2, y: 2}
+    - <Offset>k__BackingField: {x: 0.55, y: 0.38}
+      <Size>k__BackingField: {x: 1.25, y: 2}
       <Angle>k__BackingField: 5
-    <PointsAwarded>k__BackingField: 6
-    <KnockbackVelocity>k__BackingField: {x: 8, y: 8}
+    <PointsAwarded>k__BackingField: 5
+    <KnockbackVelocity>k__BackingField: {x: -10, y: 5}
   <AnimationOverrides>k__BackingField: {fileID: 22100000, guid: eec64d039aa857b91b7b11711c881153, type: 2}
   <FighterPrefab>k__BackingField: {fileID: 150414167833556814, guid: d430d01ace407c0bb9911ac5dafb5737, type: 3}
   <AudioConfig>k__BackingField:

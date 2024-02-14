@@ -87,6 +87,7 @@ public partial class FighterController : MonoBehaviour
         this.inputProvider = inputProvider;
         this.playerIndex = playerIndex;
         anim.Play("EntryFlex");
+        anim.Update(Time.deltaTime);
     }
 
     private void OnDestroy()

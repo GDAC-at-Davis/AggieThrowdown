@@ -22,24 +22,24 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -758116623, guid: 75b55697d336df34da4c10389f6df7f9, type: 3}
-    - time: 0.083333336
+    - time: 0.1
       value: {fileID: -554642089, guid: 75b55697d336df34da4c10389f6df7f9, type: 3}
-    - time: 0.16666667
+    - time: 0.2
       value: {fileID: 93507191, guid: 75b55697d336df34da4c10389f6df7f9, type: 3}
-    - time: 0.25
+    - time: 0.3
       value: {fileID: 1787849056, guid: 75b55697d336df34da4c10389f6df7f9, type: 3}
-    - time: 0.33333334
+    - time: 0.4
       value: {fileID: -659137489, guid: 75b55697d336df34da4c10389f6df7f9, type: 3}
-    - time: 0.41666666
-      value: {fileID: -578315829, guid: 75b55697d336df34da4c10389f6df7f9, type: 3}
     - time: 0.5
+      value: {fileID: -578315829, guid: 75b55697d336df34da4c10389f6df7f9, type: 3}
+    - time: 0.6
       value: {fileID: -1596434368, guid: 75b55697d336df34da4c10389f6df7f9, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 12
+  m_SampleRate: 10
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -68,7 +68,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5833333
+    m_StopTime: 0.70000005
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -102,35 +102,35 @@ AnimationClip:
     floatParameter: -10
     intParameter: 0
     messageOptions: 0
-  - time: 0.083333336
+  - time: 0.1
     functionName: SetActionAccelerationX
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: -75
     intParameter: 0
     messageOptions: 0
-  - time: 0.25
+  - time: 0.3
     functionName: SetActionVelocityX
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 15
     intParameter: 0
     messageOptions: 0
-  - time: 0.25
+  - time: 0.3
     functionName: TriggerAttackImpactHurtboxes
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.33333334
+  - time: 0.4
     functionName: TriggerAttackImpactHurtboxes
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.5833333
+  - time: 0.7
     functionName: FinishAction
     data: 
     objectReferenceParameter: {fileID: 0}

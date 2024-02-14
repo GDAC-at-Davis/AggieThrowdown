@@ -1,0 +1,404 @@
+fileFormatVersion: 2
+guid: 22cd76cd22f95554faa5299d503e3f1a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 600
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MAN_Taunt_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 2160
+        width: 740
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.30910727, y: 0.05283836}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fecd4c1f6f59b88499d3e540c386fce2
+      internalID: 1421916820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MAN_Taunt_1
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 2160
+        width: 740
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.30773234, y: 0.0652615}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 213cb7e6f47b84049acd39e98c9483b9
+      internalID: -598662560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MAN_Taunt_2
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 2160
+        width: 740
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.29972106, y: 0.06196809}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c67665bd5ae38d489b1861dab0ae99b
+      internalID: -1845456675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MAN_Taunt_3
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 2160
+        width: 740
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.28530076, y: 0.061967865}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 801daacf1da8d7b479b84cb39fa352b1
+      internalID: 71728179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MAN_Taunt_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 740
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.29651675, y: 0.075141735}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b3c02f677ba6a4d9e57f6733a812a9
+      internalID: 1141824384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MAN_Taunt_5
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 1080
+        width: 740
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.31414118, y: 0.090511404}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 157c6816c7f5ae244b7558940519e805
+      internalID: 1618066261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MAN_Taunt_6
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 1080
+        width: 740
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.30132347, y: 0.101489596}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69240ce8f21ff6a4bb825b016d8c8efd
+      internalID: 1949337816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MAN_Taunt_7
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 1080
+        width: 740
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.28209656, y: 0.11027233}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5406d9185de3db044892d1e7f81ccfca
+      internalID: 1494446799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MAN_Taunt_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 740
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.30292565, y: 0.11795703}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82b2d838d68d32e419606b6ccbf21373
+      internalID: 128333516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MAN_Taunt_9
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 0
+        width: 740
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.30132338, y: 0.12015255}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34df9963d772bfd44bc89cd357d40a5e
+      internalID: -2074332581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MAN_Taunt_10
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 0
+        width: 740
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.2933122, y: 0.12234846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22b20301fbe30d24fa91fae42877d3d4
+      internalID: -1829152748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MAN_Taunt_11
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 4
+        width: 740
+        height: 1080
+      alignment: 9
+      pivot: {x: 0.2933122, y: 0.07843539}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98d1c524ea208af4593af53c9def1c19
+      internalID: -354550181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      MAN_Taunt_0: 1421916820
+      MAN_Taunt_1: -598662560
+      MAN_Taunt_10: -1829152748
+      MAN_Taunt_11: -354550181
+      MAN_Taunt_2: -1845456675
+      MAN_Taunt_3: 71728179
+      MAN_Taunt_4: 1141824384
+      MAN_Taunt_5: 1618066261
+      MAN_Taunt_6: 1949337816
+      MAN_Taunt_7: 1494446799
+      MAN_Taunt_8: 128333516
+      MAN_Taunt_9: -2074332581
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
