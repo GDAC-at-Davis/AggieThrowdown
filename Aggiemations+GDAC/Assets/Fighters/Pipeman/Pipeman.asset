@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <FighterName>k__BackingField: Pipeman
   <FighterPortrait>k__BackingField: {fileID: 21300000, guid: 4ec92cefae7a74fa1b2d418cacc56283, type: 3}
-  <FighterDescription>k__BackingField: Pipeman has appeared! Armed with a paper fasterner,
-    he's come to exact revenge on his creator!!!?!???
+  <FighterDescription>k__BackingField: 'Pipeman has appeared! Armed with a paper
+    fasterner, he''s come to exact revenge on his creator!!!?!???
+
+    (Lara, Aron,
+    Kaoushik, Sabi)'
   <IncludeInRoster>k__BackingField: 1
   <FastLoadForTest>k__BackingField: 0
   <MoveStats>k__BackingField:

@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <FighterName>k__BackingField: Tube Man
   <FighterPortrait>k__BackingField: {fileID: 21300000, guid: 31197f84190c2014582549f945430676, type: 3}
-  <FighterDescription>k__BackingField: Tube Man, Destroyer of Worlds arrives from
+  <FighterDescription>k__BackingField: 'Tube Man, Destroyer of Worlds arrives from
     the sixth dimension to lay waste to the insolent lesser beings.
+
+    (Nicholas)'
   <IncludeInRoster>k__BackingField: 1
-  <FastLoadForTest>k__BackingField: 1
+  <FastLoadForTest>k__BackingField: 0
   <MoveStats>k__BackingField:
     <GroundMaxMovementSpeed>k__BackingField: 6
     <MovementAcceleration>k__BackingField: 50

@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <FighterName>k__BackingField: MAN
   <FighterPortrait>k__BackingField: {fileID: 21300000, guid: d493068d9125bee4ab95bd0683ca227f, type: 3}
-  <FighterDescription>k__BackingField: MAN. THE SMALL MAN.
+  <FighterDescription>k__BackingField: 'MAN. THE SMALL MAN.
+
+    (Katie, Lara, Arthur)'
   <IncludeInRoster>k__BackingField: 1
   <FastLoadForTest>k__BackingField: 0
   <MoveStats>k__BackingField:

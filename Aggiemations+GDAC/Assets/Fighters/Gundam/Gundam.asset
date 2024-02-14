@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <FighterName>k__BackingField: Gundam
   <FighterPortrait>k__BackingField: {fileID: 21300000, guid: 8998363974fdb894a9ebee795ebd8597, type: 3}
-  <FighterDescription>k__BackingField: 'Big robot fella '
+  <FighterDescription>k__BackingField: "Big robot fella \n(Jasper, Ethan, Katie)"
   <IncludeInRoster>k__BackingField: 1
   <FastLoadForTest>k__BackingField: 0
   <MoveStats>k__BackingField:
