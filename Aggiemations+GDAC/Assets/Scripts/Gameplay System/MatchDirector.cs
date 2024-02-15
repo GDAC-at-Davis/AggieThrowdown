@@ -36,6 +36,11 @@ public class MatchDirector : MonoBehaviour
         serviceContainer.EventManager.OnPlayerHitByAttack += OnPlayerHitByAttack;
     }
 
+    private void OnDestroy()
+    {
+        serviceContainer.EventManager.OnPlayerHitByAttack -= OnPlayerHitByAttack;
+    }
+
     private void OnPlayerHitByAttack(int playerIndex, FighterCombatController.AttackInstance attackInstance)
     {
         if (gameEnded)
@@ -130,6 +135,7 @@ public class MatchDirector : MonoBehaviour
 
         if (totalDeadCount >= playerScores.Count - 1)
         {
+            gameEnded = true;
             StartCoroutine(EndMatchCoroutine(alivePlayerIndex));
         }
     }
