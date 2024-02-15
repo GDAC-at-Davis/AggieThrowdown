@@ -80,7 +80,7 @@ public class FighterManager : MonoBehaviour
         controller.Initialize(playerIndex, serviceContainer.InputManager.GetInputProvider(playerIndex));
         combatController.Initialize(config, playerIndex, hitbox);
 
-        nameText.text = $"P{playerIndex + 1}";
+        nameText.text = $"{playerIndex + 1}";
         nameText.color = ServiceContainerSO.PlayerColors[playerIndex];
 
         // Hook up events
