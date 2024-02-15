@@ -24,7 +24,7 @@ MonoBehaviour:
     <AirMovementAcceleration>k__BackingField: 15
     <AirMaxMovementSpeed>k__BackingField: 5
     <Gravity>k__BackingField: 10
-    <FastFallVelocity>k__BackingField: 6
+    <FastFallVelocity>k__BackingField: 7
     <MaxGroundStableAngle>k__BackingField: 55
     <GroundCastRadius>k__BackingField: 0.2
     <GroundCastDistance>k__BackingField: 0.26

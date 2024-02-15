@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TubeMan_LightAttack
+  m_Name: BasicAttack
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,21 +21,23 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 839655016, guid: 49127ce128b4179459a2c9edc07d0b5f, type: 3}
-    - time: 0.1
-      value: {fileID: -1473778965, guid: 49127ce128b4179459a2c9edc07d0b5f, type: 3}
-    - time: 0.2
-      value: {fileID: -144546713, guid: 49127ce128b4179459a2c9edc07d0b5f, type: 3}
-    - time: 0.3
-      value: {fileID: -337033015, guid: 49127ce128b4179459a2c9edc07d0b5f, type: 3}
-    - time: 0.4
-      value: {fileID: 1988276513, guid: 49127ce128b4179459a2c9edc07d0b5f, type: 3}
+      value: {fileID: 1700550584, guid: c54464d7e54aa7e43a79e40bb819009f, type: 3}
+    - time: 0.0625
+      value: {fileID: 641152809, guid: c54464d7e54aa7e43a79e40bb819009f, type: 3}
+    - time: 0.125
+      value: {fileID: 205484887, guid: c54464d7e54aa7e43a79e40bb819009f, type: 3}
+    - time: 0.1875
+      value: {fileID: -5650664, guid: c54464d7e54aa7e43a79e40bb819009f, type: 3}
+    - time: 0.25
+      value: {fileID: 2145359703, guid: c54464d7e54aa7e43a79e40bb819009f, type: 3}
+    - time: 0.3125
+      value: {fileID: -1150907692, guid: c54464d7e54aa7e43a79e40bb819009f, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 10
+  m_SampleRate: 16
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -52,17 +54,18 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 839655016, guid: 49127ce128b4179459a2c9edc07d0b5f, type: 3}
-    - {fileID: -1473778965, guid: 49127ce128b4179459a2c9edc07d0b5f, type: 3}
-    - {fileID: -144546713, guid: 49127ce128b4179459a2c9edc07d0b5f, type: 3}
-    - {fileID: -337033015, guid: 49127ce128b4179459a2c9edc07d0b5f, type: 3}
-    - {fileID: 1988276513, guid: 49127ce128b4179459a2c9edc07d0b5f, type: 3}
+    - {fileID: 1700550584, guid: c54464d7e54aa7e43a79e40bb819009f, type: 3}
+    - {fileID: 641152809, guid: c54464d7e54aa7e43a79e40bb819009f, type: 3}
+    - {fileID: 205484887, guid: c54464d7e54aa7e43a79e40bb819009f, type: 3}
+    - {fileID: -5650664, guid: c54464d7e54aa7e43a79e40bb819009f, type: 3}
+    - {fileID: 2145359703, guid: c54464d7e54aa7e43a79e40bb819009f, type: 3}
+    - {fileID: -1150907692, guid: c54464d7e54aa7e43a79e40bb819009f, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 0.375
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -83,24 +86,10 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: MultiplyCurrentVelocityY
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0
-    functionName: SetActionAccelerationX
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: -15
-    intParameter: 0
-    messageOptions: 0
-  - time: 0
     functionName: SetActionVelocityX
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 10
+    floatParameter: 2
     intParameter: 0
     messageOptions: 0
   - time: 0
@@ -110,14 +99,14 @@ AnimationClip:
     floatParameter: -10
     intParameter: 0
     messageOptions: 0
-  - time: 0.1
+  - time: 0.1875
     functionName: TriggerAttackImpactHurtboxes
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.5
+  - time: 0.375
     functionName: FinishAction
     data: 
     objectReferenceParameter: {fileID: 0}

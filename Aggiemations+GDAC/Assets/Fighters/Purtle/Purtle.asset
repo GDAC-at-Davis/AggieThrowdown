@@ -18,12 +18,12 @@ MonoBehaviour:
 
     (Cathryn, Eugene, Arunpreet)'
   <IncludeInRoster>k__BackingField: 1
-  <FastLoadForTest>k__BackingField: 1
+  <FastLoadForTest>k__BackingField: 0
   <MoveStats>k__BackingField:
-    <GroundMaxMovementSpeed>k__BackingField: 5
+    <GroundMaxMovementSpeed>k__BackingField: 8
     <MovementAcceleration>k__BackingField: 50
-    <JumpVelocity>k__BackingField: 6
-    <AirMovementAcceleration>k__BackingField: 15
+    <JumpVelocity>k__BackingField: 9
+    <AirMovementAcceleration>k__BackingField: 50
     <AirMaxMovementSpeed>k__BackingField: 5
     <Gravity>k__BackingField: 13
     <FastFallVelocity>k__BackingField: 6
@@ -34,21 +34,21 @@ MonoBehaviour:
     groundMask:
       serializedVersion: 2
       m_Bits: 64
-  <DashCooldown>k__BackingField: 0.5
+  <DashCooldown>k__BackingField: 0.7
   <BasicAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
-    - <Offset>k__BackingField: {x: 1.11, y: 0.57}
-      <Size>k__BackingField: {x: 1.87, y: 1.4}
+    - <Offset>k__BackingField: {x: 0.81, y: 0.48}
+      <Size>k__BackingField: {x: 2.3, y: 1.85}
       <Angle>k__BackingField: 0
-    <PointsAwarded>k__BackingField: 3
-    <KnockbackVelocity>k__BackingField: {x: 5, y: -30}
+    <PointsAwarded>k__BackingField: 4
+    <KnockbackVelocity>k__BackingField: {x: 5, y: 10}
   <HeavyAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
-    - <Offset>k__BackingField: {x: 0.55, y: 0.38}
-      <Size>k__BackingField: {x: 1.25, y: 2}
-      <Angle>k__BackingField: 5
-    <PointsAwarded>k__BackingField: 5
-    <KnockbackVelocity>k__BackingField: {x: -10, y: 5}
+    - <Offset>k__BackingField: {x: 0, y: 0.09}
+      <Size>k__BackingField: {x: 1.84, y: 2.81}
+      <Angle>k__BackingField: 0
+    <PointsAwarded>k__BackingField: 4
+    <KnockbackVelocity>k__BackingField: {x: -12, y: 5}
   <AnimationOverrides>k__BackingField: {fileID: 22100000, guid: eec64d039aa857b91b7b11711c881153, type: 2}
   <FighterPrefab>k__BackingField: {fileID: 150414167833556814, guid: d430d01ace407c0bb9911ac5dafb5737, type: 3}
   <AudioConfig>k__BackingField:
