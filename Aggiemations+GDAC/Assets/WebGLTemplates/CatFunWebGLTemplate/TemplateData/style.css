@@ -1,0 +1,251 @@
+/*#region Main Structure*/
+
+body {
+    padding: 0;
+    margin: 0
+}
+
+#unity-container {
+    position: absolute
+}
+
+#unity-container.unity-desktop {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: {{{BACKGROUND_COLOR}}};
+}
+
+#unity-container.unity-mobile {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: {{{BACKGROUND_COLOR}}};
+}
+
+#unity-canvas {
+    background-color: {{{BACKGROUND_COLOR}}};
+}
+
+.unity-mobile #unity-canvas {
+    width: 100%;
+    height: 100%
+}
+
+/*#endregion*/
+
+/*#region Loading Page*/
+
+#unity-loading-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    /* Fade out */
+    transition-delay: 450ms;
+    transition-property: opacity;
+    transition-duration: 800ms;
+    transition-timing-function: ease-in;
+    display: none;
+
+    background-color: {{{BACKGROUND_COLOR}}};
+
+    z-index: 1;
+}
+
+#unity-loading-bar {
+    position: absolute;
+
+    /* CHANGE THIS TO CONFIGURE HOW HIGH UP THE SOCKET/WIRE GOES */
+    top: 66%;
+
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+#loading-power-socket-top {
+    width: 64px;
+    height: 64px;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+    background-image: url('power-socket-top.png');
+    background-repeat: no-repeat;
+    background-position :center;
+    background-size: 64px;
+
+    /* Goes over the prongs */
+    z-index: 1;
+
+    /* No anti-aliasing for crisp pixel art */
+    image-rendering: pixelated;
+}
+
+#loading-power-socket-bot {
+    width: 64px;
+    height: 64px;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+    background-image: url('power-socket-bottom.png');
+    background-repeat: no-repeat;
+    background-position :center;
+    background-size: 64px;
+
+    image-rendering: pixelated;
+}
+
+#unity-progress-bar-fill {
+    position: absolute;
+    bottom: 0; 
+    height: 0%;
+    width: 32px;
+    image-rendering: pixelated;
+}
+
+#unity-progress-bar-wire {
+    position: top;
+    height: 100%;
+
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+    width: 8px;
+    background-image: url('wire.png');
+    background-position: center;
+    background-size: 8px;
+
+    z-index: -1;
+    image-rendering: pixelated;
+}
+
+#unity-progress-bar-prongs {
+    position: top;
+    width: 64px;
+    height: 64px;
+
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+    background-image: url('power-prong.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 64px;
+
+    image-rendering: pixelated;
+}
+
+#loading-cat {
+    width: 64px;
+    height: 64px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    /* CHANGE THIS TO CONFIGURE CAT VERTICAL POSITION */
+    padding-bottom: 0px;
+
+    background-image: url('cat.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 64px;
+
+    z-index: 2;
+
+    image-rendering: pixelated;
+}
+
+#loading-lightbulb {
+    width: 64px;
+    height: 64px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    /* CHANGE THIS TO CONFIGURE LIGHTBULB VERTICAL POSITION */
+    padding-bottom: 120px;
+
+    background-image: url('lightbulb.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 64px;
+
+    image-rendering: pixelated;
+    
+}
+
+
+/*#endregion*/
+
+/*#region Footer Row*/
+
+#unity-footer {
+    position: relative;
+}
+
+/* Mobile is fullscreen by default*/
+.unity-mobile #unity-footer {
+    display: none;
+}
+
+#unity-fullscreen-button {
+    cursor: pointer;
+    float: right;
+    width: 32px;
+    height: 32px;
+    
+    background-image: url('fullscreen-button.png');
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-size: contain;
+    transform:scale(0.9);
+    will-change: transform;
+    transition: transform 200ms ease-out 200ms;
+}
+
+#unity-fullscreen-button:hover {
+    transform:scale(1)
+}
+
+/*#endregion*/
+
+/*#region Warning Popup*/
+
+#unity-warning {
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%);
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    display: none
+}
+
+/*#endregion*/
+
+/*#region Helpers*/
+
+#background {
+    background-color: {{{BACKGROUND_COLOR}}};
+}
+
+.semitransparent-background {
+    opacity: 0.2;
+}
+
+.transparent-background {
+    opacity: 0;
+}
+
+/*#endregion*/
