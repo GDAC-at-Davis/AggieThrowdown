@@ -17,8 +17,7 @@ MonoBehaviour:
   <FighterDescription>k__BackingField: 'Pipeman has appeared! Armed with a paper
     fasterner, he''s come to exact revenge on his creator!!!?!???
 
-    (Lara, Aron,
-    Kaoushik, Sabi)'
+'
   <IncludeInRoster>k__BackingField: 1
   <FastLoadForTest>k__BackingField: 0
   <MoveStats>k__BackingField:

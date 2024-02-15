@@ -14,10 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <FighterName>k__BackingField: The AntiChrist
   <FighterPortrait>k__BackingField: {fileID: 21300000, guid: b8921c148f79826459847dd5bbe2d982, type: 3}
-  <FighterDescription>k__BackingField: 'innocent carrot got peeled!
+  <FighterDescription>k__BackingField: 'Innocent carrot got peeled!
 
-    (Merritt,
-    Jason, Arthur)
 
 '
   <IncludeInRoster>k__BackingField: 1

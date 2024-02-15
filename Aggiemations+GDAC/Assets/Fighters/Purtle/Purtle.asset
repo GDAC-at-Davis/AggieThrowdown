@@ -16,7 +16,7 @@ MonoBehaviour:
   <FighterPortrait>k__BackingField: {fileID: 21300000, guid: 0842dd131bb169e43af9a35fe2111bed, type: 3}
   <FighterDescription>k__BackingField: 'Purtle Purtle
 
-    (Cathryn, Eugene, Arunpreet)'
+'
   <IncludeInRoster>k__BackingField: 1
   <FastLoadForTest>k__BackingField: 0
   <MoveStats>k__BackingField:

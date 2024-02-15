@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d2d4dc77e48e364aa469586c6652a40, type: 3}
   m_Name: Gundam
   m_EditorClassIdentifier: 
-  <FighterName>k__BackingField: Gundam
+  <FighterName>k__BackingField: Destiny Gundam
   <FighterPortrait>k__BackingField: {fileID: 21300000, guid: 8998363974fdb894a9ebee795ebd8597, type: 3}
-  <FighterDescription>k__BackingField: "Big robot fella \n(Jasper, Ethan, Katie)"
+  <FighterDescription>k__BackingField: "Big robot fella \n"
   <IncludeInRoster>k__BackingField: 1
   <FastLoadForTest>k__BackingField: 0
   <MoveStats>k__BackingField:
