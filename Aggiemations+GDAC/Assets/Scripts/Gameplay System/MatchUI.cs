@@ -54,7 +54,8 @@ public class MatchUI : MonoBehaviour
         {
             var scoreUI = Instantiate(playerScorePrefab, playerScoreLayout.transform);
             scoreUI.Initialize(i);
-            scoreUI.UpdateSlider(0);
+            scoreUI.UpdateSlider(1);
+            scoreUI.SetFlipX(i % 2 == 0);
             playerScoreUIs.Add(scoreUI);
         }
     }

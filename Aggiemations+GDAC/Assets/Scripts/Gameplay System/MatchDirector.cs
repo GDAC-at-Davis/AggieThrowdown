@@ -43,9 +43,9 @@ public class MatchDirector : MonoBehaviour
             return;
         }
 
-        playerScores[attackInstance.sourcePlayerIndex] += attackInstance.attackConfig.PointsAwarded;
-        matchUI.UpdateScoreUI(attackInstance.sourcePlayerIndex,
-            playerScores[attackInstance.sourcePlayerIndex] / winningScore);
+        playerScores[playerIndex] += attackInstance.attackConfig.PointsAwarded;
+        matchUI.UpdateScoreUI(playerIndex,
+            1 - playerScores[playerIndex] / winningScore);
 
         Debug.Log(playerScores[attackInstance.sourcePlayerIndex]);
         CheckForGameEnd();
@@ -114,20 +114,23 @@ public class MatchDirector : MonoBehaviour
 
     private void CheckForGameEnd()
     {
-        var winningPlayerIndex = -1;
+        var alivePlayerIndex = 0;
+        var totalDeadCount = 0;
         for (var i = 0; i < playerScores.Count; i++)
         {
-            if (playerScores[i] >= winningScore)
+            if (playerScores[i] < winningScore)
             {
-                winningPlayerIndex = i;
-                gameEnded = true;
-                break;
+                alivePlayerIndex = i;
+            }
+            else
+            {
+                totalDeadCount++;
             }
         }
 
-        if (winningPlayerIndex != -1)
+        if (totalDeadCount >= playerScores.Count - 1)
         {
-            StartCoroutine(EndMatchCoroutine(winningPlayerIndex));
+            StartCoroutine(EndMatchCoroutine(alivePlayerIndex));
         }
     }
 
