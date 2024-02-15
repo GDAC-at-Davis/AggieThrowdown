@@ -35,20 +35,20 @@ MonoBehaviour:
     groundMask:
       serializedVersion: 2
       m_Bits: 64
-  <DashCooldown>k__BackingField: 0.8
+  <DashCooldown>k__BackingField: 1
   <BasicAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
     - <Offset>k__BackingField: {x: 0.6, y: 0.45}
-      <Size>k__BackingField: {x: 1, y: 1}
+      <Size>k__BackingField: {x: 1.29, y: 1}
       <Angle>k__BackingField: 0
     <PointsAwarded>k__BackingField: 3
     <KnockbackVelocity>k__BackingField: {x: 10, y: 3}
   <HeavyAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
     - <Offset>k__BackingField: {x: 0, y: 0.5}
-      <Size>k__BackingField: {x: 1.7, y: 1.2}
+      <Size>k__BackingField: {x: 1.97, y: 1.48}
       <Angle>k__BackingField: 0
-    <PointsAwarded>k__BackingField: 5
+    <PointsAwarded>k__BackingField: 4
     <KnockbackVelocity>k__BackingField: {x: 5, y: 5}
   <AnimationOverrides>k__BackingField: {fileID: 22100000, guid: 24013ff10e319314f970f96a87e36489, type: 2}
   <FighterPrefab>k__BackingField: {fileID: 150414167833556814, guid: dd2f284b4ef5aa040b6e423ccb4e2e76, type: 3}

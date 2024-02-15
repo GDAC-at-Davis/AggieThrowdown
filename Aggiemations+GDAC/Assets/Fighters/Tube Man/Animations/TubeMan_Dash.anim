@@ -80,7 +80,7 @@ AnimationClip:
     functionName: SetActionVelocityX
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 10
+    floatParameter: 12
     intParameter: 0
     messageOptions: 0
   - time: 0
@@ -88,6 +88,13 @@ AnimationClip:
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0
+    functionName: SetActionAccelerationX
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: -10
     intParameter: 0
     messageOptions: 0
   - time: 0.16666667

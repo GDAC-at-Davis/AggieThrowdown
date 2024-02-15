@@ -34,7 +34,7 @@ MonoBehaviour:
     groundMask:
       serializedVersion: 2
       m_Bits: 64
-  <DashCooldown>k__BackingField: 0.5
+  <DashCooldown>k__BackingField: 0.7
   <BasicAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
     - <Offset>k__BackingField: {x: 0.55, y: 0.44}
