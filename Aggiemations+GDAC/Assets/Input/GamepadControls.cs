@@ -86,7 +86,18 @@ public partial class @GamepadControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""42cdbc05-ff28-433c-8d6d-4fb4832f3c8a"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""33e7fc5b-fef9-4f8d-ad72-28bb0dc6ae1e"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -108,7 +119,7 @@ public partial class @GamepadControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7331478a-d09c-487f-b12d-6c8c665cf4ea"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -119,7 +130,18 @@ public partial class @GamepadControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""5be7f844-bf8e-4c5c-8202-58656b3d8337"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e040aef5-ac95-4c37-bc10-f500c2ca68f3"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -131,6 +153,17 @@ public partial class @GamepadControls: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""f744e40f-e958-4540-a250-a9774af5fc41"",
                     ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Taunt"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dda585d0-6656-4404-814d-7cb0c63b1db1"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
