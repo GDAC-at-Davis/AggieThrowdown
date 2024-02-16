@@ -74,9 +74,14 @@ public class GamepadInputSource : InputSource, GamepadControls.IGameplayActions
         inputProviders[PlayerIndex].TriggerOnHeavyAttackInput(context);
     }
 
-    public void OnDash(InputAction.CallbackContext context)
+    public void OnDash_Left(InputAction.CallbackContext context)
     {
-        inputProviders[PlayerIndex].TriggerOnDashInput(context);
+        inputProviders[PlayerIndex].TriggerOnDashInput(context, -1);
+    }
+
+    public void OnDash_Right(InputAction.CallbackContext context)
+    {
+        inputProviders[PlayerIndex].TriggerOnDashInput(context, 1);
     }
 
     public void OnTaunt(InputAction.CallbackContext context)

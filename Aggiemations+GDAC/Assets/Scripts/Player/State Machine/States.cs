@@ -90,6 +90,11 @@ public partial class FighterController : MonoBehaviour
             return;
         }
 
+        if (ctx.direction != 0)
+        {
+            xInput = ctx.direction;
+        }
+
         SwitchState(State.Dash);
     }
 

@@ -39,6 +39,7 @@ public class InputProvider
         public bool buffered;
         public InputActionPhase phase;
         public InputAction.CallbackContext callbackContext;
+        public int direction;
     }
 
     private List<BufferEntry> inputBuffer = new();
@@ -48,23 +49,25 @@ public class InputProvider
         this.bufferDuration = bufferDuration;
     }
 
-    private void QueueInputToBuffer(InputType type, InputAction.CallbackContext context)
+    private void QueueInputToBuffer(InputType type, InputAction.CallbackContext context, int direction = 0)
     {
         inputBuffer.Add(new BufferEntry
         {
             inputType = type,
             time = Time.time,
-            context = ContextFromCallback(context, true)
+            context = ContextFromCallback(context, true, direction)
         });
     }
 
-    private InputContext ContextFromCallback(InputAction.CallbackContext context, bool buffered = false)
+    private InputContext ContextFromCallback(InputAction.CallbackContext context, bool buffered = false,
+        int direction = 0)
     {
         return new InputContext
         {
             phase = context.phase,
             callbackContext = context,
-            buffered = buffered
+            buffered = buffered,
+            direction = direction
         };
     }
 
@@ -122,10 +125,10 @@ public class InputProvider
         QueueInputToBuffer(InputType.HeavyAttack, context);
     }
 
-    public void TriggerOnDashInput(InputAction.CallbackContext context)
+    public void TriggerOnDashInput(InputAction.CallbackContext context, int direction = 0)
     {
-        OnDashInput?.Invoke(ContextFromCallback(context));
-        QueueInputToBuffer(InputType.Dash, context);
+        OnDashInput?.Invoke(ContextFromCallback(context, true, direction));
+        QueueInputToBuffer(InputType.Dash, context, direction);
     }
 
     public void TriggerOnTauntInput(InputAction.CallbackContext context)

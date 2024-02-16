@@ -64,9 +64,18 @@ public partial class @GamepadControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Dash"",
+                    ""name"": ""Dash_Left"",
                     ""type"": ""Button"",
                     ""id"": ""01780217-5bf7-4357-bf1c-c8330cd9d644"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Dash_Right"",
+                    ""type"": ""Button"",
+                    ""id"": ""433f977b-4782-4c7b-a08f-e77cbed4d1f9"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -134,36 +143,14 @@ public partial class @GamepadControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Dash"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e040aef5-ac95-4c37-bc10-f500c2ca68f3"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Dash"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""f744e40f-e958-4540-a250-a9774af5fc41"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Taunt"",
+                    ""action"": ""Dash_Left"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""dda585d0-6656-4404-814d-7cb0c63b1db1"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -192,6 +179,17 @@ public partial class @GamepadControls: IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""05244636-cd68-40d5-956f-e1f7d8b39fc4"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash_Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -204,7 +202,8 @@ public partial class @GamepadControls: IInputActionCollection2, IDisposable
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
         m_Gameplay_Basic = m_Gameplay.FindAction("Basic", throwIfNotFound: true);
         m_Gameplay_Heavy = m_Gameplay.FindAction("Heavy", throwIfNotFound: true);
-        m_Gameplay_Dash = m_Gameplay.FindAction("Dash", throwIfNotFound: true);
+        m_Gameplay_Dash_Left = m_Gameplay.FindAction("Dash_Left", throwIfNotFound: true);
+        m_Gameplay_Dash_Right = m_Gameplay.FindAction("Dash_Right", throwIfNotFound: true);
         m_Gameplay_Taunt = m_Gameplay.FindAction("Taunt", throwIfNotFound: true);
     }
 
@@ -271,7 +270,8 @@ public partial class @GamepadControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Jump;
     private readonly InputAction m_Gameplay_Basic;
     private readonly InputAction m_Gameplay_Heavy;
-    private readonly InputAction m_Gameplay_Dash;
+    private readonly InputAction m_Gameplay_Dash_Left;
+    private readonly InputAction m_Gameplay_Dash_Right;
     private readonly InputAction m_Gameplay_Taunt;
     public struct GameplayActions
     {
@@ -281,7 +281,8 @@ public partial class @GamepadControls: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
         public InputAction @Basic => m_Wrapper.m_Gameplay_Basic;
         public InputAction @Heavy => m_Wrapper.m_Gameplay_Heavy;
-        public InputAction @Dash => m_Wrapper.m_Gameplay_Dash;
+        public InputAction @Dash_Left => m_Wrapper.m_Gameplay_Dash_Left;
+        public InputAction @Dash_Right => m_Wrapper.m_Gameplay_Dash_Right;
         public InputAction @Taunt => m_Wrapper.m_Gameplay_Taunt;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
@@ -304,9 +305,12 @@ public partial class @GamepadControls: IInputActionCollection2, IDisposable
             @Heavy.started += instance.OnHeavy;
             @Heavy.performed += instance.OnHeavy;
             @Heavy.canceled += instance.OnHeavy;
-            @Dash.started += instance.OnDash;
-            @Dash.performed += instance.OnDash;
-            @Dash.canceled += instance.OnDash;
+            @Dash_Left.started += instance.OnDash_Left;
+            @Dash_Left.performed += instance.OnDash_Left;
+            @Dash_Left.canceled += instance.OnDash_Left;
+            @Dash_Right.started += instance.OnDash_Right;
+            @Dash_Right.performed += instance.OnDash_Right;
+            @Dash_Right.canceled += instance.OnDash_Right;
             @Taunt.started += instance.OnTaunt;
             @Taunt.performed += instance.OnTaunt;
             @Taunt.canceled += instance.OnTaunt;
@@ -326,9 +330,12 @@ public partial class @GamepadControls: IInputActionCollection2, IDisposable
             @Heavy.started -= instance.OnHeavy;
             @Heavy.performed -= instance.OnHeavy;
             @Heavy.canceled -= instance.OnHeavy;
-            @Dash.started -= instance.OnDash;
-            @Dash.performed -= instance.OnDash;
-            @Dash.canceled -= instance.OnDash;
+            @Dash_Left.started -= instance.OnDash_Left;
+            @Dash_Left.performed -= instance.OnDash_Left;
+            @Dash_Left.canceled -= instance.OnDash_Left;
+            @Dash_Right.started -= instance.OnDash_Right;
+            @Dash_Right.performed -= instance.OnDash_Right;
+            @Dash_Right.canceled -= instance.OnDash_Right;
             @Taunt.started -= instance.OnTaunt;
             @Taunt.performed -= instance.OnTaunt;
             @Taunt.canceled -= instance.OnTaunt;
@@ -355,7 +362,8 @@ public partial class @GamepadControls: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnBasic(InputAction.CallbackContext context);
         void OnHeavy(InputAction.CallbackContext context);
-        void OnDash(InputAction.CallbackContext context);
+        void OnDash_Left(InputAction.CallbackContext context);
+        void OnDash_Right(InputAction.CallbackContext context);
         void OnTaunt(InputAction.CallbackContext context);
     }
 }
