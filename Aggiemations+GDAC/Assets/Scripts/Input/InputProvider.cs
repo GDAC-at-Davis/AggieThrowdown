@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Input provider represents the interface between the input system and users 
+/// </summary>
 public class InputProvider
 {
     public Vector2 MovementInput { get; set; }

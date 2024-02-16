@@ -120,8 +120,11 @@ public partial class FighterController : MonoBehaviour
         moveEngine.Move(xInput, moveStats, moveDependencies);
 
         // Fastfall
-        if (!moveEngine.Context.IsGrounded && inputProvider.MovementInput.y < 0 &&
-            moveDependencies.Rb.velocity.y > -moveStats.FastFallVelocity)
+        if (!moveEngine.Context.IsGrounded
+            && inputProvider.MovementInput.y < -0.4f
+            && moveDependencies.Rb.velocity.y > -moveStats.FastFallVelocity
+            && !jumping
+            && jumpStaticTimer < 0)
         {
             var vel = moveDependencies.Rb.velocity;
             vel.y = -moveStats.FastFallVelocity;

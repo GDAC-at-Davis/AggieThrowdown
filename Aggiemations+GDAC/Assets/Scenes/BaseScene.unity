@@ -179,6 +179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 51350691}
   - component: {fileID: 51350692}
+  - component: {fileID: 51350693}
   m_Layer: 0
   m_Name: Input Manager
   m_TagString: Untagged
@@ -215,6 +216,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   container: {fileID: 11400000, guid: 3fc2650fb7b155344982f95f802766cc, type: 2}
   inputBufferDuration: 0.2
+--- !u!114 &51350693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51350690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ebca13350bc954b9822bc247ef2046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiInputManager: {fileID: 51350692}
 --- !u!1 &1271793633
 GameObject:
   m_ObjectHideFlags: 0

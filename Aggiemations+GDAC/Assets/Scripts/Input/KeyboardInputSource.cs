@@ -1,47 +1,22 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MultiInputManager : MonoBehaviour, DefaultControls.IGameplayActions
+public class KeyboardInputSource : InputSource, DefaultControls.IGameplayActions
 {
-    [SerializeField]
-    private ServiceContainerSO container;
+    private DefaultControls inputMap;
 
-    [SerializeField]
-    private float inputBufferDuration;
-
-    private readonly List<InputProvider> inputProviders = new();
-    private DefaultControls input;
-
-    private void Awake()
+    public KeyboardInputSource(MultiInputManager inputManager) : base(inputManager)
     {
-        container.InputManager = this;
-
-        input = new DefaultControls();
-        input.Enable();
-        input.Gameplay.AddCallbacks(this);
-
-        inputProviders.Add(new InputProvider());
-        inputProviders.Add(new InputProvider());
-
-        foreach (var inputProvider in inputProviders)
-        {
-            inputProvider.Initialize(inputBufferDuration);
-        }
+        inputMap = new DefaultControls();
+        inputMap.Enable();
+        inputMap.Gameplay.AddCallbacks(this);
     }
 
-    private void OnDestroy()
+    public override void Dispose()
     {
-        input.Disable();
-    }
-
-    private void Update()
-    {
-        foreach (var inputProvider in inputProviders)
-        {
-            inputProvider.Update();
-        }
+        inputMap.Disable();
     }
 
     public void OnMovement_P1(InputAction.CallbackContext context)
@@ -104,10 +79,5 @@ public class MultiInputManager : MonoBehaviour, DefaultControls.IGameplayActions
     public void OnTaunt_P2(InputAction.CallbackContext context)
     {
         inputProviders[1].TriggerOnTauntInput(context);
-    }
-
-    public InputProvider GetInputProvider(int playerIndex)
-    {
-        return inputProviders[playerIndex];
     }
 }
