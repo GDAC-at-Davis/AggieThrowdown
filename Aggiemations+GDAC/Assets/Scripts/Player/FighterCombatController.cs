@@ -11,8 +11,6 @@ public class FighterCombatController : MonoBehaviour
 
     private static Coroutine FreezeFrameCorout;
     public event Action<AttackInstance, bool> OnHitByAttack;
-    public event Action<AttackInstance> OnKilledAttack;
-
     public int IsInvincible { get; private set; }
     public bool IsSuperArmor { get; private set; }
 
@@ -20,7 +18,6 @@ public class FighterCombatController : MonoBehaviour
     private FighterHitbox hitbox;
     private FighterConfigSO config;
 
-    public int CurrentHealth { get; private set; }
 
     public struct AttackInstance
     {
@@ -105,13 +102,6 @@ public class FighterCombatController : MonoBehaviour
         }
 
         OnHitByAttack?.Invoke(instance, IsSuperArmor);
-
-        CurrentHealth -= instance.attackConfig.PointsAwarded;
-
-        if (CurrentHealth <= 0)
-        {
-            OnKilledAttack?.Invoke(instance);
-        }
 
         // Freeze frame
         if (FreezeFrameCorout != null)

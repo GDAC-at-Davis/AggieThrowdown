@@ -56,7 +56,7 @@ public class AttackConfig
     public List<Hurtbox> Hurtboxes { get; private set; }
 
     [field: SerializeField]
-    public int PointsAwarded { get; private set; }
+    public float PointsAwarded { get; private set; }
 
     [field: SerializeField]
     public Vector2 KnockbackVelocity { get; private set; }

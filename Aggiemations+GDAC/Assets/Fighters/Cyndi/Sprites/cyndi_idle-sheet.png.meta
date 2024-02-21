@@ -1,0 +1,391 @@
+fileFormatVersion: 2
+guid: b9c7ad02f4fb7a040bf7b317cbe529c4
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cyndi_idle-sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2196
+        width: 1906
+        height: 1098
+      alignment: 9
+      pivot: {x: 0.54623187, y: 0.45121858}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fdc19bd1eb1ae348995b96b57937179
+      internalID: 211772468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyndi_idle-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1906
+        y: 2196
+        width: 1906
+        height: 1098
+      alignment: 9
+      pivot: {x: 0.55076444, y: 0.4433507}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0884ff474957224d962fddce905ce6f
+      internalID: -2128213774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyndi_idle-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 3812
+        y: 2196
+        width: 1906
+        height: 1098
+      alignment: 9
+      pivot: {x: 0.54433674, y: 0.45315167}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 702fb0ae369de894ab40c38e4049a4be
+      internalID: -680809346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyndi_idle-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 5718
+        y: 2196
+        width: 1906
+        height: 1098
+      alignment: 9
+      pivot: {x: 0.5655414, y: 0.4364205}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 876e6a946a7b13e4889350b3d4efa306
+      internalID: -1736574693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyndi_idle-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1098
+        width: 1906
+        height: 1098
+      alignment: 9
+      pivot: {x: 0.56554204, y: 0.4364205}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32ac368fff600ab498ba2716794a13e5
+      internalID: 892135562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyndi_idle-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1906
+        y: 1098
+        width: 1906
+        height: 1098
+      alignment: 9
+      pivot: {x: 0.5412366, y: 0.46924096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24fd31ec0bf732a408634608f07bc196
+      internalID: -2006205707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyndi_idle-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 3812
+        y: 1098
+        width: 1906
+        height: 1098
+      alignment: 9
+      pivot: {x: 0.5621483, y: 0.45195922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40c450bdf62176d4db964e6332893a85
+      internalID: 815343385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyndi_idle-sheet_7
+      rect:
+        serializedVersion: 2
+        x: 5718
+        y: 1098
+        width: 1906
+        height: 1098
+      alignment: 9
+      pivot: {x: 0.56991696, y: 0.44521657}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f762d5c30a8ff7418f0a136801a70cc
+      internalID: 523945587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyndi_idle-sheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1906
+        height: 1098
+      alignment: 9
+      pivot: {x: 0.5844545, y: 0.44002625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df8287169d646b54fa99cb43efcf8470
+      internalID: 1305943325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyndi_idle-sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 0
+        width: 1906
+        height: 1098
+      alignment: 9
+      pivot: {x: 0.61594886, y: 0.44198585}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c572a9c4d6f8db49b501ea367ad5877
+      internalID: -823363321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyndi_idle-sheet_10
+      rect:
+        serializedVersion: 2
+        x: 3812
+        y: 0
+        width: 1906
+        height: 1098
+      alignment: 9
+      pivot: {x: 0.60230774, y: 0.44435352}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59c2fdb2dcffe434cb9c8bcd5be241e8
+      internalID: 421046757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyndi_idle-sheet_11
+      rect:
+        serializedVersion: 2
+        x: 5718
+        y: 2
+        width: 1906
+        height: 1098
+      alignment: 9
+      pivot: {x: 0.62686193, y: 0.4408019}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8efd99c902221254096a70dd4a929fe5
+      internalID: 1074119900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      cyndi_idle-sheet_0: 211772468
+      cyndi_idle-sheet_1: -2128213774
+      cyndi_idle-sheet_10: 421046757
+      cyndi_idle-sheet_11: 1074119900
+      cyndi_idle-sheet_2: -680809346
+      cyndi_idle-sheet_3: -1736574693
+      cyndi_idle-sheet_4: 892135562
+      cyndi_idle-sheet_5: -2006205707
+      cyndi_idle-sheet_6: 815343385
+      cyndi_idle-sheet_7: 523945587
+      cyndi_idle-sheet_8: 1305943325
+      cyndi_idle-sheet_9: -823363321
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

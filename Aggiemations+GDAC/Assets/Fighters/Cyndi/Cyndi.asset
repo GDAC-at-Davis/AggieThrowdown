@@ -10,47 +10,45 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d2d4dc77e48e364aa469586c6652a40, type: 3}
-  m_Name: Purtle
+  m_Name: Cyndi
   m_EditorClassIdentifier: 
-  <FighterName>k__BackingField: Purtle
-  <FighterPortrait>k__BackingField: {fileID: 21300000, guid: 0842dd131bb169e43af9a35fe2111bed, type: 3}
-  <FighterDescription>k__BackingField: 'Purtle Purtle
-
-'
+  <FighterName>k__BackingField: Cyndi
+  <FighterPortrait>k__BackingField: {fileID: 21300000, guid: 0b47883d6dc899b42b58ed182708f7b1, type: 3}
+  <FighterDescription>k__BackingField: Silly little clay creature!
   <IncludeInRoster>k__BackingField: 1
-  <FastLoadForTest>k__BackingField: 0
+  <FastLoadForTest>k__BackingField: 1
   <MoveStats>k__BackingField:
-    <GroundMaxMovementSpeed>k__BackingField: 8
+    <GroundMaxMovementSpeed>k__BackingField: 5
     <MovementAcceleration>k__BackingField: 50
-    <JumpVelocity>k__BackingField: 9
-    <AirMovementAcceleration>k__BackingField: 50
+    <JumpVelocity>k__BackingField: 6
+    <AirMovementAcceleration>k__BackingField: 15
     <AirMaxMovementSpeed>k__BackingField: 5
     <Gravity>k__BackingField: 13
-    <FastFallVelocity>k__BackingField: 6
+    <FastFallVelocity>k__BackingField: 5
     <MaxGroundStableAngle>k__BackingField: 55
     <GroundCastRadius>k__BackingField: 0.2
-    <GroundCastDistance>k__BackingField: 0.26
-    <GroundCastOffset>k__BackingField: 0.32
+    <GroundCastDistance>k__BackingField: 0.58
+    <GroundCastOffset>k__BackingField: 0.64
     groundMask:
       serializedVersion: 2
       m_Bits: 64
-  <DashCooldown>k__BackingField: 0.4
+  <DashCooldown>k__BackingField: 0.5
   <BasicAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
-    - <Offset>k__BackingField: {x: 0.81, y: 0.48}
-      <Size>k__BackingField: {x: 2.3, y: 1.85}
+    - <Offset>k__BackingField: {x: 0.74, y: 0.22}
+      <Size>k__BackingField: {x: 0.99, y: 0.85}
       <Angle>k__BackingField: 0
-    <PointsAwarded>k__BackingField: 3
-    <KnockbackVelocity>k__BackingField: {x: 5, y: 10}
+    <PointsAwarded>k__BackingField: 5
+    <KnockbackVelocity>k__BackingField: {x: 15, y: 0}
   <HeavyAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
-    - <Offset>k__BackingField: {x: 0, y: 0.09}
-      <Size>k__BackingField: {x: 1.84, y: 2.81}
-      <Angle>k__BackingField: 0
-    <PointsAwarded>k__BackingField: 4
-    <KnockbackVelocity>k__BackingField: {x: -12, y: 5}
-  <AnimationOverrides>k__BackingField: {fileID: 22100000, guid: eec64d039aa857b91b7b11711c881153, type: 2}
-  <FighterPrefab>k__BackingField: {fileID: 150414167833556814, guid: d430d01ace407c0bb9911ac5dafb5737, type: 3}
+    - <Offset>k__BackingField: {x: 0.53, y: 0.37}
+      <Size>k__BackingField: {x: 0.89, y: 0.89}
+      <Angle>k__BackingField: 4.9
+    <PointsAwarded>k__BackingField: 1.5
+    <KnockbackVelocity>k__BackingField: {x: 5, y: 2}
+  <AnimationOverrides>k__BackingField: {fileID: 22100000, guid: cbf31656037cbf249a0b016865f6072c, type: 2}
+  <FighterPrefab>k__BackingField: {fileID: 150414167833556814, guid: 6f4952c2f353b134a91aafc91ac7c654, type: 3}
   <AudioConfig>k__BackingField:
     <JumpClip>k__BackingField: {fileID: 8300000, guid: 6d1f004a849db5749b59f6daba3683da, type: 3}
     <DashClip>k__BackingField: {fileID: 8300000, guid: 8a37af193e72519448a65809fa03bdff, type: 3}

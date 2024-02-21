@@ -20,7 +20,7 @@ public class MatchDirector : MonoBehaviour
     private ArenaMap map;
 
     [SerializeField]
-    private int winningScore = 50;
+    private float winningScore = 50;
 
     private List<PlayerInfo> playerInfos = new();
     private List<float> playerScores = new();
