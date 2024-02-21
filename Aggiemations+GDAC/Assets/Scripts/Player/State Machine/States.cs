@@ -136,6 +136,11 @@ public partial class FighterController : MonoBehaviour
             moveDependencies.Rb.velocity = vel;
         }
 
+        if (moveEngine.Context.IsGrounded)
+        {
+            didJump = false;
+        }
+
         var maxFallSpeed = 15f;
         // Limit fall speed
         if (moveDependencies.Rb.velocity.y < -maxFallSpeed)
@@ -167,8 +172,9 @@ public partial class FighterController : MonoBehaviour
 
     private void HandleJumpInput(InputProvider.InputContext ctx)
     {
-        var canJump = !jumping && jumpStaticTimer < 0f &&
-                      (moveEngine.Context.AirTime < 0.1f || moveEngine.Context.IsStableOnGround);
+        var coyoteTime = Time.time - moveEngine.Context.LastGroundedTime < moveStats.CoyoteTime;
+        var canJump = !jumping && jumpStaticTimer < 0f && !didJump &&
+                      (coyoteTime || moveEngine.Context.IsStableOnGround);
 
         if (ctx.phase == InputActionPhase.Started && canJump)
         {
@@ -178,6 +184,7 @@ public partial class FighterController : MonoBehaviour
             SFXOneshotPlayer.Instance.PlaySFXOneshot(bodyTransformPivot.position, fighterConfig.AudioConfig.JumpClip);
             jumping = true;
             jumpStaticTimer = 0.2f;
+            didJump = true;
         }
 
         // Early release

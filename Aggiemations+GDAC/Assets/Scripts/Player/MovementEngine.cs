@@ -20,10 +20,9 @@ public struct MovementContext
 
     public Vector2 GroundNormalSmoothed;
 
-    [FormerlySerializedAs("GroundNormalRaw")]
     public Vector2 GroundNormal;
 
-    public float AirTime;
+    public float LastGroundedTime;
 }
 
 public class MovementEngine : MonoBehaviour
@@ -39,7 +38,7 @@ public class MovementEngine : MonoBehaviour
 
         // Test grounded
         var newContext = new MovementContext();
-        newContext.AirTime = Context.AirTime;
+        newContext.LastGroundedTime = Context.LastGroundedTime;
 
         CalculateGrounded(stats, dependencies, ref newContext);
 
@@ -47,11 +46,10 @@ public class MovementEngine : MonoBehaviour
         if (!newContext.IsStableOnGround)
         {
             dependencies.Rb.velocity += Vector2.down * (stats.Gravity * Time.fixedDeltaTime);
-            newContext.AirTime += Time.fixedDeltaTime;
         }
         else
         {
-            newContext.AirTime = 0;
+            newContext.LastGroundedTime = Time.time;
         }
 
         GroundSnap(horizontalInput, stats, dependencies, ref newContext);

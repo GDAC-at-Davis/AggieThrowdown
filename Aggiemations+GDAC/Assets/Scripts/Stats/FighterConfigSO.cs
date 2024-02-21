@@ -148,6 +148,9 @@ public class MovementStats
     public float JumpVelocity { get; private set; }
 
     [field: SerializeField]
+    public float CoyoteTime { get; private set; }
+
+    [field: SerializeField]
     public float AirMovementAcceleration { get; private set; }
 
     [field: SerializeField]

@@ -50,6 +50,7 @@ public partial class FighterController : MonoBehaviour
     private State currentState = State.Stasis;
 
     private bool jumping;
+    private bool didJump;
     private float xInput;
 
     private InputProvider inputProvider;
