@@ -28,10 +28,12 @@ public class GamepadInputSource : InputSource, GamepadControls.IGameplayActions
         // Pair bound devices to the user
         if (!user.valid)
         {
+            // No valid user, create a new one
             user = InputUser.PerformPairingWithDevice(boundDevices[0]);
         }
         else
         {
+            // Already have a user, pair the new devices to it
             InputUser.PerformPairingWithDevice(boundDevices[0], user);
         }
 

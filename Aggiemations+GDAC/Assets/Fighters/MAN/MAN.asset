@@ -34,13 +34,13 @@ MonoBehaviour:
     groundMask:
       serializedVersion: 2
       m_Bits: 64
-  <DashCooldown>k__BackingField: 0.7
+  <DashCooldown>k__BackingField: 0.4
   <BasicAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
     - <Offset>k__BackingField: {x: 0.55, y: 0.44}
       <Size>k__BackingField: {x: 1.36, y: 1.06}
       <Angle>k__BackingField: 0
-    <PointsAwarded>k__BackingField: 2
+    <PointsAwarded>k__BackingField: 3
     <KnockbackVelocity>k__BackingField: {x: 10, y: -2}
   <HeavyAttack>k__BackingField:
     <Hurtboxes>k__BackingField:

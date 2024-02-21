@@ -98,24 +98,24 @@ AnimationClip:
     functionName: SetActionVelocityX
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 20
+    floatParameter: 16
     intParameter: 0
     messageOptions: 0
-  - time: 0
-    functionName: SetActionAccelerationX
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: -100
-    intParameter: 0
-    messageOptions: 0
-  - time: 0
+  - time: 0.041666668
     functionName: SetActionVelocityY
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.375
+  - time: 0.041666668
+    functionName: SetActionAccelerationX
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: -65
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.29166666
     functionName: FinishAction
     data: 
     objectReferenceParameter: {fileID: 0}

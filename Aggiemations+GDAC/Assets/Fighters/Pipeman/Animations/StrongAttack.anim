@@ -109,7 +109,35 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.5833333
+  - time: 0
+    functionName: SetActionAccelerationX
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 30
+    intParameter: 0
+    messageOptions: 0
+  - time: 0
+    functionName: SetActionAccelerationY
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: -5
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.083333336
+    functionName: SetActionAccelerationX
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.41666666
+    functionName: TriggerAttackImpactHurtboxes
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.75
     functionName: TriggerAttackImpactHurtboxes
     data: 
     objectReferenceParameter: {fileID: 0}

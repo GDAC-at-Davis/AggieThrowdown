@@ -202,7 +202,6 @@ public partial class FighterController : MonoBehaviour
     {
         currentActionDirection = ren.flipX ? -1 : 1;
         anim.Play("Dash", -1, 0);
-        dashCooldownTimer = fighterConfig.DashCooldown;
         animEventHandler.OnFinishAction += HandleEndDash;
         combatController.OnHitByAttack += HandleOnHitByAttack;
 
@@ -216,6 +215,7 @@ public partial class FighterController : MonoBehaviour
     {
         animEventHandler.OnFinishAction -= HandleEndDash;
         combatController.OnHitByAttack -= HandleOnHitByAttack;
+        dashCooldownTimer = fighterConfig.DashCooldown;
 
         actionStaticTimer = ActionStaticTimer;
 
