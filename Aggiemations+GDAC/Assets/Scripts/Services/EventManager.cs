@@ -16,4 +16,5 @@ public class EventManager : MonoBehaviour
 
     // Player propogating events
     public Action<int, FighterCombatController.AttackInstance> OnPlayerHitByAttack;
+    public Action<Transform, bool, Sprite> OnAfterImageRequested;
 }

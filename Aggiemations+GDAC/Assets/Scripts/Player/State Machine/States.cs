@@ -85,7 +85,7 @@ public partial class FighterController : MonoBehaviour
 
     private void HandleDashInput(InputProvider.InputContext ctx)
     {
-        if (dashCooldownTimer > 0)
+        if (ctx.phase != InputActionPhase.Started || dashCooldownTimer > 0)
         {
             return;
         }
@@ -209,6 +209,7 @@ public partial class FighterController : MonoBehaviour
     {
         currentActionDirection = ren.flipX ? -1 : 1;
         anim.Play("Dash", -1, 0);
+        dashFixedUpdateCounter = 0;
         animEventHandler.OnFinishAction += HandleEndDash;
         combatController.OnHitByAttack += HandleOnHitByAttack;
 
@@ -239,6 +240,12 @@ public partial class FighterController : MonoBehaviour
     private void DashStateFixedUpdate()
     {
         ApplyActionAcceleration();
+        // make sure that the first afterimage is on the second frame to avoid the pre-dash sprite showing
+        dashFixedUpdateCounter++;
+        if (dashFixedUpdateCounter % 2 == 0)
+        {
+            OnAfterImageRequested?.Invoke(ren.transform, ren.flipX, ren.sprite);
+        }
     }
 
     #endregion

@@ -76,4 +76,9 @@ public class SimpleAnimator : MonoBehaviour, IAnimationClipSource
     {
         results.Add(animationClip);
     }
+
+    public float ClipLength()
+    {
+        return animationClip.length;
+    }
 }

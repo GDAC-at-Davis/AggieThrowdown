@@ -86,6 +86,21 @@ public class FighterManager : MonoBehaviour
         // Hook up events
         animEventHandler.OnSetSuperArmor += combatController.SetSuperArmor;
         combatController.OnHitByAttack += OnHitByAttack;
+
+        controller.OnAfterImageRequested += OnAfterImageRequested;
+    }
+
+    private void OnDestroy()
+    {
+        if (mainCamera)
+        {
+            mainCamera.RemoveTarget(bodyTransformPivot);
+        }
+
+        animEventHandler.OnSetSuperArmor -= combatController.SetSuperArmor;
+        combatController.OnHitByAttack -= OnHitByAttack;
+
+        controller.OnAfterImageRequested -= OnAfterImageRequested;
     }
 
     public void SetControl(bool val)
@@ -96,6 +111,11 @@ public class FighterManager : MonoBehaviour
     private void OnHitByAttack(FighterCombatController.AttackInstance attackInstance, bool superArmor)
     {
         serviceContainer.EventManager.OnPlayerHitByAttack?.Invoke(playerIndex, attackInstance);
+    }
+
+    private void OnAfterImageRequested(Transform transform, bool flipX, Sprite sprite)
+    {
+        serviceContainer.EventManager.OnAfterImageRequested?.Invoke(transform, flipX, sprite);
     }
 
     public Vector2 GetBodyPosition()

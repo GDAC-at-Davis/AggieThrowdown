@@ -35,6 +35,8 @@ public partial class FighterController : MonoBehaviour
     [SerializeField]
     private Transform bodyTransformPivot;
 
+    public event Action<Transform, bool, Sprite> OnAfterImageRequested;
+
 
     private enum State
     {
@@ -64,6 +66,8 @@ public partial class FighterController : MonoBehaviour
     private float dashCooldownTimer;
     private float actionStaticTimer;
     private float jumpStaticTimer;
+
+    private int dashFixedUpdateCounter;
 
     public void Configure(MovementStats stats,
         MovementDependencies moveDependencies,

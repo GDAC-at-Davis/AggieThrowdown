@@ -16,7 +16,7 @@ MonoBehaviour:
   <FighterPortrait>k__BackingField: {fileID: 21300000, guid: 0b47883d6dc899b42b58ed182708f7b1, type: 3}
   <FighterDescription>k__BackingField: Silly little clay creature!
   <IncludeInRoster>k__BackingField: 1
-  <FastLoadForTest>k__BackingField: 1
+  <FastLoadForTest>k__BackingField: 0
   <MoveStats>k__BackingField:
     <GroundMaxMovementSpeed>k__BackingField: 5
     <MovementAcceleration>k__BackingField: 50
