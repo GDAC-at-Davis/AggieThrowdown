@@ -45,6 +45,7 @@
         var fullscreenButton = document.querySelector("#unity-fullscreen-button");
         var warningBanner = document.querySelector("#unity-warning");
         var lightbulb = document.querySelector("#loading-lightbulb");
+
         #if SHOW_DIAGNOSTICS
         var diagnostics_icon = document.getElementById("diagnostics-icon");
         #endif
@@ -137,7 +138,7 @@
         canvas.style.background = "url('" + buildUrl + "/{{{ BACKGROUND_FILENAME.replace(/'/g, '%27') }}}') center / cover";
         #endif
 
-        // Show loading page, hide the lightbulb
+        // Show custom loading page, hide the lightbulb
         loadingPage.style.display = "block";
         lightbulb.style.display = "none";
 
@@ -160,20 +161,21 @@
         } */
 
         // Load unity game with loading screen UI
-        function LoadUnityGame()
+        async function LoadUnityGame()
         {
             // Disable fullscreen while loading
             fullscreenButton.classList.add('semitransparent-background');
 
             createUnityInstance(canvas, config, (progress) => {
+                // Change height to move the prongs
                 progressBarFull.style.height = 100 * progress + "%";
             }).then((unityInstance) => {
-
+                // Called when the loading is finished
                 // Loading bar finish visuals + fade out 
                 loadingPage.classList.add('transparent-background')
                 lightbulb.style.display = "block";
 
-                //2 seconds before stop rendering
+                // Wait 2 seconds before transitioning out into the game
                 var delayInMilliseconds = 2000; 
                 setTimeout(function () {
                     loadingPage.style.display = "none";
@@ -186,7 +188,7 @@
                 };
                 #endif
 
-                // Fullscreen is enabled when the game loads, so set the button up
+                // Fullscreen button should become enabled when the game loads, make it visible
                 fullscreenButton.classList.remove('semitransparent-background')
                 fullscreenButton.onclick = () => {
                     unityInstance.SetFullscreen(1);

@@ -149,6 +149,17 @@ public partial class @GamepadControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""ef645fe4-8d2a-40d2-94c3-2082be092330"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash_Left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""dda585d0-6656-4404-814d-7cb0c63b1db1"",
                     ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",
@@ -184,6 +195,17 @@ public partial class @GamepadControls: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""05244636-cd68-40d5-956f-e1f7d8b39fc4"",
                     ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash_Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1f5448db-aa39-459e-a0c4-f1754c6d9b85"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

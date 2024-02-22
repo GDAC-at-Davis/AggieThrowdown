@@ -173,8 +173,7 @@ public partial class FighterController : MonoBehaviour
     private void HandleJumpInput(InputProvider.InputContext ctx)
     {
         var coyoteTime = Time.time - moveEngine.Context.LastGroundedTime < moveStats.CoyoteTime;
-        var canJump = !jumping && jumpStaticTimer < 0f && !didJump &&
-                      (coyoteTime || moveEngine.Context.IsStableOnGround);
+        var canJump = !jumping && jumpStaticTimer < 0f && !didJump;
 
         if (ctx.phase == InputActionPhase.Started && canJump)
         {

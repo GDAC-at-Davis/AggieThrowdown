@@ -74,7 +74,7 @@ body {
     left: 50%;
     transform: translate(-50%, 0%);
 
-    background-image: url('power-socket-top.png');
+    background-image: url('custom/power-socket-top.png');
     background-repeat: no-repeat;
     background-position :center;
     background-size: 64px;
@@ -94,7 +94,7 @@ body {
     left: 50%;
     transform: translate(-50%, 0%);
 
-    background-image: url('power-socket-bottom.png');
+    background-image: url('custom/power-socket-bottom.png');
     background-repeat: no-repeat;
     background-position :center;
     background-size: 64px;
@@ -118,7 +118,7 @@ body {
     transform: translate(-50%, 0%);
 
     width: 8px;
-    background-image: url('wire.png');
+    background-image: url('custom/wire.png');
     background-position: center;
     background-size: 8px;
 
@@ -134,7 +134,7 @@ body {
     left: 50%;
     transform: translate(-50%, 0%);
 
-    background-image: url('power-prong.png');
+    background-image: url('custom/power-prong.png');
     background-repeat: no-repeat;
     background-position: top;
     background-size: 64px;
@@ -154,15 +154,21 @@ body {
     /* CHANGE THIS TO CONFIGURE CAT VERTICAL POSITION */
     padding-bottom: 0px;
 
-    background-image: url('cat.png');
+    background-image: url('custom/cat.png');
     background-repeat: no-repeat;
-    background-position: top;
-    background-size: 64px;
+    background-position: 0px;/* top; */
+    background-size: 128px; 
 
     z-index: 2;
 
     image-rendering: pixelated;
+
+    animation: cat-loading-animation 0.8s steps(2) infinite;
 }
+
+@keyframes cat-loading-animation {
+    100% { background-position: -128px; }
+ }
 
 #loading-lightbulb {
     width: 64px;
@@ -176,7 +182,7 @@ body {
     /* CHANGE THIS TO CONFIGURE LIGHTBULB VERTICAL POSITION */
     padding-bottom: 120px;
 
-    background-image: url('lightbulb.png');
+    background-image: url('custom/lightbulb.png');
     background-repeat: no-repeat;
     background-position: top;
     background-size: 64px;
@@ -205,7 +211,7 @@ body {
     width: 32px;
     height: 32px;
     
-    background-image: url('fullscreen-button.png');
+    background-image: url('custom/fullscreen-button.png');
     background-repeat: no-repeat; 
     background-position: center;
     background-size: contain;
