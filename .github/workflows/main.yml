@@ -1,0 +1,7 @@
+name: Unity-Builder
+run-name: ${{ github.actor }} is building a cool game!
+
+on: 
+  push:
+    branches: 
+      -main
