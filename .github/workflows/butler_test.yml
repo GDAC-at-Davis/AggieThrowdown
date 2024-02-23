@@ -12,10 +12,10 @@ jobs:
       - name: Download Butler
         run: |
           curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
-          ls
           unzip butler.zip
           chmod +x butler
           ./butler -V
+          tree -L 2
 
       - name: Dummy
         run: |
