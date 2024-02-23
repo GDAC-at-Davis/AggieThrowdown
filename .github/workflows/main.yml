@@ -52,10 +52,9 @@ jobs:
           path: build/${{ matrix.targetPlatform }}
 
       - name: Zip Build
-        uses: vimtor/action-zip@v1.1
+        uses: montudor/action-zip@v1
         with:
-          files: build/${{ matrix.targetPlatform }}
-          dest: build/Build-${{ matrix.targetPlatform }}.zip
+          args: zip -qq -r build/Build-${{ matrix.targetPlatform }}.zip build/${{ matrix.targetPlatform }}
           
       - name: Download Butler
         run: |
