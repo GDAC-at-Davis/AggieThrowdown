@@ -36,11 +36,11 @@ jobs:
       - name: Library Cache
         uses: actions/cache@v3
         with:
-          path: ${{PROJ_DIR}}/Library
-          key: Library-${{ PROJ_NAME }}-${{ matrix.targetPlatform }}-${{ hashFiles('${{PROJ_DIR}}/Assets/**', '${{PROJ_DIR}}/Packages/**', '${{PROJ_DIR}}/ProjectSettings/**') }}
+          path: ${{env.PROJ_DIR}}/Library
+          key: Library-${{ env.PROJ_NAME }}-${{ matrix.targetPlatform }}-${{ hashFiles('${{env.PROJ_DIR}}/Assets/**', '${{env.PROJ_DIR}}/Packages/**', '${{env.PROJ_DIR}}/ProjectSettings/**') }}
           restore-keys: |
-            Library-${{ PROJ_NAME }}-${{ matrix.targetPlatform }}-
-            Library-${{ PROJ_NAME }}-
+            Library-${{ env.PROJ_NAME }}-${{ matrix.targetPlatform }}-
+            Library-${{ env.PROJ_NAME }}-
         
       - name: Build Unity Project
         uses: game-ci/unity-builder@v4
@@ -51,24 +51,24 @@ jobs:
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
           unityVersion: auto
-          projectPath: ${{PROJ_DIR}}
-          buildsPath: ${{BUILD_PATH}}
+          projectPath: ${{env.PROJ_DIR}}
+          buildsPath: ${{env.BUILD_PATH}}
           
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}
-          path: ${{BUILD_DIR}}/${{ matrix.targetPlatform }}
+          name: ${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}
+          path: ${{env.BUILD_DIR}}/${{ matrix.targetPlatform }}
 
       # Zip before uploading to itch isn't required, but lower upload size
       - name: Zip Build
         uses: montudor/action-zip@v1
         with:
-          args: zip -qq -r ${{BUILD_DIR}}/${{BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}.zip ${{BUILD_DIR}}/${{ matrix.targetPlatform }}
+          args: zip -qq -r ${{env.BUILD_DIR}}/${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}.zip ${{env.BUILD_DIR}}/${{ matrix.targetPlatform }}
           
       - name: Download Butler
         run: |
-          curl -L -o butler.zip ${{BUTLER_LINK}}
+          curl -L -o butler.zip ${{env.BUTLER_LINK}}
           unzip butler.zip
           chmod +x butler
           ./butler -V
@@ -76,7 +76,7 @@ jobs:
 
       - name: Push Build to Butler
         run: |
-          ./butler push ${{BUILD_DIR}}/${{BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}.zip ${{ITCH_GAME_NAME}}:${{ matrix.targetPlatform }}
+          ./butler push ${{env.BUILD_DIR}}/${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}.zip ${{env.ITCH_GAME_NAME}}:${{ matrix.targetPlatform }}
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
     
