@@ -54,7 +54,7 @@ jobs:
       - name: Zip Build
         uses: vimtor/action-zip@v1.1
         with:
-          files: build/${{ matrix.targetPlatform }}
+          files: build/Build-Artifact-${{ matrix.targetPlatform }}
           dest: build/${{ matrix.targetPlatform }}.zip
           
       - name: Download Butler
