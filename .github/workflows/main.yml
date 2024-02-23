@@ -64,7 +64,7 @@ jobs:
 
       - name: Push Build to Butler
         run: |
-          ./butler/butler.exe push build/${{ matrix.targetPlatform }}.zip gdac/${{ matrix.targetPlatform }} --userversion ${{  github.ref_name }}
+          ./butler/butler.exe push build/${{ matrix.targetPlatform }}.zip gdacdavis/aggie-throwdown --userversion ${{  github.ref_name }}
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
     
