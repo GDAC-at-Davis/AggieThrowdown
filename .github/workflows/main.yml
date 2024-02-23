@@ -1,14 +1,23 @@
 name: Unity-Builder
 run-name: ${{ github.actor }} is building ${{ github.ref_name }}
 
+env:
+  PROJ_DIR: Aggiemations+GDAC
+  PROJ_NAME: GDACxAggieMations
+  BUILD_NAME_PREFIX: Build
+  BUILD_DIR: build
+  BUTLER_LINK: https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+  ITCH_GAME_NAME: gdacdavis/aggie-throwdown
+
 on: 
   push:
     branches: 
       -main
     paths:
-      - ‘Assets/**’
-      - ‘Packages/**’
-      - ‘ProjectSettings/**
+      # Only build when these are changed by the push
+      - ‘${{PROJ_DIR}}/Assets/**’
+      - ‘${{PROJ_DIR}}/Packages/**’
+      - ‘${{PROJ_DIR}}/ProjectSettings/**
   workflow_dispatch:
       
 jobs:
@@ -27,11 +36,11 @@ jobs:
       - name: Library Cache
         uses: actions/cache@v3
         with:
-          path: Aggiemations+GDAC/Library
-          key: Library-GDACxAggieMations-${{ matrix.targetPlatform }}-${{ hashFiles('Aggiemations+GDAC/Assets/**', 'Aggiemations+GDAC/Packages/**', 'Aggiemations+GDAC/ProjectSettings/**') }}
+          path: ${{PROJ_DIR}}/Library
+          key: Library-${{ PROJ_NAME }}-${{ matrix.targetPlatform }}-${{ hashFiles('${{PROJ_DIR}}/Assets/**', '${{PROJ_DIR}}/Packages/**', '${{PROJ_DIR}}/ProjectSettings/**') }}
           restore-keys: |
-            Library-GDACxAggieMations-${{ matrix.targetPlatform }}-
-            Library-GDACxAggieMations-
+            Library-${{ PROJ_NAME }}-${{ matrix.targetPlatform }}-
+            Library-${{ PROJ_NAME }}-
         
       - name: Build Unity Project
         uses: game-ci/unity-builder@v4
@@ -42,36 +51,32 @@ jobs:
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
           unityVersion: auto
-          projectPath: Aggiemations+GDAC
-          buildsPath: build
+          projectPath: ${{PROJ_DIR}}
+          buildsPath: ${{BUILD_PATH}}
           
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Build-${{ matrix.targetPlatform }}
-          path: build/${{ matrix.targetPlatform }}
+          name: ${{BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}
+          path: ${{BUILD_DIR}}/${{ matrix.targetPlatform }}
 
-      - name: Tree
-        run: |
-          tree -L 5
-
+      # Zip before uploading to itch isn't required, but lower upload size
       - name: Zip Build
         uses: montudor/action-zip@v1
         with:
-          args: zip -qq -r build/Build-${{ matrix.targetPlatform }}.zip build/${{ matrix.targetPlatform }}
+          args: zip -qq -r ${{BUILD_DIR}}/${{BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}.zip ${{BUILD_DIR}}/${{ matrix.targetPlatform }}
           
       - name: Download Butler
         run: |
-          curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+          curl -L -o butler.zip ${{BUTLER_LINK}}
           unzip butler.zip
           chmod +x butler
           ./butler -V
           tree -L 4
-          
 
       - name: Push Build to Butler
         run: |
-          ./butler push build/Build-${{ matrix.targetPlatform }}.zip gdacdavis/aggie-throwdown:WebGL --userversion ${{  github.ref_name }}
+          ./butler push ${{BUILD_DIR}}/${{BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}.zip ${{ITCH_GAME_NAME}}:${{ matrix.targetPlatform }}
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
     
