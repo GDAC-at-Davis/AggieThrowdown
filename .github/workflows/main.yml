@@ -51,6 +51,10 @@ jobs:
           name: Build-${{ matrix.targetPlatform }}
           path: build/${{ matrix.targetPlatform }}
 
+      - name: Tree
+        run: |
+          tree -L 5
+
       - name: Zip Build
         uses: montudor/action-zip@v1
         with:
