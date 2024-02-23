@@ -1,0 +1,29 @@
+name: Butler-Test
+run-name: Butler Testing
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  TestButler:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Butler
+        run: |
+          curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+          ls
+          unzip butler.zip
+          chmod +x butler
+          ./butler -V
+
+      - name: Dummy
+        run: |
+          touch DummyBuild
+          
+
+      - name: Push Build to Butler
+        run: |
+          ./butler/butler push DummyBuild gdacdavis/aggie-throwdown --userversion ${{  github.ref_name }}
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
