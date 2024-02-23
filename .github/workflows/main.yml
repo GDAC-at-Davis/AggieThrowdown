@@ -66,6 +66,6 @@ jobs:
         run: |
           ./butler/butler.exe push build/${{ matrix.targetPlatform }}.zip gdac/${{ matrix.targetPlatform }} --userversion ${{  github.ref_name }}
         env:
-          BUTLER_API_KEY: ${{ secrets.ITCH_IO_API_KEY }}
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
     
     
