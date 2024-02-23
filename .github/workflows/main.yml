@@ -15,9 +15,9 @@ on:
       - main
     paths:
       # Only build when these are changed by the push
-      - ‘${{PROJ_DIR}}/Assets/**’
-      - ‘${{PROJ_DIR}}/Packages/**’
-      - ‘${{PROJ_DIR}}/ProjectSettings/**
+      - ‘${{env.PROJ_DIR}}/Assets/**’
+      - ‘${{env.PROJ_DIR}}/Packages/**’
+      - ‘${{env.PROJ_DIR}}/ProjectSettings/**
   workflow_dispatch:
       
 jobs:
