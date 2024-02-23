@@ -33,17 +33,17 @@ jobs:
             Library-GDACxAggieMations-${{ matrix.targetPlatform }}-
             Library-GDACxAggieMations-
         
-      # - name: Build Unity Project
-      #   uses: game-ci/unity-builder@v4
-      #   env:
-      #     UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-      #     UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-      #     UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-      #   with:
-      #     targetPlatform: ${{ matrix.targetPlatform }}
-      #     unityVersion: auto
-      #     projectPath: Aggiemations+GDAC
-      #     buildsPath: build
+      - name: Build Unity Project
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: ${{ matrix.targetPlatform }}
+          unityVersion: auto
+          projectPath: Aggiemations+GDAC
+          buildsPath: build
           
       # - name: Upload Build Artifact
       #   uses: actions/upload-artifact@v4
@@ -64,10 +64,11 @@ jobs:
           unzip butler.zip
           chmod +x butler
           ./butler -V
+          
 
       - name: Push Build to Butler
         run: |
-          ./butler/butler.exe push build/Build-Artifact-${{ matrix.targetPlatform }}.zip gdacdavis/aggie-throwdown --userversion ${{  github.ref_name }}
+          ./butler/butler push build/Build-Artifact-${{ matrix.targetPlatform }}.zip gdacdavis/aggie-throwdown --userversion ${{  github.ref_name }}
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
     
