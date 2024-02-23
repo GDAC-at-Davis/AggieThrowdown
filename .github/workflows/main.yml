@@ -1,5 +1,5 @@
 name: Unity-Builder
-run-name: ${{ github.actor }} is building a cool game!
+run-name: ${{ github.actor }} is building ${{ github.ref_name }}
 
 on: 
   push:
