@@ -5,3 +5,67 @@ on:
   push:
     branches: 
       -main
+    paths:
+      - ‘Assets/**’
+      - ‘Packages/**’
+      - ‘ProjectSettings/**
+  workflow_dispatch:
+      
+jobs:
+  BuildForWebGL:
+    runs-on: windows-2019
+    strategy:
+      matrix:
+        targetPlatform:
+          - WebGL
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Library Cache
+        uses: actions/cache@v3
+        with:
+          path: Aggiemations+GDAC/Library
+          key: Library-GDACxAggieMations-${{ matrix.targetPlatform }}-${{ hashFiles('Aggiemations+GDAC/Assets/**', 'Aggiemations+GDAC/Packages/**', 'Aggiemations+GDAC/ProjectSettings/**') }}
+          restore-keys: |
+            Library-GDACxAggieMations-${{ matrix.targetPlatform }}-
+            Library-GDACxAggieMations-
+        
+      - name: Build Unity Project
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: ${{ matrix.targetPlatform }}
+          unityVersion: auto
+          projectPath: Aggiemations+GDAC
+          buildsPath: build
+          
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Build-Artifact-${{ matrix.targetPlatform }}
+          path: build/${{ matrix.targetPlatform }}
+
+      - name: Zip Build
+        uses: vimtor/action-zip@v1.1
+        with:
+          files: build/${{ matrix.targetPlatform }}
+          dest: build/${{ matrix.targetPlatform }}.zip
+          
+      - name: Download Butler
+        run: |
+          curl -o butler.zip https://broth.itch.ovh/butler/windows-amd64/LATEST/archive/default
+          powershell Expand-Archive butler.zip
+
+      - name: Push Build to Butler
+        run: |
+          ./butler/butler.exe push build/${{ matrix.targetPlatform }}.zip gdac/${{ matrix.targetPlatform }} --userversion ${{  github.ref_name }}
+        env:
+          BUTLER_API_KEY: ${{ secrets.ITCH_IO_API_KEY }}
+    
+    
