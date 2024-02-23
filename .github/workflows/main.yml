@@ -13,11 +13,11 @@ on:
   push:
     branches: 
       - main
-    paths:
-      # Only build when these are changed by the push
-      - ‘${{env.PROJ_DIR}}/Assets/**’
-      - ‘${{env.PROJ_DIR}}/Packages/**’
-      - ‘${{env.PROJ_DIR}}/ProjectSettings/**
+    # paths:
+    #   # Only build when these are changed by the push
+    #   - ‘${{env.PROJ_DIR}}/Assets/**’
+    #   - ‘${{env.PROJ_DIR}}/Packages/**’
+    #   - ‘${{env.PROJ_DIR}}/ProjectSettings/**
   workflow_dispatch:
       
 jobs:
