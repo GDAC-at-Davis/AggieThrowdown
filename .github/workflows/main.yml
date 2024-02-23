@@ -51,11 +51,11 @@ jobs:
           name: Build-Artifact-${{ matrix.targetPlatform }}
           path: build/${{ matrix.targetPlatform }}
 
-      - name: Zip Build
-        uses: vimtor/action-zip@v1.1
-        with:
-          files: build/Build-Artifact-${{ matrix.targetPlatform }}
-          dest: build/${{ matrix.targetPlatform }}.zip
+      # - name: Zip Build
+      #   uses: vimtor/action-zip@v1.1
+      #   with:
+      #     files: build/Build-Artifact-${{ matrix.targetPlatform }}
+      #     dest: build/${{ matrix.targetPlatform }}.zip
           
       - name: Download Butler
         run: |
@@ -64,7 +64,7 @@ jobs:
 
       - name: Push Build to Butler
         run: |
-          ./butler/butler.exe push build/${{ matrix.targetPlatform }}.zip gdacdavis/aggie-throwdown --userversion ${{  github.ref_name }}
+          ./butler/butler.exe push build/Build-Artifact-${{ matrix.targetPlatform }}.zip gdacdavis/aggie-throwdown --userversion ${{  github.ref_name }}
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
     
