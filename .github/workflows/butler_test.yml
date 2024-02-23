@@ -11,13 +11,10 @@ jobs:
     steps:
       - name: Download Butler
         run: |
-          pwd
-          tree -L 4
           curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
           unzip butler.zip
           chmod +x butler
           ./butler -V
-          pwd
           tree -L 4
 
       - name: Dummy
@@ -27,6 +24,6 @@ jobs:
 
       - name: Push Build to Butler
         run: |
-          ./butler push DummyBuild gdacdavis/aggie-throwdown --userversion ${{  github.ref_name }}
+          ./butler push DummyBuild gdacdavis/aggie-throwdown:webgl --userversion ${{  github.ref_name }}
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
