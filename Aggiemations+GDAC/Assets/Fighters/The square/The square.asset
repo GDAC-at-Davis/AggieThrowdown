@@ -40,7 +40,7 @@ MonoBehaviour:
       <Size>k__BackingField: {x: 1, y: 0.64}
       <Angle>k__BackingField: 0
     <PointsAwarded>k__BackingField: 3
-    <KnockbackVelocity>k__BackingField: {x: 15, y: 0}
+    <KnockbackVelocity>k__BackingField: {x: 6, y: 0}
   <HeavyAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
     - <Offset>k__BackingField: {x: 0, y: 0.79}
