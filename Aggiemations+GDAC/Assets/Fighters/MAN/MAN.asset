@@ -45,11 +45,11 @@ MonoBehaviour:
     <KnockbackVelocity>k__BackingField: {x: 10, y: -2}
   <HeavyAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
-    - <Offset>k__BackingField: {x: 1, y: 0.55}
-      <Size>k__BackingField: {x: 2.1, y: 1}
+    - <Offset>k__BackingField: {x: 1.2, y: 0.55}
+      <Size>k__BackingField: {x: 1.9, y: 1}
       <Angle>k__BackingField: 0
     <PointsAwarded>k__BackingField: 3
-    <KnockbackVelocity>k__BackingField: {x: 2, y: 4}
+    <KnockbackVelocity>k__BackingField: {x: 6, y: 4}
   <AnimationOverrides>k__BackingField: {fileID: 22100000, guid: d54e49e898f1fd04491b0970567ae96b, type: 2}
   <FighterPrefab>k__BackingField: {fileID: 150414167833556814, guid: 45dd1c2b2d9b6ae439697e84e535ff09, type: 3}
   <AudioConfig>k__BackingField:
