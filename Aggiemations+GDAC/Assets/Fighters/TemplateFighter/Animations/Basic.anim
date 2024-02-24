@@ -89,7 +89,7 @@ AnimationClip:
     functionName: MultiplyCurrentVelocityY
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 0.65
+    floatParameter: 0.5
     intParameter: 0
     messageOptions: 0
   - time: 0.089655176
@@ -104,6 +104,13 @@ AnimationClip:
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.13103448
+    functionName: SetActionAccelerationY
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: -10
     intParameter: 0
     messageOptions: 0
   - time: 0.18620689
