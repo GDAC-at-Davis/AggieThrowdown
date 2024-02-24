@@ -24,6 +24,7 @@ MonoBehaviour:
     <GroundMaxMovementSpeed>k__BackingField: 6
     <MovementAcceleration>k__BackingField: 50
     <JumpVelocity>k__BackingField: 6
+    <CoyoteTime>k__BackingField: 0
     <AirMovementAcceleration>k__BackingField: 15
     <AirMaxMovementSpeed>k__BackingField: 5
     <Gravity>k__BackingField: 14
@@ -46,7 +47,7 @@ MonoBehaviour:
   <HeavyAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
     - <Offset>k__BackingField: {x: 0, y: 0.5}
-      <Size>k__BackingField: {x: 1.97, y: 1.48}
+      <Size>k__BackingField: {x: 1.85, y: 1.48}
       <Angle>k__BackingField: 0
     <PointsAwarded>k__BackingField: 4
     <KnockbackVelocity>k__BackingField: {x: 5, y: 5}

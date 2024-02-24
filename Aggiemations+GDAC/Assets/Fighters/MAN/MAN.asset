@@ -35,7 +35,7 @@ MonoBehaviour:
     groundMask:
       serializedVersion: 2
       m_Bits: 64
-  <DashCooldown>k__BackingField: 0.4
+  <DashCooldown>k__BackingField: 0.55
   <BasicAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
     - <Offset>k__BackingField: {x: 0.55, y: 0.44}
@@ -45,8 +45,8 @@ MonoBehaviour:
     <KnockbackVelocity>k__BackingField: {x: 10, y: -2}
   <HeavyAttack>k__BackingField:
     <Hurtboxes>k__BackingField:
-    - <Offset>k__BackingField: {x: 1.12, y: 0.47}
-      <Size>k__BackingField: {x: 2.3, y: 1.15}
+    - <Offset>k__BackingField: {x: 1, y: 0.55}
+      <Size>k__BackingField: {x: 2.1, y: 1}
       <Angle>k__BackingField: 0
     <PointsAwarded>k__BackingField: 3
     <KnockbackVelocity>k__BackingField: {x: 2, y: 4}

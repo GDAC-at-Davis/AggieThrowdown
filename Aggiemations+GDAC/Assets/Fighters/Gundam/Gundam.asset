@@ -20,7 +20,8 @@ MonoBehaviour:
   <MoveStats>k__BackingField:
     <GroundMaxMovementSpeed>k__BackingField: 4.5
     <MovementAcceleration>k__BackingField: 50
-    <JumpVelocity>k__BackingField: 6
+    <JumpVelocity>k__BackingField: 6.5
+    <CoyoteTime>k__BackingField: 0
     <AirMovementAcceleration>k__BackingField: 15
     <AirMaxMovementSpeed>k__BackingField: 5
     <Gravity>k__BackingField: 10

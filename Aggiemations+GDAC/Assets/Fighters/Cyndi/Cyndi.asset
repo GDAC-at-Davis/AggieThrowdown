@@ -46,7 +46,7 @@ MonoBehaviour:
     - <Offset>k__BackingField: {x: 0.21, y: 0.37}
       <Size>k__BackingField: {x: 1.23, y: 0.89}
       <Angle>k__BackingField: 4.9
-    <PointsAwarded>k__BackingField: 1.25
+    <PointsAwarded>k__BackingField: 1.5
     <KnockbackVelocity>k__BackingField: {x: 5, y: 2}
   <AnimationOverrides>k__BackingField: {fileID: 22100000, guid: cbf31656037cbf249a0b016865f6072c, type: 2}
   <FighterPrefab>k__BackingField: {fileID: 150414167833556814, guid: 6f4952c2f353b134a91aafc91ac7c654, type: 3}

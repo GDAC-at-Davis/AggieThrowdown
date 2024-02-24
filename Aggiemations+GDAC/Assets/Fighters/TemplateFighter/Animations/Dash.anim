@@ -22,20 +22,20 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -6994824071544803430, guid: 72eb4a71dec61ed47bb10dcc4a348dcc, type: 3}
-    - time: 0.04
+    - time: 0.033333335
       value: {fileID: -4723396261734719308, guid: 72eb4a71dec61ed47bb10dcc4a348dcc, type: 3}
-    - time: 0.08
+    - time: 0.06666667
       value: {fileID: -6904164767297344267, guid: 72eb4a71dec61ed47bb10dcc4a348dcc, type: 3}
-    - time: 0.13
+    - time: 0.108333334
       value: {fileID: -7887312808182486043, guid: 72eb4a71dec61ed47bb10dcc4a348dcc, type: 3}
-    - time: 0.18
+    - time: 0.15
       value: {fileID: -7887312808182486043, guid: 72eb4a71dec61ed47bb10dcc4a348dcc, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 100
+  m_SampleRate: 120
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -62,7 +62,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.19000001
+    m_StopTime: 0.15833335
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -86,31 +86,31 @@ AnimationClip:
     functionName: SetActionVelocityX
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 21
+    floatParameter: 22
     intParameter: 0
     messageOptions: 0
-  - time: 0.01
+  - time: 0.008333334
     functionName: SetActionAccelerationX
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: -150
+    floatParameter: -140
     intParameter: 0
     messageOptions: 0
-  - time: 0.02
+  - time: 0.016666668
     functionName: SetActionVelocityY
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.17
+  - time: 0.14166667
     functionName: SetActionVelocityY
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.18
+  - time: 0.15
     functionName: FinishAction
     data: 
     objectReferenceParameter: {fileID: 0}
