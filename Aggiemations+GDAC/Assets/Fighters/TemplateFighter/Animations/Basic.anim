@@ -22,22 +22,22 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 8403032481410221412, guid: 72eb4a71dec61ed47bb10dcc4a348dcc, type: 3}
-    - time: 0.062068965
+    - time: 0.06428572
       value: {fileID: -6651859442743071287, guid: 72eb4a71dec61ed47bb10dcc4a348dcc, type: 3}
-    - time: 0.11724138
+    - time: 0.12142857
       value: {fileID: 324324301612634485, guid: 72eb4a71dec61ed47bb10dcc4a348dcc, type: 3}
-    - time: 0.18620689
+    - time: 0.19285715
       value: {fileID: 1795112508426315271, guid: 72eb4a71dec61ed47bb10dcc4a348dcc, type: 3}
-    - time: 0.24827586
+    - time: 0.25714287
       value: {fileID: -3125115815083815390, guid: 72eb4a71dec61ed47bb10dcc4a348dcc, type: 3}
-    - time: 0.31034482
+    - time: 0.32142857
       value: {fileID: -3125115815083815390, guid: 72eb4a71dec61ed47bb10dcc4a348dcc, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 145
+  m_SampleRate: 140
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -65,7 +65,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.31724137
+    m_StopTime: 0.32857144
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -92,42 +92,42 @@ AnimationClip:
     floatParameter: 0.5
     intParameter: 0
     messageOptions: 0
-  - time: 0.089655176
+  - time: 0.092857145
     functionName: SetActionAccelerationX
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: -75
     intParameter: 0
     messageOptions: 0
-  - time: 0.11724138
+  - time: 0.12142857
     functionName: TriggerAttackImpactHurtboxes
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.13103448
+  - time: 0.13571429
     functionName: SetActionAccelerationY
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: -10
     intParameter: 0
     messageOptions: 0
-  - time: 0.18620689
+  - time: 0.19285715
     functionName: SetActionVelocityX
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 5
     intParameter: 0
     messageOptions: 0
-  - time: 0.20689656
+  - time: 0.21428572
     functionName: SetActionAccelerationX
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.31034482
+  - time: 0.32142857
     functionName: FinishAction
     data: 
     objectReferenceParameter: {fileID: 0}
