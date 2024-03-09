@@ -2,12 +2,12 @@ name: Unity-Builder
 run-name: ${{ github.actor }} is building ${{ github.ref_name }}
 
 env:
-  PROJ_DIR: Midsock
-  PROJ_NAME: midsock
+  PROJ_DIR: Aggiemations+GDAC
+  PROJ_NAME: AggieThrowdown
   BUILD_NAME_PREFIX: Build
   BUILD_DIR: build
   BUTLER_LINK: https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
-  ITCH_GAME_NAME: doublebrackets/midsock
+  ITCH_GAME_NAME: gdacdavis/aggie-throwdown
 
 on: 
   push:
