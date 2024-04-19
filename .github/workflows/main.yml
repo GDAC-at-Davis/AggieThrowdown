@@ -27,6 +27,7 @@ jobs:
       matrix:
         targetPlatform:
           - WebGL
+          - StandaloneWindows64
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
