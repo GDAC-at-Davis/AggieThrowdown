@@ -9,25 +9,29 @@ env:
   BUTLER_LINK: https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
   ITCH_GAME_NAME: gdacdavis/aggie-throwdown
 
-on: 
+on:
   push:
-    branches: 
+    branches:
       - main
-    # paths:
-    #   # Only build when these are changed by the push
-    #   - ‘${{env.PROJ_DIR}}/Assets/**’
-    #   - ‘${{env.PROJ_DIR}}/Packages/**’
-    #   - ‘${{env.PROJ_DIR}}/ProjectSettings/**
+    paths:
+      # Only build when these are changed by the push
+      # Actions doesn't support env. variables in this section...
+      # Manually type in the project directory raw name to replace 'PROJ_DIR' in the following 3 lines
+      - "Aggiemations+GDAC/Assets/**"
+      - "Aggiemations+GDAC/Packages/**"
+      - "Aggiemations+GDAC/ProjectSettings/**"
   workflow_dispatch:
-      
+
 jobs:
-  BuildForWebGL:
+  UnityBuilds:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         targetPlatform:
           - WebGL
           - StandaloneWindows64
+          - StandaloneOSX
+          - StandaloneLinux64
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -42,7 +46,7 @@ jobs:
           restore-keys: |
             Library-${{ env.PROJ_NAME }}-${{ matrix.targetPlatform }}-
             Library-${{ env.PROJ_NAME }}-
-        
+
       - name: Build Unity Project
         uses: game-ci/unity-builder@v4
         env:
@@ -54,7 +58,7 @@ jobs:
           unityVersion: auto
           projectPath: ${{env.PROJ_DIR}}
           buildsPath: ${{env.BUILD_PATH}}
-          
+
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -66,7 +70,7 @@ jobs:
         uses: montudor/action-zip@v1
         with:
           args: zip -qq -r ${{env.BUILD_DIR}}/${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}.zip ${{env.BUILD_DIR}}/${{ matrix.targetPlatform }}
-          
+
       - name: Download Butler
         run: |
           curl -L -o butler.zip ${{env.BUTLER_LINK}}
@@ -80,5 +84,5 @@ jobs:
           ./butler push ${{env.BUILD_DIR}}/${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}.zip ${{env.ITCH_GAME_NAME}}:${{ matrix.targetPlatform }}
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
-    
+
     
