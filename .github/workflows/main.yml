@@ -58,6 +58,8 @@ jobs:
           unityVersion: auto
           projectPath: ${{env.PROJ_DIR}}
           buildsPath: ${{env.BUILD_PATH}}
+          # This is the name of the runnable file (e.g the .exe file)
+          buildName: ${{env.PROJ_NAME}}
 
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
